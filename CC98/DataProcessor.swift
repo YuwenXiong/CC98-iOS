@@ -56,8 +56,10 @@ class DataProcessor {
     func GetTopicPost(topicID: Int, from: Int, to: Int) -> Array<CC98Post> {
         let postsJSON = GetJSON(baseURL + "Post/Topic/\(topicID)?from=\(from)&to=\(to)")
         var posts = Array<CC98Post>()
-        for i in 0...postsJSON.count-1 {
-            posts.append(CC98Post(postInfo: postsJSON[i], dataProcessor: self))
+        if postsJSON.count > 0 {
+            for i in 0...postsJSON.count-1 {
+                posts.append(CC98Post(postInfo: postsJSON[i], dataProcessor: self))
+            }
         }
         return posts
     }
