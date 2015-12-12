@@ -50,8 +50,15 @@ class DataProcessor {
     }
     
     // pass
-    func GetBoardTopic(boardID: Int, from: Int, to: Int) -> JSON {
-        return GetJSON(baseURL + "Topic/Board/\(boardID)?from=\(from)&to=\(to)")
+    func GetBoardTopic(boardID: Int, from: Int, to: Int) -> Array<CC98Topic> {
+        let topicsJSON = GetJSON(baseURL + "Topic/Board/\(boardID)?from=\(from)&to=\(to)")
+        var topics = Array<CC98Topic>()
+        if topicsJSON.count > 0 {
+            for i in 0...topicsJSON.count-1 {
+                topics.append(CC98Topic(ID: topicsJSON[i]["id"].intValue))
+            }
+        }
+        return topics
     }
     
     // pass

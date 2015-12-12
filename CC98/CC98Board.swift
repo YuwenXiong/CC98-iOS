@@ -10,6 +10,7 @@ import Foundation
 
 class CC98Board {
     let ID: Int, parent: Int, name: String, isCategory: Bool, subBoardCount: Int, todayPosts: Int
+    var from = 0, to = 9
     var boards = Array<CC98Board>()
     init(ID: Int) {
         let data = globalDataProcessor.GetBoardInfo(ID)
@@ -28,5 +29,11 @@ class CC98Board {
                 self.boards.append(CC98Board(ID: subBoardData[i]["id"].intValue))
             }
         }
+    }
+    func loadTopics() -> Array<CC98Topic> {
+        let ret = globalDataProcessor.GetBoardTopic(ID, from: from, to: to)
+        from += 10
+        to += 10
+        return ret
     }
 }

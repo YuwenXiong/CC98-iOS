@@ -30,7 +30,7 @@ class PostDetailController:UITableViewController{
     }
     
     func loadData(isPullRefresh:Bool){
-        data=X.GetHotTopic();
+//        data=X.GetHotTopic();
         self.loading = false
         
         if(isPullRefresh){

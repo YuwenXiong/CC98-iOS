@@ -17,14 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        let X = DataProcessor()
-
-        X.GetHotTopic()
+//        let X = DataProcessor()
+        let temp = globalDataProcessor.GetTopicPost(4583500, from: 0, to: 20)
+//        X.GetHotTopic()
 //        X.GetBoardTopic(744, from: 0, to: 19)
 //        X.GetTopicInfo(4582400)
 //        let posts = X.GetTopicPost(4582400, from: 0, to: 19)
 //        X.ParsePostContent(posts[0]["content"].string!)
-        let boards = X.GetRootBoard()
+//        let boards = X.GetRootBoard()
 //        let posts = X.GetTopicPost(4582400, from: 0, to: 19)
         
 //        X.ParsePostContent(posts[0].content)
