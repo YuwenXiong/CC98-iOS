@@ -12,6 +12,8 @@ import UIKit
 class PostCell:UITableViewCell{
 
     
+    @IBOutlet weak var createTime: UILabel!
+    @IBOutlet weak var boardName: UILabel!
 
     @IBOutlet weak var authorName: UILabel!
     @IBOutlet weak var containerView: UIView!

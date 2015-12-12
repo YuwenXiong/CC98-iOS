@@ -1,16 +1,18 @@
 //
-//  HotTopicViewController.swift
+//  PostDetailController.swift
 //  CC98
 //
-//  Created by CCNT on 12/8/15.
+//  Created by CCNT on 12/13/15.
 //  Copyright © 2015 Orpine. All rights reserved.
 //
+
+
 
 import Foundation
 import UIKit
 import SwiftyJSON
 
-class HotTopicViewController:UITableViewController{
+class PostDetailController:UITableViewController{
     
     var loading:Bool = false
     let X=DataProcessor();
@@ -28,7 +30,7 @@ class HotTopicViewController:UITableViewController{
     }
     
     func loadData(isPullRefresh:Bool){
-//        data=X.GetHotTopic();
+        data=X.GetHotTopic();
         self.loading = false
         
         if(isPullRefresh){
