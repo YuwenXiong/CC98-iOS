@@ -19,7 +19,10 @@ class CC98Board {
         self.isCategory = data["isCategory"].boolValue
         self.subBoardCount = data["childBoardCount"].intValue
         self.todayPosts = data["todayPostCount"].intValue
+    }
+    func GetSubBoards() {
         if self.subBoardCount > 0 {
+            self.boards.removeAll()
             let subBoardData = globalDataProcessor.GetSubBoards(self.ID)
             for i in 0...self.subBoardCount-1 {
                 self.boards.append(CC98Board(ID: subBoardData[i]["id"].intValue))
