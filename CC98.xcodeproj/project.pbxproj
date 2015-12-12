@@ -123,6 +123,8 @@
 		CC5C234C1C1C808000ADF5CF /* CC98Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C23481C1C808000ADF5CF /* CC98Post.swift */; };
 		CC5C234D1C1C808000ADF5CF /* CC98User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C23491C1C808000ADF5CF /* CC98User.swift */; };
 		CC5C234E1C1C808000ADF5CF /* configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C234A1C1C808000ADF5CF /* configure.swift */; };
+		CC5C23501C1C9BC500ADF5CF /* CC98Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C234F1C1C9BC500ADF5CF /* CC98Topic.swift */; };
+		CC5C23521C1C9F2F00ADF5CF /* CC98Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C23511C1C9F2F00ADF5CF /* CC98Board.swift */; };
 		F9A7B39895763995670457FC /* Pods_CC98.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 680525184E7802334BE2B88A /* Pods_CC98.framework */; };
 		FFB124BB1C1C8BAF00F4ECB2 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB124BA1C1C8BAF00F4ECB2 /* PostCell.swift */; };
 		FFB124BD1C1C8C0B00F4ECB2 /* HotTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB124BC1C1C8C0B00F4ECB2 /* HotTopicViewController.swift */; };
@@ -283,6 +285,8 @@
 		CC5C23481C1C808000ADF5CF /* CC98Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CC98Post.swift; sourceTree = "<group>"; };
 		CC5C23491C1C808000ADF5CF /* CC98User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CC98User.swift; sourceTree = "<group>"; };
 		CC5C234A1C1C808000ADF5CF /* configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = configure.swift; sourceTree = "<group>"; };
+		CC5C234F1C1C9BC500ADF5CF /* CC98Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CC98Topic.swift; sourceTree = "<group>"; };
+		CC5C23511C1C9F2F00ADF5CF /* CC98Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CC98Board.swift; sourceTree = "<group>"; };
 		FFB124BA1C1C8BAF00F4ECB2 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		FFB124BC1C1C8C0B00F4ECB2 /* HotTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotTopicViewController.swift; sourceTree = "<group>"; };
 		FFB124BF1C1C8CA800F4ECB2 /* BreakOutToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakOutToRefreshView.swift; sourceTree = "<group>"; };
@@ -526,8 +530,10 @@
 			children = (
 				CC5C23471C1C808000ADF5CF /* DataProcessor.swift */,
 				CC5C23481C1C808000ADF5CF /* CC98Post.swift */,
+				CC5C23511C1C9F2F00ADF5CF /* CC98Board.swift */,
 				CC5C23491C1C808000ADF5CF /* CC98User.swift */,
 				CC5C234A1C1C808000ADF5CF /* configure.swift */,
+				CC5C234F1C1C9BC500ADF5CF /* CC98Topic.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -877,11 +883,13 @@
 				CC5C234B1C1C808000ADF5CF /* DataProcessor.swift in Sources */,
 				CC5C234E1C1C808000ADF5CF /* configure.swift in Sources */,
 				FFB124CE1C1C8CBF00F4ECB2 /* UIScrollView+Refresh.swift in Sources */,
+				CC5C23521C1C9F2F00ADF5CF /* CC98Board.swift in Sources */,
 				FFB124BD1C1C8C0B00F4ECB2 /* HotTopicViewController.swift in Sources */,
 				FFB124C61C1C8CA800F4ECB2 /* RefreshBaseView.swift in Sources */,
 				CC19242A1C1C7E85007F0669 /* SecondViewController.swift in Sources */,
 				CC5C234C1C1C808000ADF5CF /* CC98Post.swift in Sources */,
 				FFB124C71C1C8CA800F4ECB2 /* RefreshConst.swift in Sources */,
+				CC5C23501C1C9BC500ADF5CF /* CC98Topic.swift in Sources */,
 				CC1924261C1C7E85007F0669 /* AppDelegate.swift in Sources */,
 				FFB124C81C1C8CA800F4ECB2 /* RefreshFooterView.swift in Sources */,
 				FFB124CD1C1C8CBF00F4ECB2 /* SwiftNotice.swift in Sources */,

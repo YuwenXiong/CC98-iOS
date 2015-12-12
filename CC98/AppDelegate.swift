@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        X.GetTopicInfo(4582400)
 //        let posts = X.GetTopicPost(4582400, from: 0, to: 19)
 //        X.ParsePostContent(posts[0]["content"].string!)
-
-        let posts = X.GetTopicPost(4582400, from: 0, to: 19)
+        let boards = X.GetRootBoard()
+//        let posts = X.GetTopicPost(4582400, from: 0, to: 19)
         
 //        X.ParsePostContent(posts[0].content)
 //        X.GetPost(791058817)

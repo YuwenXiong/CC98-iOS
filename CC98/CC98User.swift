@@ -18,8 +18,7 @@ class CC98User {
         self.gender = userInfo["gender"] == 0 ? "male" : "female"
     }
     convenience init(userID: Int) {
-        let dataProcessor = DataProcessor()
-        let userInfo = dataProcessor.GetUserByID(userID)
+        let userInfo = globalDataProcessor.GetUserByID(userID)
         self.init(userInfo: userInfo)
     }
     

@@ -11,6 +11,8 @@ import Foundation
 var baseURL = "http://api.cc98.org/"
 let siteURL = "http://www.cc98.org/"
 
+let globalDataProcessor = DataProcessor()
+
 //let settings = [
 //    "client_id": "CC98",
 //    "client_secret": "84e21510-02f4-4992-b6ee-823a3f64e33d",

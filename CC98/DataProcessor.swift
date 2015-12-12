@@ -18,7 +18,7 @@ class DataProcessor {
             response in
             NSLog("Success: \(response.request?.URL)")
             self.json = JSON(data: response.data!)
-            print(self.json)
+//            print(self.json)
             flag = true
         }
         while (!flag) {
@@ -38,8 +38,15 @@ class DataProcessor {
     }
     
     // pass
-    func GetHotTopic() -> JSON {
-        return GetJSON(baseURL + "Topic/Hot")
+    func GetHotTopic() -> Array<CC98Topic> {
+        let topicsJSON = GetJSON(baseURL + "Topic/Hot")
+        var topics = Array<CC98Topic>()
+        if topicsJSON.count > 0 {
+            for i in 0...topicsJSON.count-1 {
+                topics.append(CC98Topic(ID: topicsJSON[i]["id"].intValue))
+            }
+        }
+        return topics
     }
     
     // pass
@@ -82,8 +89,15 @@ class DataProcessor {
     
     // Board
     // pass
-    func GetBoardRoot() -> JSON {
-        return GetJSON(baseURL + "Board/Root")
+    func GetRootBoard() -> Array<CC98Board> {
+        let boardsJSON = GetJSON(baseURL + "Board/Root")
+        var boards = Array<CC98Board>()
+        if boardsJSON.count > 0 {
+            for i in 0...boardsJSON.count-1 {
+                boards.append(CC98Board(ID: boardsJSON[i]["id"].intValue))
+            }
+        }
+        return boards
     }
     // pass
     func GetSubBoards(boardID: Int) -> JSON {
@@ -92,6 +106,10 @@ class DataProcessor {
     // pass
     func GetBoardInfo(boardID: Int) -> JSON {
         return GetJSON(baseURL + "Board/\(boardID)")
+    }
+    
+    func GetBoard(boardID: Int) -> CC98Board {
+        return CC98Board(ID: boardID)
     }
     
     func ParsePostContent(post: CC98Post) -> String {
