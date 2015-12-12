@@ -15,7 +15,7 @@ class CC98Topic {
         let data = dataProcessor.GetTopicInfo(ID)
         self.ID = ID
         self.title = data["title"].stringValue
-        self.author = data["author"].stringValue
+        self.author = data["authorName"].stringValue
         self.time = data["time"].stringValue.stringByReplacingOccurrencesOfString("T", withString: " ")
         self.boardID = data["boardId"].intValue
         self.boardName = globalDataProcessor.GetBoardInfo(boardID)["name"].stringValue

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 //        let X = DataProcessor()
-        let temp = globalDataProcessor.GetTopicPost(4583500, from: 0, to: 20)
+        let temp = globalDataProcessor.GetHotTopic()
 //        X.GetHotTopic()
 //        X.GetBoardTopic(744, from: 0, to: 19)
 //        X.GetTopicInfo(4582400)
