@@ -79,7 +79,7 @@ class HotTopicViewController:UITableViewController{
         else{
             cell.authorName.text=topic.author
         }
-        cell.boardName.text=topic.
+        cell.boardName.text=topic.boardName
         cell.createTime.text=topic.time
         cell.updateConstraintsIfNeeded()
         // cell.contentView.backgroundColor = UIColor.grayColor()
@@ -93,9 +93,14 @@ class HotTopicViewController:UITableViewController{
     
     private func configureCell(cell:TopicCell,indexPath: NSIndexPath,isForOffscreenUse:Bool){
         
-        let  datai = self.data[indexPath.row]
-        cell.title.text=datai["title"].string;
-        cell.authorName.text=datai["authorName"].string;
+        let topic=topics[indexPath.row]
+        cell.title.text=topic.title
+        if topic.author==""{
+            cell.authorName.text="匿名"
+        }
+        else{
+            cell.authorName.text=topic.author
+        }
         cell.selectionStyle = .None;
     }
     
