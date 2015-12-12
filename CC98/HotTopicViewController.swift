@@ -101,6 +101,7 @@ class HotTopicViewController:UITableViewController{
         else{
             cell.authorName.text=topic.author
         }
+        cell.createTime.text=topic.time
         cell.selectionStyle = .None;
     }
     
