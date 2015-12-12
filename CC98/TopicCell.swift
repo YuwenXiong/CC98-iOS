@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class PostCell:UITableViewCell{
+class TopicCell:UITableViewCell{
 
     
     @IBOutlet weak var createTime: UILabel!

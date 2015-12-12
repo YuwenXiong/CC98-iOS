@@ -13,8 +13,8 @@ import SwiftyJSON
 class HotTopicViewController:UITableViewController{
     
     var loading:Bool = false
-    let X=DataProcessor();
-    var data:JSON=nil
+    
+    var topics = Array<CC98Topic>()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.estimatedRowHeight = 120;
@@ -28,7 +28,7 @@ class HotTopicViewController:UITableViewController{
     }
     
     func loadData(isPullRefresh:Bool){
-//        data=X.GetHotTopic();
+        topics=globalDataProcessor.GetHotTopic();
         self.loading = false
         
         if(isPullRefresh){
@@ -37,7 +37,7 @@ class HotTopicViewController:UITableViewController{
         else{
             self.tableView.footerEndRefreshing()
         }
-        if data==nil {
+        if topics.count==0 {
             let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
             alert.show()
             return
@@ -58,7 +58,7 @@ class HotTopicViewController:UITableViewController{
         return 1
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PostCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TopicCell
         cell.containerView.backgroundColor = UIColor(red: 0.85, green: 0.85, blue:0.85, alpha: 0.9)
     }
     
@@ -69,18 +69,18 @@ class HotTopicViewController:UITableViewController{
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        //let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! PostCell
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PostCell
-        let datai=data[indexPath.row]
-        cell.title.text=datai["title"].string
-        if datai["authorName"]==nil{
+        //let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! TopicCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TopicCell
+        let topic=topics[indexPath.row]
+        cell.title.text=topic.title
+        if topic.author==""{
             cell.authorName.text="匿名"
         }
         else{
-            cell.authorName.text=datai["authorName"].string
+            cell.authorName.text=topic.author
         }
-        cell.boardName.text=datai["boardName"].string
-        cell.createTime.text=datai["createTime"].string
+        cell.boardName.text=topic.
+        cell.createTime.text=topic.time
         cell.updateConstraintsIfNeeded()
         // cell.contentView.backgroundColor = UIColor.grayColor()
         
@@ -89,9 +89,9 @@ class HotTopicViewController:UITableViewController{
         
         return cell
     }
-    var prototypeCell:PostCell?
+    var prototypeCell:TopicCell?
     
-    private func configureCell(cell:PostCell,indexPath: NSIndexPath,isForOffscreenUse:Bool){
+    private func configureCell(cell:TopicCell,indexPath: NSIndexPath,isForOffscreenUse:Bool){
         
         let  datai = self.data[indexPath.row]
         cell.title.text=datai["title"].string;
@@ -103,7 +103,7 @@ class HotTopicViewController:UITableViewController{
         
         if prototypeCell == nil
         {
-            self.prototypeCell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as? PostCell
+            self.prototypeCell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as? TopicCell
         }
         
         

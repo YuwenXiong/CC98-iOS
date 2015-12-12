@@ -126,7 +126,7 @@
 		CC5C23501C1C9BC500ADF5CF /* CC98Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C234F1C1C9BC500ADF5CF /* CC98Topic.swift */; };
 		CC5C23521C1C9F2F00ADF5CF /* CC98Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C23511C1C9F2F00ADF5CF /* CC98Board.swift */; };
 		F9A7B39895763995670457FC /* Pods_CC98.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 680525184E7802334BE2B88A /* Pods_CC98.framework */; };
-		FFB124BB1C1C8BAF00F4ECB2 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB124BA1C1C8BAF00F4ECB2 /* PostCell.swift */; };
+		FFB124BB1C1C8BAF00F4ECB2 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB124BA1C1C8BAF00F4ECB2 /* TopicCell.swift */; };
 		FFB124BD1C1C8C0B00F4ECB2 /* HotTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB124BC1C1C8C0B00F4ECB2 /* HotTopicViewController.swift */; };
 		FFB124C51C1C8CA800F4ECB2 /* BreakOutToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB124BF1C1C8CA800F4ECB2 /* BreakOutToRefreshView.swift */; };
 		FFB124C61C1C8CA800F4ECB2 /* RefreshBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB124C01C1C8CA800F4ECB2 /* RefreshBaseView.swift */; };
@@ -288,7 +288,7 @@
 		CC5C234A1C1C808000ADF5CF /* configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = configure.swift; sourceTree = "<group>"; };
 		CC5C234F1C1C9BC500ADF5CF /* CC98Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CC98Topic.swift; sourceTree = "<group>"; };
 		CC5C23511C1C9F2F00ADF5CF /* CC98Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CC98Board.swift; sourceTree = "<group>"; };
-		FFB124BA1C1C8BAF00F4ECB2 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		FFB124BA1C1C8BAF00F4ECB2 /* TopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
 		FFB124BC1C1C8C0B00F4ECB2 /* HotTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotTopicViewController.swift; sourceTree = "<group>"; };
 		FFB124BF1C1C8CA800F4ECB2 /* BreakOutToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakOutToRefreshView.swift; sourceTree = "<group>"; };
 		FFB124C01C1C8CA800F4ECB2 /* RefreshBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshBaseView.swift; sourceTree = "<group>"; };
@@ -561,7 +561,7 @@
 		FFB124B91C1C8B6200F4ECB2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				FFB124BA1C1C8BAF00F4ECB2 /* PostCell.swift */,
+				FFB124BA1C1C8BAF00F4ECB2 /* TopicCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -900,7 +900,7 @@
 				FFE422CF1C1CABB30034B879 /* PostDetailController.swift in Sources */,
 				FFB124C91C1C8CA800F4ECB2 /* RefreshHeaderView.swift in Sources */,
 				CC5C234D1C1C808000ADF5CF /* CC98User.swift in Sources */,
-				FFB124BB1C1C8BAF00F4ECB2 /* PostCell.swift in Sources */,
+				FFB124BB1C1C8BAF00F4ECB2 /* TopicCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
