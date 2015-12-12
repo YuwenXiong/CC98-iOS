@@ -1,0 +1,1055 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A8BD2180881B60157A04EE9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 827955ABB3EC01BC0BAB466D /* Pods.framework */; };
+		CC1924261C1C7E85007F0669 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1924251C1C7E85007F0669 /* AppDelegate.swift */; };
+		CC1924281C1C7E85007F0669 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1924271C1C7E85007F0669 /* FirstViewController.swift */; };
+		CC19242A1C1C7E85007F0669 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1924291C1C7E85007F0669 /* SecondViewController.swift */; };
+		CC19242D1C1C7E85007F0669 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC19242B1C1C7E85007F0669 /* Main.storyboard */; };
+		CC19242F1C1C7E85007F0669 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC19242E1C1C7E85007F0669 /* Assets.xcassets */; };
+		CC1924321C1C7E85007F0669 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1924301C1C7E85007F0669 /* LaunchScreen.storyboard */; };
+		CC19243D1C1C7E85007F0669 /* CC98Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19243C1C1C7E85007F0669 /* CC98Tests.swift */; };
+		CC1924481C1C7E86007F0669 /* CC98UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1924471C1C7E86007F0669 /* CC98UITests.swift */; };
+		CC5C22DF1C1C7FE100ADF5CF /* bootstrap.css in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22761C1C7FE100ADF5CF /* bootstrap.css */; };
+		CC5C22E01C1C7FE100ADF5CF /* CC98MessageWebPage.html in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22771C1C7FE100ADF5CF /* CC98MessageWebPage.html */; };
+		CC5C22E11C1C7FE100ADF5CF /* CC98PostListStyle.css in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22781C1C7FE100ADF5CF /* CC98PostListStyle.css */; };
+		CC5C22E21C1C7FE100ADF5CF /* CC98PostListWebPage.html in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22791C1C7FE100ADF5CF /* CC98PostListWebPage.html */; };
+		CC5C22E31C1C7FE100ADF5CF /* clientubb.js in Resources */ = {isa = PBXBuildFile; fileRef = CC5C227A1C1C7FE100ADF5CF /* clientubb.js */; };
+		CC5C22E41C1C7FE100ADF5CF /* emot00.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C227C1C1C7FE100ADF5CF /* emot00.gif */; };
+		CC5C22E51C1C7FE100ADF5CF /* emot01.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C227D1C1C7FE100ADF5CF /* emot01.gif */; };
+		CC5C22E61C1C7FE100ADF5CF /* emot02.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C227E1C1C7FE100ADF5CF /* emot02.gif */; };
+		CC5C22E71C1C7FE100ADF5CF /* emot03.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C227F1C1C7FE100ADF5CF /* emot03.gif */; };
+		CC5C22E81C1C7FE100ADF5CF /* emot04.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22801C1C7FE100ADF5CF /* emot04.gif */; };
+		CC5C22E91C1C7FE100ADF5CF /* emot05.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22811C1C7FE100ADF5CF /* emot05.gif */; };
+		CC5C22EA1C1C7FE100ADF5CF /* emot06.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22821C1C7FE100ADF5CF /* emot06.gif */; };
+		CC5C22EB1C1C7FE100ADF5CF /* emot07.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22831C1C7FE100ADF5CF /* emot07.gif */; };
+		CC5C22EC1C1C7FE100ADF5CF /* emot08.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22841C1C7FE100ADF5CF /* emot08.gif */; };
+		CC5C22ED1C1C7FE100ADF5CF /* emot09.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22851C1C7FE100ADF5CF /* emot09.gif */; };
+		CC5C22EE1C1C7FE100ADF5CF /* emot10.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22861C1C7FE100ADF5CF /* emot10.gif */; };
+		CC5C22EF1C1C7FE100ADF5CF /* emot11.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22871C1C7FE100ADF5CF /* emot11.gif */; };
+		CC5C22F01C1C7FE100ADF5CF /* emot12.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22881C1C7FE100ADF5CF /* emot12.gif */; };
+		CC5C22F11C1C7FE100ADF5CF /* emot13.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22891C1C7FE100ADF5CF /* emot13.gif */; };
+		CC5C22F21C1C7FE100ADF5CF /* emot14.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C228A1C1C7FE100ADF5CF /* emot14.gif */; };
+		CC5C22F31C1C7FE100ADF5CF /* emot15.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C228B1C1C7FE100ADF5CF /* emot15.gif */; };
+		CC5C22F41C1C7FE100ADF5CF /* emot16.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C228C1C1C7FE100ADF5CF /* emot16.gif */; };
+		CC5C22F51C1C7FE100ADF5CF /* emot17.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C228D1C1C7FE100ADF5CF /* emot17.gif */; };
+		CC5C22F61C1C7FE100ADF5CF /* emot18.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C228E1C1C7FE100ADF5CF /* emot18.gif */; };
+		CC5C22F71C1C7FE100ADF5CF /* emot19.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C228F1C1C7FE100ADF5CF /* emot19.gif */; };
+		CC5C22F81C1C7FE100ADF5CF /* emot20.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22901C1C7FE100ADF5CF /* emot20.gif */; };
+		CC5C22F91C1C7FE100ADF5CF /* emot21.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22911C1C7FE100ADF5CF /* emot21.gif */; };
+		CC5C22FA1C1C7FE100ADF5CF /* emot22.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22921C1C7FE100ADF5CF /* emot22.gif */; };
+		CC5C22FB1C1C7FE100ADF5CF /* emot23.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22931C1C7FE100ADF5CF /* emot23.gif */; };
+		CC5C22FC1C1C7FE100ADF5CF /* emot24.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22941C1C7FE100ADF5CF /* emot24.gif */; };
+		CC5C22FD1C1C7FE100ADF5CF /* emot25.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22951C1C7FE100ADF5CF /* emot25.gif */; };
+		CC5C22FE1C1C7FE100ADF5CF /* emot26.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22961C1C7FE100ADF5CF /* emot26.gif */; };
+		CC5C22FF1C1C7FE100ADF5CF /* emot27.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22971C1C7FE100ADF5CF /* emot27.gif */; };
+		CC5C23001C1C7FE100ADF5CF /* emot28.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22981C1C7FE100ADF5CF /* emot28.gif */; };
+		CC5C23011C1C7FE100ADF5CF /* emot29.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22991C1C7FE100ADF5CF /* emot29.gif */; };
+		CC5C23021C1C7FE100ADF5CF /* emot30.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C229A1C1C7FE100ADF5CF /* emot30.gif */; };
+		CC5C23031C1C7FE100ADF5CF /* emot31.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C229B1C1C7FE100ADF5CF /* emot31.gif */; };
+		CC5C23041C1C7FE100ADF5CF /* emot32.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C229C1C1C7FE100ADF5CF /* emot32.gif */; };
+		CC5C23051C1C7FE100ADF5CF /* emot33.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C229D1C1C7FE100ADF5CF /* emot33.gif */; };
+		CC5C23061C1C7FE100ADF5CF /* emot34.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C229E1C1C7FE100ADF5CF /* emot34.gif */; };
+		CC5C23071C1C7FE100ADF5CF /* emot35.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C229F1C1C7FE100ADF5CF /* emot35.gif */; };
+		CC5C23081C1C7FE100ADF5CF /* emot36.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A01C1C7FE100ADF5CF /* emot36.gif */; };
+		CC5C23091C1C7FE100ADF5CF /* emot37.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A11C1C7FE100ADF5CF /* emot37.gif */; };
+		CC5C230A1C1C7FE100ADF5CF /* emot38.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A21C1C7FE100ADF5CF /* emot38.gif */; };
+		CC5C230B1C1C7FE100ADF5CF /* emot39.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A31C1C7FE100ADF5CF /* emot39.gif */; };
+		CC5C230C1C1C7FE100ADF5CF /* emot40.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A41C1C7FE100ADF5CF /* emot40.gif */; };
+		CC5C230D1C1C7FE100ADF5CF /* emot41.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A51C1C7FE100ADF5CF /* emot41.gif */; };
+		CC5C230E1C1C7FE100ADF5CF /* emot42.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A61C1C7FE100ADF5CF /* emot42.gif */; };
+		CC5C230F1C1C7FE100ADF5CF /* emot43.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A71C1C7FE100ADF5CF /* emot43.gif */; };
+		CC5C23101C1C7FE100ADF5CF /* emot44.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A81C1C7FE100ADF5CF /* emot44.gif */; };
+		CC5C23111C1C7FE100ADF5CF /* emot45.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A91C1C7FE100ADF5CF /* emot45.gif */; };
+		CC5C23121C1C7FE100ADF5CF /* emot46.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22AA1C1C7FE100ADF5CF /* emot46.gif */; };
+		CC5C23131C1C7FE100ADF5CF /* emot47.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22AB1C1C7FE100ADF5CF /* emot47.gif */; };
+		CC5C23141C1C7FE100ADF5CF /* emot48.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22AC1C1C7FE100ADF5CF /* emot48.gif */; };
+		CC5C23151C1C7FE100ADF5CF /* emot49.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22AD1C1C7FE100ADF5CF /* emot49.gif */; };
+		CC5C23161C1C7FE100ADF5CF /* emot50.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22AE1C1C7FE100ADF5CF /* emot50.gif */; };
+		CC5C23171C1C7FE100ADF5CF /* emot51.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22AF1C1C7FE100ADF5CF /* emot51.gif */; };
+		CC5C23181C1C7FE100ADF5CF /* emot52.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B01C1C7FE100ADF5CF /* emot52.gif */; };
+		CC5C23191C1C7FE100ADF5CF /* emot53.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B11C1C7FE100ADF5CF /* emot53.gif */; };
+		CC5C231A1C1C7FE100ADF5CF /* emot54.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B21C1C7FE100ADF5CF /* emot54.gif */; };
+		CC5C231B1C1C7FE100ADF5CF /* emot55.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B31C1C7FE100ADF5CF /* emot55.gif */; };
+		CC5C231C1C1C7FE100ADF5CF /* emot56.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B41C1C7FE100ADF5CF /* emot56.gif */; };
+		CC5C231D1C1C7FE100ADF5CF /* emot57.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B51C1C7FE100ADF5CF /* emot57.gif */; };
+		CC5C231E1C1C7FE100ADF5CF /* emot58.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B61C1C7FE100ADF5CF /* emot58.gif */; };
+		CC5C231F1C1C7FE100ADF5CF /* emot59.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B71C1C7FE100ADF5CF /* emot59.gif */; };
+		CC5C23201C1C7FE100ADF5CF /* emot60.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B81C1C7FE100ADF5CF /* emot60.gif */; };
+		CC5C23211C1C7FE100ADF5CF /* emot61.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B91C1C7FE100ADF5CF /* emot61.gif */; };
+		CC5C23221C1C7FE100ADF5CF /* emot62.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22BA1C1C7FE100ADF5CF /* emot62.gif */; };
+		CC5C23231C1C7FE100ADF5CF /* emot63.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22BB1C1C7FE100ADF5CF /* emot63.gif */; };
+		CC5C23241C1C7FE100ADF5CF /* emot64.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22BC1C1C7FE100ADF5CF /* emot64.gif */; };
+		CC5C23251C1C7FE100ADF5CF /* emot65.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22BD1C1C7FE100ADF5CF /* emot65.gif */; };
+		CC5C23261C1C7FE100ADF5CF /* emot66.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22BE1C1C7FE100ADF5CF /* emot66.gif */; };
+		CC5C23271C1C7FE100ADF5CF /* emot67.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22BF1C1C7FE100ADF5CF /* emot67.gif */; };
+		CC5C23281C1C7FE100ADF5CF /* emot68.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C01C1C7FE100ADF5CF /* emot68.gif */; };
+		CC5C23291C1C7FE100ADF5CF /* emot69.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C11C1C7FE100ADF5CF /* emot69.gif */; };
+		CC5C232A1C1C7FE100ADF5CF /* emot70.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C21C1C7FE100ADF5CF /* emot70.gif */; };
+		CC5C232B1C1C7FE100ADF5CF /* emot71.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C31C1C7FE100ADF5CF /* emot71.gif */; };
+		CC5C232C1C1C7FE100ADF5CF /* emot72.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C41C1C7FE100ADF5CF /* emot72.gif */; };
+		CC5C232D1C1C7FE100ADF5CF /* emot73.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C51C1C7FE100ADF5CF /* emot73.gif */; };
+		CC5C232E1C1C7FE100ADF5CF /* emot74.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C61C1C7FE100ADF5CF /* emot74.gif */; };
+		CC5C232F1C1C7FE100ADF5CF /* emot75.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C71C1C7FE100ADF5CF /* emot75.gif */; };
+		CC5C23301C1C7FE100ADF5CF /* emot76.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C81C1C7FE100ADF5CF /* emot76.gif */; };
+		CC5C23311C1C7FE100ADF5CF /* emot77.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C91C1C7FE100ADF5CF /* emot77.gif */; };
+		CC5C23321C1C7FE100ADF5CF /* emot78.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22CA1C1C7FE100ADF5CF /* emot78.gif */; };
+		CC5C23331C1C7FE100ADF5CF /* emot79.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22CB1C1C7FE100ADF5CF /* emot79.gif */; };
+		CC5C23341C1C7FE100ADF5CF /* emot80.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22CC1C1C7FE100ADF5CF /* emot80.gif */; };
+		CC5C23351C1C7FE100ADF5CF /* emot81.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22CD1C1C7FE100ADF5CF /* emot81.gif */; };
+		CC5C23361C1C7FE100ADF5CF /* emot82.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22CE1C1C7FE100ADF5CF /* emot82.gif */; };
+		CC5C23371C1C7FE100ADF5CF /* emot83.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22CF1C1C7FE100ADF5CF /* emot83.gif */; };
+		CC5C23381C1C7FE100ADF5CF /* emot84.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D01C1C7FE100ADF5CF /* emot84.gif */; };
+		CC5C23391C1C7FE100ADF5CF /* emot85.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D11C1C7FE100ADF5CF /* emot85.gif */; };
+		CC5C233A1C1C7FE100ADF5CF /* emot86.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D21C1C7FE100ADF5CF /* emot86.gif */; };
+		CC5C233B1C1C7FE100ADF5CF /* emot87.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D31C1C7FE100ADF5CF /* emot87.gif */; };
+		CC5C233C1C1C7FE100ADF5CF /* emot88.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D41C1C7FE100ADF5CF /* emot88.gif */; };
+		CC5C233D1C1C7FE100ADF5CF /* emot89.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D51C1C7FE100ADF5CF /* emot89.gif */; };
+		CC5C233E1C1C7FE100ADF5CF /* emot90.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D61C1C7FE100ADF5CF /* emot90.gif */; };
+		CC5C233F1C1C7FE100ADF5CF /* emot91.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D71C1C7FE100ADF5CF /* emot91.gif */; };
+		CC5C23401C1C7FE100ADF5CF /* mootools.core.js in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D81C1C7FE100ADF5CF /* mootools.core.js */; };
+		CC5C23411C1C7FE100ADF5CF /* jpg.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22DA1C1C7FE100ADF5CF /* jpg.gif */; };
+		CC5C23421C1C7FE100ADF5CF /* png.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22DB1C1C7FE100ADF5CF /* png.gif */; };
+		CC5C23431C1C7FE100ADF5CF /* url.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22DC1C1C7FE100ADF5CF /* url.gif */; };
+		CC5C23441C1C7FE100ADF5CF /* temp.html in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22DD1C1C7FE100ADF5CF /* temp.html */; };
+		CC5C23451C1C7FE100ADF5CF /* temp2.html in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22DE1C1C7FE100ADF5CF /* temp2.html */; };
+		CC5C234B1C1C808000ADF5CF /* DataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C23471C1C808000ADF5CF /* DataProcessor.swift */; };
+		CC5C234C1C1C808000ADF5CF /* CC98Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C23481C1C808000ADF5CF /* CC98Post.swift */; };
+		CC5C234D1C1C808000ADF5CF /* CC98User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C23491C1C808000ADF5CF /* CC98User.swift */; };
+		CC5C234E1C1C808000ADF5CF /* configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C234A1C1C808000ADF5CF /* configure.swift */; };
+		F9A7B39895763995670457FC /* Pods_CC98.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 680525184E7802334BE2B88A /* Pods_CC98.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CC1924391C1C7E85007F0669 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC19241A1C1C7E85007F0669 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC1924211C1C7E85007F0669;
+			remoteInfo = CC98;
+		};
+		CC1924441C1C7E86007F0669 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC19241A1C1C7E85007F0669 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC1924211C1C7E85007F0669;
+			remoteInfo = CC98;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		23E8F5C119735D6D5A2F7974 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		680525184E7802334BE2B88A /* Pods_CC98.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CC98.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EA22B8EC066ED6C5D53FF27 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		827955ABB3EC01BC0BAB466D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC1924221C1C7E85007F0669 /* CC98.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CC98.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC1924251C1C7E85007F0669 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CC1924271C1C7E85007F0669 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		CC1924291C1C7E85007F0669 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		CC19242C1C1C7E85007F0669 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CC19242E1C1C7E85007F0669 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC1924311C1C7E85007F0669 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CC1924331C1C7E85007F0669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC1924381C1C7E85007F0669 /* CC98Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CC98Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC19243C1C1C7E85007F0669 /* CC98Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CC98Tests.swift; sourceTree = "<group>"; };
+		CC19243E1C1C7E85007F0669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC1924431C1C7E86007F0669 /* CC98UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CC98UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC1924471C1C7E86007F0669 /* CC98UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CC98UITests.swift; sourceTree = "<group>"; };
+		CC1924491C1C7E86007F0669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC5C22761C1C7FE100ADF5CF /* bootstrap.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.css; sourceTree = "<group>"; };
+		CC5C22771C1C7FE100ADF5CF /* CC98MessageWebPage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CC98MessageWebPage.html; sourceTree = "<group>"; };
+		CC5C22781C1C7FE100ADF5CF /* CC98PostListStyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = CC98PostListStyle.css; sourceTree = "<group>"; };
+		CC5C22791C1C7FE100ADF5CF /* CC98PostListWebPage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CC98PostListWebPage.html; sourceTree = "<group>"; };
+		CC5C227A1C1C7FE100ADF5CF /* clientubb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = clientubb.js; sourceTree = "<group>"; };
+		CC5C227C1C1C7FE100ADF5CF /* emot00.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot00.gif; sourceTree = "<group>"; };
+		CC5C227D1C1C7FE100ADF5CF /* emot01.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot01.gif; sourceTree = "<group>"; };
+		CC5C227E1C1C7FE100ADF5CF /* emot02.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot02.gif; sourceTree = "<group>"; };
+		CC5C227F1C1C7FE100ADF5CF /* emot03.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot03.gif; sourceTree = "<group>"; };
+		CC5C22801C1C7FE100ADF5CF /* emot04.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot04.gif; sourceTree = "<group>"; };
+		CC5C22811C1C7FE100ADF5CF /* emot05.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot05.gif; sourceTree = "<group>"; };
+		CC5C22821C1C7FE100ADF5CF /* emot06.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot06.gif; sourceTree = "<group>"; };
+		CC5C22831C1C7FE100ADF5CF /* emot07.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot07.gif; sourceTree = "<group>"; };
+		CC5C22841C1C7FE100ADF5CF /* emot08.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot08.gif; sourceTree = "<group>"; };
+		CC5C22851C1C7FE100ADF5CF /* emot09.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot09.gif; sourceTree = "<group>"; };
+		CC5C22861C1C7FE100ADF5CF /* emot10.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot10.gif; sourceTree = "<group>"; };
+		CC5C22871C1C7FE100ADF5CF /* emot11.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot11.gif; sourceTree = "<group>"; };
+		CC5C22881C1C7FE100ADF5CF /* emot12.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot12.gif; sourceTree = "<group>"; };
+		CC5C22891C1C7FE100ADF5CF /* emot13.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot13.gif; sourceTree = "<group>"; };
+		CC5C228A1C1C7FE100ADF5CF /* emot14.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot14.gif; sourceTree = "<group>"; };
+		CC5C228B1C1C7FE100ADF5CF /* emot15.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot15.gif; sourceTree = "<group>"; };
+		CC5C228C1C1C7FE100ADF5CF /* emot16.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot16.gif; sourceTree = "<group>"; };
+		CC5C228D1C1C7FE100ADF5CF /* emot17.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot17.gif; sourceTree = "<group>"; };
+		CC5C228E1C1C7FE100ADF5CF /* emot18.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot18.gif; sourceTree = "<group>"; };
+		CC5C228F1C1C7FE100ADF5CF /* emot19.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot19.gif; sourceTree = "<group>"; };
+		CC5C22901C1C7FE100ADF5CF /* emot20.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot20.gif; sourceTree = "<group>"; };
+		CC5C22911C1C7FE100ADF5CF /* emot21.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot21.gif; sourceTree = "<group>"; };
+		CC5C22921C1C7FE100ADF5CF /* emot22.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot22.gif; sourceTree = "<group>"; };
+		CC5C22931C1C7FE100ADF5CF /* emot23.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot23.gif; sourceTree = "<group>"; };
+		CC5C22941C1C7FE100ADF5CF /* emot24.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot24.gif; sourceTree = "<group>"; };
+		CC5C22951C1C7FE100ADF5CF /* emot25.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot25.gif; sourceTree = "<group>"; };
+		CC5C22961C1C7FE100ADF5CF /* emot26.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot26.gif; sourceTree = "<group>"; };
+		CC5C22971C1C7FE100ADF5CF /* emot27.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot27.gif; sourceTree = "<group>"; };
+		CC5C22981C1C7FE100ADF5CF /* emot28.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot28.gif; sourceTree = "<group>"; };
+		CC5C22991C1C7FE100ADF5CF /* emot29.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot29.gif; sourceTree = "<group>"; };
+		CC5C229A1C1C7FE100ADF5CF /* emot30.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot30.gif; sourceTree = "<group>"; };
+		CC5C229B1C1C7FE100ADF5CF /* emot31.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot31.gif; sourceTree = "<group>"; };
+		CC5C229C1C1C7FE100ADF5CF /* emot32.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot32.gif; sourceTree = "<group>"; };
+		CC5C229D1C1C7FE100ADF5CF /* emot33.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot33.gif; sourceTree = "<group>"; };
+		CC5C229E1C1C7FE100ADF5CF /* emot34.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot34.gif; sourceTree = "<group>"; };
+		CC5C229F1C1C7FE100ADF5CF /* emot35.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot35.gif; sourceTree = "<group>"; };
+		CC5C22A01C1C7FE100ADF5CF /* emot36.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot36.gif; sourceTree = "<group>"; };
+		CC5C22A11C1C7FE100ADF5CF /* emot37.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot37.gif; sourceTree = "<group>"; };
+		CC5C22A21C1C7FE100ADF5CF /* emot38.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot38.gif; sourceTree = "<group>"; };
+		CC5C22A31C1C7FE100ADF5CF /* emot39.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot39.gif; sourceTree = "<group>"; };
+		CC5C22A41C1C7FE100ADF5CF /* emot40.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot40.gif; sourceTree = "<group>"; };
+		CC5C22A51C1C7FE100ADF5CF /* emot41.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot41.gif; sourceTree = "<group>"; };
+		CC5C22A61C1C7FE100ADF5CF /* emot42.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot42.gif; sourceTree = "<group>"; };
+		CC5C22A71C1C7FE100ADF5CF /* emot43.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot43.gif; sourceTree = "<group>"; };
+		CC5C22A81C1C7FE100ADF5CF /* emot44.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot44.gif; sourceTree = "<group>"; };
+		CC5C22A91C1C7FE100ADF5CF /* emot45.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot45.gif; sourceTree = "<group>"; };
+		CC5C22AA1C1C7FE100ADF5CF /* emot46.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot46.gif; sourceTree = "<group>"; };
+		CC5C22AB1C1C7FE100ADF5CF /* emot47.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot47.gif; sourceTree = "<group>"; };
+		CC5C22AC1C1C7FE100ADF5CF /* emot48.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot48.gif; sourceTree = "<group>"; };
+		CC5C22AD1C1C7FE100ADF5CF /* emot49.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot49.gif; sourceTree = "<group>"; };
+		CC5C22AE1C1C7FE100ADF5CF /* emot50.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot50.gif; sourceTree = "<group>"; };
+		CC5C22AF1C1C7FE100ADF5CF /* emot51.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot51.gif; sourceTree = "<group>"; };
+		CC5C22B01C1C7FE100ADF5CF /* emot52.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot52.gif; sourceTree = "<group>"; };
+		CC5C22B11C1C7FE100ADF5CF /* emot53.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot53.gif; sourceTree = "<group>"; };
+		CC5C22B21C1C7FE100ADF5CF /* emot54.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot54.gif; sourceTree = "<group>"; };
+		CC5C22B31C1C7FE100ADF5CF /* emot55.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot55.gif; sourceTree = "<group>"; };
+		CC5C22B41C1C7FE100ADF5CF /* emot56.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot56.gif; sourceTree = "<group>"; };
+		CC5C22B51C1C7FE100ADF5CF /* emot57.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot57.gif; sourceTree = "<group>"; };
+		CC5C22B61C1C7FE100ADF5CF /* emot58.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot58.gif; sourceTree = "<group>"; };
+		CC5C22B71C1C7FE100ADF5CF /* emot59.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot59.gif; sourceTree = "<group>"; };
+		CC5C22B81C1C7FE100ADF5CF /* emot60.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot60.gif; sourceTree = "<group>"; };
+		CC5C22B91C1C7FE100ADF5CF /* emot61.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot61.gif; sourceTree = "<group>"; };
+		CC5C22BA1C1C7FE100ADF5CF /* emot62.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot62.gif; sourceTree = "<group>"; };
+		CC5C22BB1C1C7FE100ADF5CF /* emot63.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot63.gif; sourceTree = "<group>"; };
+		CC5C22BC1C1C7FE100ADF5CF /* emot64.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot64.gif; sourceTree = "<group>"; };
+		CC5C22BD1C1C7FE100ADF5CF /* emot65.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot65.gif; sourceTree = "<group>"; };
+		CC5C22BE1C1C7FE100ADF5CF /* emot66.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot66.gif; sourceTree = "<group>"; };
+		CC5C22BF1C1C7FE100ADF5CF /* emot67.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot67.gif; sourceTree = "<group>"; };
+		CC5C22C01C1C7FE100ADF5CF /* emot68.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot68.gif; sourceTree = "<group>"; };
+		CC5C22C11C1C7FE100ADF5CF /* emot69.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot69.gif; sourceTree = "<group>"; };
+		CC5C22C21C1C7FE100ADF5CF /* emot70.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot70.gif; sourceTree = "<group>"; };
+		CC5C22C31C1C7FE100ADF5CF /* emot71.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot71.gif; sourceTree = "<group>"; };
+		CC5C22C41C1C7FE100ADF5CF /* emot72.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot72.gif; sourceTree = "<group>"; };
+		CC5C22C51C1C7FE100ADF5CF /* emot73.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot73.gif; sourceTree = "<group>"; };
+		CC5C22C61C1C7FE100ADF5CF /* emot74.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot74.gif; sourceTree = "<group>"; };
+		CC5C22C71C1C7FE100ADF5CF /* emot75.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot75.gif; sourceTree = "<group>"; };
+		CC5C22C81C1C7FE100ADF5CF /* emot76.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot76.gif; sourceTree = "<group>"; };
+		CC5C22C91C1C7FE100ADF5CF /* emot77.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot77.gif; sourceTree = "<group>"; };
+		CC5C22CA1C1C7FE100ADF5CF /* emot78.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot78.gif; sourceTree = "<group>"; };
+		CC5C22CB1C1C7FE100ADF5CF /* emot79.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot79.gif; sourceTree = "<group>"; };
+		CC5C22CC1C1C7FE100ADF5CF /* emot80.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot80.gif; sourceTree = "<group>"; };
+		CC5C22CD1C1C7FE100ADF5CF /* emot81.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot81.gif; sourceTree = "<group>"; };
+		CC5C22CE1C1C7FE100ADF5CF /* emot82.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot82.gif; sourceTree = "<group>"; };
+		CC5C22CF1C1C7FE100ADF5CF /* emot83.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot83.gif; sourceTree = "<group>"; };
+		CC5C22D01C1C7FE100ADF5CF /* emot84.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot84.gif; sourceTree = "<group>"; };
+		CC5C22D11C1C7FE100ADF5CF /* emot85.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot85.gif; sourceTree = "<group>"; };
+		CC5C22D21C1C7FE100ADF5CF /* emot86.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot86.gif; sourceTree = "<group>"; };
+		CC5C22D31C1C7FE100ADF5CF /* emot87.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot87.gif; sourceTree = "<group>"; };
+		CC5C22D41C1C7FE100ADF5CF /* emot88.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot88.gif; sourceTree = "<group>"; };
+		CC5C22D51C1C7FE100ADF5CF /* emot89.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot89.gif; sourceTree = "<group>"; };
+		CC5C22D61C1C7FE100ADF5CF /* emot90.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot90.gif; sourceTree = "<group>"; };
+		CC5C22D71C1C7FE100ADF5CF /* emot91.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot91.gif; sourceTree = "<group>"; };
+		CC5C22D81C1C7FE100ADF5CF /* mootools.core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = mootools.core.js; sourceTree = "<group>"; };
+		CC5C22DA1C1C7FE100ADF5CF /* jpg.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jpg.gif; sourceTree = "<group>"; };
+		CC5C22DB1C1C7FE100ADF5CF /* png.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = png.gif; sourceTree = "<group>"; };
+		CC5C22DC1C1C7FE100ADF5CF /* url.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = url.gif; sourceTree = "<group>"; };
+		CC5C22DD1C1C7FE100ADF5CF /* temp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = temp.html; sourceTree = "<group>"; };
+		CC5C22DE1C1C7FE100ADF5CF /* temp2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = temp2.html; sourceTree = "<group>"; };
+		CC5C23471C1C808000ADF5CF /* DataProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProcessor.swift; sourceTree = "<group>"; };
+		CC5C23481C1C808000ADF5CF /* CC98Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CC98Post.swift; sourceTree = "<group>"; };
+		CC5C23491C1C808000ADF5CF /* CC98User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CC98User.swift; sourceTree = "<group>"; };
+		CC5C234A1C1C808000ADF5CF /* configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = configure.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CC19241F1C1C7E85007F0669 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A8BD2180881B60157A04EE9 /* Pods.framework in Frameworks */,
+				F9A7B39895763995670457FC /* Pods_CC98.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC1924351C1C7E85007F0669 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC1924401C1C7E85007F0669 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A7F1C0E8DA44F348946A04B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				827955ABB3EC01BC0BAB466D /* Pods.framework */,
+				680525184E7802334BE2B88A /* Pods_CC98.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC1924191C1C7E85007F0669 = {
+			isa = PBXGroup;
+			children = (
+				CC1924241C1C7E85007F0669 /* CC98 */,
+				CC19243B1C1C7E85007F0669 /* CC98Tests */,
+				CC1924461C1C7E86007F0669 /* CC98UITests */,
+				CC1924231C1C7E85007F0669 /* Products */,
+				EAE1F2C38FE692928D873C61 /* Pods */,
+				9A7F1C0E8DA44F348946A04B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CC1924231C1C7E85007F0669 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC1924221C1C7E85007F0669 /* CC98.app */,
+				CC1924381C1C7E85007F0669 /* CC98Tests.xctest */,
+				CC1924431C1C7E86007F0669 /* CC98UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CC1924241C1C7E85007F0669 /* CC98 */ = {
+			isa = PBXGroup;
+			children = (
+				CC5C23461C1C806B00ADF5CF /* Data */,
+				CC5C22751C1C7FE100ADF5CF /* Resources */,
+				CC1924251C1C7E85007F0669 /* AppDelegate.swift */,
+				CC1924271C1C7E85007F0669 /* FirstViewController.swift */,
+				CC1924291C1C7E85007F0669 /* SecondViewController.swift */,
+				CC19242B1C1C7E85007F0669 /* Main.storyboard */,
+				CC19242E1C1C7E85007F0669 /* Assets.xcassets */,
+				CC1924301C1C7E85007F0669 /* LaunchScreen.storyboard */,
+				CC1924331C1C7E85007F0669 /* Info.plist */,
+			);
+			path = CC98;
+			sourceTree = "<group>";
+		};
+		CC19243B1C1C7E85007F0669 /* CC98Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CC19243C1C1C7E85007F0669 /* CC98Tests.swift */,
+				CC19243E1C1C7E85007F0669 /* Info.plist */,
+			);
+			path = CC98Tests;
+			sourceTree = "<group>";
+		};
+		CC1924461C1C7E86007F0669 /* CC98UITests */ = {
+			isa = PBXGroup;
+			children = (
+				CC1924471C1C7E86007F0669 /* CC98UITests.swift */,
+				CC1924491C1C7E86007F0669 /* Info.plist */,
+			);
+			path = CC98UITests;
+			sourceTree = "<group>";
+		};
+		CC5C22751C1C7FE100ADF5CF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CC5C22761C1C7FE100ADF5CF /* bootstrap.css */,
+				CC5C22771C1C7FE100ADF5CF /* CC98MessageWebPage.html */,
+				CC5C22781C1C7FE100ADF5CF /* CC98PostListStyle.css */,
+				CC5C22791C1C7FE100ADF5CF /* CC98PostListWebPage.html */,
+				CC5C227A1C1C7FE100ADF5CF /* clientubb.js */,
+				CC5C227B1C1C7FE100ADF5CF /* face */,
+				CC5C22D81C1C7FE100ADF5CF /* mootools.core.js */,
+				CC5C22D91C1C7FE100ADF5CF /* pic */,
+				CC5C22DD1C1C7FE100ADF5CF /* temp.html */,
+				CC5C22DE1C1C7FE100ADF5CF /* temp2.html */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CC5C227B1C1C7FE100ADF5CF /* face */ = {
+			isa = PBXGroup;
+			children = (
+				CC5C227C1C1C7FE100ADF5CF /* emot00.gif */,
+				CC5C227D1C1C7FE100ADF5CF /* emot01.gif */,
+				CC5C227E1C1C7FE100ADF5CF /* emot02.gif */,
+				CC5C227F1C1C7FE100ADF5CF /* emot03.gif */,
+				CC5C22801C1C7FE100ADF5CF /* emot04.gif */,
+				CC5C22811C1C7FE100ADF5CF /* emot05.gif */,
+				CC5C22821C1C7FE100ADF5CF /* emot06.gif */,
+				CC5C22831C1C7FE100ADF5CF /* emot07.gif */,
+				CC5C22841C1C7FE100ADF5CF /* emot08.gif */,
+				CC5C22851C1C7FE100ADF5CF /* emot09.gif */,
+				CC5C22861C1C7FE100ADF5CF /* emot10.gif */,
+				CC5C22871C1C7FE100ADF5CF /* emot11.gif */,
+				CC5C22881C1C7FE100ADF5CF /* emot12.gif */,
+				CC5C22891C1C7FE100ADF5CF /* emot13.gif */,
+				CC5C228A1C1C7FE100ADF5CF /* emot14.gif */,
+				CC5C228B1C1C7FE100ADF5CF /* emot15.gif */,
+				CC5C228C1C1C7FE100ADF5CF /* emot16.gif */,
+				CC5C228D1C1C7FE100ADF5CF /* emot17.gif */,
+				CC5C228E1C1C7FE100ADF5CF /* emot18.gif */,
+				CC5C228F1C1C7FE100ADF5CF /* emot19.gif */,
+				CC5C22901C1C7FE100ADF5CF /* emot20.gif */,
+				CC5C22911C1C7FE100ADF5CF /* emot21.gif */,
+				CC5C22921C1C7FE100ADF5CF /* emot22.gif */,
+				CC5C22931C1C7FE100ADF5CF /* emot23.gif */,
+				CC5C22941C1C7FE100ADF5CF /* emot24.gif */,
+				CC5C22951C1C7FE100ADF5CF /* emot25.gif */,
+				CC5C22961C1C7FE100ADF5CF /* emot26.gif */,
+				CC5C22971C1C7FE100ADF5CF /* emot27.gif */,
+				CC5C22981C1C7FE100ADF5CF /* emot28.gif */,
+				CC5C22991C1C7FE100ADF5CF /* emot29.gif */,
+				CC5C229A1C1C7FE100ADF5CF /* emot30.gif */,
+				CC5C229B1C1C7FE100ADF5CF /* emot31.gif */,
+				CC5C229C1C1C7FE100ADF5CF /* emot32.gif */,
+				CC5C229D1C1C7FE100ADF5CF /* emot33.gif */,
+				CC5C229E1C1C7FE100ADF5CF /* emot34.gif */,
+				CC5C229F1C1C7FE100ADF5CF /* emot35.gif */,
+				CC5C22A01C1C7FE100ADF5CF /* emot36.gif */,
+				CC5C22A11C1C7FE100ADF5CF /* emot37.gif */,
+				CC5C22A21C1C7FE100ADF5CF /* emot38.gif */,
+				CC5C22A31C1C7FE100ADF5CF /* emot39.gif */,
+				CC5C22A41C1C7FE100ADF5CF /* emot40.gif */,
+				CC5C22A51C1C7FE100ADF5CF /* emot41.gif */,
+				CC5C22A61C1C7FE100ADF5CF /* emot42.gif */,
+				CC5C22A71C1C7FE100ADF5CF /* emot43.gif */,
+				CC5C22A81C1C7FE100ADF5CF /* emot44.gif */,
+				CC5C22A91C1C7FE100ADF5CF /* emot45.gif */,
+				CC5C22AA1C1C7FE100ADF5CF /* emot46.gif */,
+				CC5C22AB1C1C7FE100ADF5CF /* emot47.gif */,
+				CC5C22AC1C1C7FE100ADF5CF /* emot48.gif */,
+				CC5C22AD1C1C7FE100ADF5CF /* emot49.gif */,
+				CC5C22AE1C1C7FE100ADF5CF /* emot50.gif */,
+				CC5C22AF1C1C7FE100ADF5CF /* emot51.gif */,
+				CC5C22B01C1C7FE100ADF5CF /* emot52.gif */,
+				CC5C22B11C1C7FE100ADF5CF /* emot53.gif */,
+				CC5C22B21C1C7FE100ADF5CF /* emot54.gif */,
+				CC5C22B31C1C7FE100ADF5CF /* emot55.gif */,
+				CC5C22B41C1C7FE100ADF5CF /* emot56.gif */,
+				CC5C22B51C1C7FE100ADF5CF /* emot57.gif */,
+				CC5C22B61C1C7FE100ADF5CF /* emot58.gif */,
+				CC5C22B71C1C7FE100ADF5CF /* emot59.gif */,
+				CC5C22B81C1C7FE100ADF5CF /* emot60.gif */,
+				CC5C22B91C1C7FE100ADF5CF /* emot61.gif */,
+				CC5C22BA1C1C7FE100ADF5CF /* emot62.gif */,
+				CC5C22BB1C1C7FE100ADF5CF /* emot63.gif */,
+				CC5C22BC1C1C7FE100ADF5CF /* emot64.gif */,
+				CC5C22BD1C1C7FE100ADF5CF /* emot65.gif */,
+				CC5C22BE1C1C7FE100ADF5CF /* emot66.gif */,
+				CC5C22BF1C1C7FE100ADF5CF /* emot67.gif */,
+				CC5C22C01C1C7FE100ADF5CF /* emot68.gif */,
+				CC5C22C11C1C7FE100ADF5CF /* emot69.gif */,
+				CC5C22C21C1C7FE100ADF5CF /* emot70.gif */,
+				CC5C22C31C1C7FE100ADF5CF /* emot71.gif */,
+				CC5C22C41C1C7FE100ADF5CF /* emot72.gif */,
+				CC5C22C51C1C7FE100ADF5CF /* emot73.gif */,
+				CC5C22C61C1C7FE100ADF5CF /* emot74.gif */,
+				CC5C22C71C1C7FE100ADF5CF /* emot75.gif */,
+				CC5C22C81C1C7FE100ADF5CF /* emot76.gif */,
+				CC5C22C91C1C7FE100ADF5CF /* emot77.gif */,
+				CC5C22CA1C1C7FE100ADF5CF /* emot78.gif */,
+				CC5C22CB1C1C7FE100ADF5CF /* emot79.gif */,
+				CC5C22CC1C1C7FE100ADF5CF /* emot80.gif */,
+				CC5C22CD1C1C7FE100ADF5CF /* emot81.gif */,
+				CC5C22CE1C1C7FE100ADF5CF /* emot82.gif */,
+				CC5C22CF1C1C7FE100ADF5CF /* emot83.gif */,
+				CC5C22D01C1C7FE100ADF5CF /* emot84.gif */,
+				CC5C22D11C1C7FE100ADF5CF /* emot85.gif */,
+				CC5C22D21C1C7FE100ADF5CF /* emot86.gif */,
+				CC5C22D31C1C7FE100ADF5CF /* emot87.gif */,
+				CC5C22D41C1C7FE100ADF5CF /* emot88.gif */,
+				CC5C22D51C1C7FE100ADF5CF /* emot89.gif */,
+				CC5C22D61C1C7FE100ADF5CF /* emot90.gif */,
+				CC5C22D71C1C7FE100ADF5CF /* emot91.gif */,
+			);
+			path = face;
+			sourceTree = "<group>";
+		};
+		CC5C22D91C1C7FE100ADF5CF /* pic */ = {
+			isa = PBXGroup;
+			children = (
+				CC5C22DA1C1C7FE100ADF5CF /* jpg.gif */,
+				CC5C22DB1C1C7FE100ADF5CF /* png.gif */,
+				CC5C22DC1C1C7FE100ADF5CF /* url.gif */,
+			);
+			path = pic;
+			sourceTree = "<group>";
+		};
+		CC5C23461C1C806B00ADF5CF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CC5C23471C1C808000ADF5CF /* DataProcessor.swift */,
+				CC5C23481C1C808000ADF5CF /* CC98Post.swift */,
+				CC5C23491C1C808000ADF5CF /* CC98User.swift */,
+				CC5C234A1C1C808000ADF5CF /* configure.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		EAE1F2C38FE692928D873C61 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7EA22B8EC066ED6C5D53FF27 /* Pods.debug.xcconfig */,
+				23E8F5C119735D6D5A2F7974 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CC1924211C1C7E85007F0669 /* CC98 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC19244C1C1C7E86007F0669 /* Build configuration list for PBXNativeTarget "CC98" */;
+			buildPhases = (
+				683D626CCAF537A0F9D4030D /* Check Pods Manifest.lock */,
+				CC19241E1C1C7E85007F0669 /* Sources */,
+				CC19241F1C1C7E85007F0669 /* Frameworks */,
+				CC1924201C1C7E85007F0669 /* Resources */,
+				ABFA0460FEDC70B485C8CC07 /* Embed Pods Frameworks */,
+				9835B7B456C8D24AA9382632 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CC98;
+			productName = CC98;
+			productReference = CC1924221C1C7E85007F0669 /* CC98.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CC1924371C1C7E85007F0669 /* CC98Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC19244F1C1C7E86007F0669 /* Build configuration list for PBXNativeTarget "CC98Tests" */;
+			buildPhases = (
+				CC1924341C1C7E85007F0669 /* Sources */,
+				CC1924351C1C7E85007F0669 /* Frameworks */,
+				CC1924361C1C7E85007F0669 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC19243A1C1C7E85007F0669 /* PBXTargetDependency */,
+			);
+			name = CC98Tests;
+			productName = CC98Tests;
+			productReference = CC1924381C1C7E85007F0669 /* CC98Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CC1924421C1C7E85007F0669 /* CC98UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC1924521C1C7E86007F0669 /* Build configuration list for PBXNativeTarget "CC98UITests" */;
+			buildPhases = (
+				CC19243F1C1C7E85007F0669 /* Sources */,
+				CC1924401C1C7E85007F0669 /* Frameworks */,
+				CC1924411C1C7E85007F0669 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC1924451C1C7E86007F0669 /* PBXTargetDependency */,
+			);
+			name = CC98UITests;
+			productName = CC98UITests;
+			productReference = CC1924431C1C7E86007F0669 /* CC98UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CC19241A1C1C7E85007F0669 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Orpine;
+				TargetAttributes = {
+					CC1924211C1C7E85007F0669 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					CC1924371C1C7E85007F0669 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = CC1924211C1C7E85007F0669;
+					};
+					CC1924421C1C7E85007F0669 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = CC1924211C1C7E85007F0669;
+					};
+				};
+			};
+			buildConfigurationList = CC19241D1C1C7E85007F0669 /* Build configuration list for PBXProject "CC98" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CC1924191C1C7E85007F0669;
+			productRefGroup = CC1924231C1C7E85007F0669 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CC1924211C1C7E85007F0669 /* CC98 */,
+				CC1924371C1C7E85007F0669 /* CC98Tests */,
+				CC1924421C1C7E85007F0669 /* CC98UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC1924201C1C7E85007F0669 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC1924321C1C7E85007F0669 /* LaunchScreen.storyboard in Resources */,
+				CC5C22F71C1C7FE100ADF5CF /* emot19.gif in Resources */,
+				CC5C23351C1C7FE100ADF5CF /* emot81.gif in Resources */,
+				CC5C23121C1C7FE100ADF5CF /* emot46.gif in Resources */,
+				CC5C232F1C1C7FE100ADF5CF /* emot75.gif in Resources */,
+				CC5C230D1C1C7FE100ADF5CF /* emot41.gif in Resources */,
+				CC5C23391C1C7FE100ADF5CF /* emot85.gif in Resources */,
+				CC5C23291C1C7FE100ADF5CF /* emot69.gif in Resources */,
+				CC5C23441C1C7FE100ADF5CF /* temp.html in Resources */,
+				CC5C230A1C1C7FE100ADF5CF /* emot38.gif in Resources */,
+				CC5C231F1C1C7FE100ADF5CF /* emot59.gif in Resources */,
+				CC5C23421C1C7FE100ADF5CF /* png.gif in Resources */,
+				CC5C22F91C1C7FE100ADF5CF /* emot21.gif in Resources */,
+				CC5C22E01C1C7FE100ADF5CF /* CC98MessageWebPage.html in Resources */,
+				CC5C23411C1C7FE100ADF5CF /* jpg.gif in Resources */,
+				CC5C233A1C1C7FE100ADF5CF /* emot86.gif in Resources */,
+				CC5C23021C1C7FE100ADF5CF /* emot30.gif in Resources */,
+				CC5C22FD1C1C7FE100ADF5CF /* emot25.gif in Resources */,
+				CC5C22F41C1C7FE100ADF5CF /* emot16.gif in Resources */,
+				CC5C23031C1C7FE100ADF5CF /* emot31.gif in Resources */,
+				CC5C23271C1C7FE100ADF5CF /* emot67.gif in Resources */,
+				CC5C23211C1C7FE100ADF5CF /* emot61.gif in Resources */,
+				CC5C22E51C1C7FE100ADF5CF /* emot01.gif in Resources */,
+				CC5C23301C1C7FE100ADF5CF /* emot76.gif in Resources */,
+				CC5C23141C1C7FE100ADF5CF /* emot48.gif in Resources */,
+				CC5C233D1C1C7FE100ADF5CF /* emot89.gif in Resources */,
+				CC5C231B1C1C7FE100ADF5CF /* emot55.gif in Resources */,
+				CC5C22E61C1C7FE100ADF5CF /* emot02.gif in Resources */,
+				CC5C231A1C1C7FE100ADF5CF /* emot54.gif in Resources */,
+				CC5C232A1C1C7FE100ADF5CF /* emot70.gif in Resources */,
+				CC5C232D1C1C7FE100ADF5CF /* emot73.gif in Resources */,
+				CC5C23111C1C7FE100ADF5CF /* emot45.gif in Resources */,
+				CC5C231C1C1C7FE100ADF5CF /* emot56.gif in Resources */,
+				CC5C22FF1C1C7FE100ADF5CF /* emot27.gif in Resources */,
+				CC5C23401C1C7FE100ADF5CF /* mootools.core.js in Resources */,
+				CC5C233E1C1C7FE100ADF5CF /* emot90.gif in Resources */,
+				CC5C22ED1C1C7FE100ADF5CF /* emot09.gif in Resources */,
+				CC5C23171C1C7FE100ADF5CF /* emot51.gif in Resources */,
+				CC5C22FC1C1C7FE100ADF5CF /* emot24.gif in Resources */,
+				CC5C232B1C1C7FE100ADF5CF /* emot71.gif in Resources */,
+				CC5C22FB1C1C7FE100ADF5CF /* emot23.gif in Resources */,
+				CC5C23221C1C7FE100ADF5CF /* emot62.gif in Resources */,
+				CC5C23011C1C7FE100ADF5CF /* emot29.gif in Resources */,
+				CC5C230C1C1C7FE100ADF5CF /* emot40.gif in Resources */,
+				CC5C23251C1C7FE100ADF5CF /* emot65.gif in Resources */,
+				CC5C22F61C1C7FE100ADF5CF /* emot18.gif in Resources */,
+				CC5C23151C1C7FE100ADF5CF /* emot49.gif in Resources */,
+				CC5C22F21C1C7FE100ADF5CF /* emot14.gif in Resources */,
+				CC5C231E1C1C7FE100ADF5CF /* emot58.gif in Resources */,
+				CC5C22E81C1C7FE100ADF5CF /* emot04.gif in Resources */,
+				CC5C23201C1C7FE100ADF5CF /* emot60.gif in Resources */,
+				CC5C23451C1C7FE100ADF5CF /* temp2.html in Resources */,
+				CC5C23361C1C7FE100ADF5CF /* emot82.gif in Resources */,
+				CC5C22E11C1C7FE100ADF5CF /* CC98PostListStyle.css in Resources */,
+				CC5C23001C1C7FE100ADF5CF /* emot28.gif in Resources */,
+				CC5C23371C1C7FE100ADF5CF /* emot83.gif in Resources */,
+				CC19242F1C1C7E85007F0669 /* Assets.xcassets in Resources */,
+				CC5C233B1C1C7FE100ADF5CF /* emot87.gif in Resources */,
+				CC5C23041C1C7FE100ADF5CF /* emot32.gif in Resources */,
+				CC5C23281C1C7FE100ADF5CF /* emot68.gif in Resources */,
+				CC5C233C1C1C7FE100ADF5CF /* emot88.gif in Resources */,
+				CC5C23311C1C7FE100ADF5CF /* emot77.gif in Resources */,
+				CC5C22F31C1C7FE100ADF5CF /* emot15.gif in Resources */,
+				CC5C232C1C1C7FE100ADF5CF /* emot72.gif in Resources */,
+				CC5C22EA1C1C7FE100ADF5CF /* emot06.gif in Resources */,
+				CC5C22F81C1C7FE100ADF5CF /* emot20.gif in Resources */,
+				CC5C23131C1C7FE100ADF5CF /* emot47.gif in Resources */,
+				CC5C23051C1C7FE100ADF5CF /* emot33.gif in Resources */,
+				CC5C22FA1C1C7FE100ADF5CF /* emot22.gif in Resources */,
+				CC5C232E1C1C7FE100ADF5CF /* emot74.gif in Resources */,
+				CC5C23101C1C7FE100ADF5CF /* emot44.gif in Resources */,
+				CC5C230F1C1C7FE100ADF5CF /* emot43.gif in Resources */,
+				CC5C23431C1C7FE100ADF5CF /* url.gif in Resources */,
+				CC5C23071C1C7FE100ADF5CF /* emot35.gif in Resources */,
+				CC5C23331C1C7FE100ADF5CF /* emot79.gif in Resources */,
+				CC5C22E41C1C7FE100ADF5CF /* emot00.gif in Resources */,
+				CC5C22EC1C1C7FE100ADF5CF /* emot08.gif in Resources */,
+				CC5C23341C1C7FE100ADF5CF /* emot80.gif in Resources */,
+				CC5C230E1C1C7FE100ADF5CF /* emot42.gif in Resources */,
+				CC5C230B1C1C7FE100ADF5CF /* emot39.gif in Resources */,
+				CC5C23321C1C7FE100ADF5CF /* emot78.gif in Resources */,
+				CC5C23261C1C7FE100ADF5CF /* emot66.gif in Resources */,
+				CC5C22F11C1C7FE100ADF5CF /* emot13.gif in Resources */,
+				CC5C233F1C1C7FE100ADF5CF /* emot91.gif in Resources */,
+				CC5C23231C1C7FE100ADF5CF /* emot63.gif in Resources */,
+				CC5C22E21C1C7FE100ADF5CF /* CC98PostListWebPage.html in Resources */,
+				CC5C22EE1C1C7FE100ADF5CF /* emot10.gif in Resources */,
+				CC5C22F51C1C7FE100ADF5CF /* emot17.gif in Resources */,
+				CC5C22EB1C1C7FE100ADF5CF /* emot07.gif in Resources */,
+				CC5C22FE1C1C7FE100ADF5CF /* emot26.gif in Resources */,
+				CC5C22DF1C1C7FE100ADF5CF /* bootstrap.css in Resources */,
+				CC5C23181C1C7FE100ADF5CF /* emot52.gif in Resources */,
+				CC5C23191C1C7FE100ADF5CF /* emot53.gif in Resources */,
+				CC5C23081C1C7FE100ADF5CF /* emot36.gif in Resources */,
+				CC5C23161C1C7FE100ADF5CF /* emot50.gif in Resources */,
+				CC5C22F01C1C7FE100ADF5CF /* emot12.gif in Resources */,
+				CC5C22E91C1C7FE100ADF5CF /* emot05.gif in Resources */,
+				CC19242D1C1C7E85007F0669 /* Main.storyboard in Resources */,
+				CC5C22EF1C1C7FE100ADF5CF /* emot11.gif in Resources */,
+				CC5C23381C1C7FE100ADF5CF /* emot84.gif in Resources */,
+				CC5C23061C1C7FE100ADF5CF /* emot34.gif in Resources */,
+				CC5C23091C1C7FE100ADF5CF /* emot37.gif in Resources */,
+				CC5C22E71C1C7FE100ADF5CF /* emot03.gif in Resources */,
+				CC5C23241C1C7FE100ADF5CF /* emot64.gif in Resources */,
+				CC5C22E31C1C7FE100ADF5CF /* clientubb.js in Resources */,
+				CC5C231D1C1C7FE100ADF5CF /* emot57.gif in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC1924361C1C7E85007F0669 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC1924411C1C7E85007F0669 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		683D626CCAF537A0F9D4030D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9835B7B456C8D24AA9382632 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CC98/Pods-CC98-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABFA0460FEDC70B485C8CC07 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CC98/Pods-CC98-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC19241E1C1C7E85007F0669 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC5C234B1C1C808000ADF5CF /* DataProcessor.swift in Sources */,
+				CC5C234E1C1C808000ADF5CF /* configure.swift in Sources */,
+				CC19242A1C1C7E85007F0669 /* SecondViewController.swift in Sources */,
+				CC5C234C1C1C808000ADF5CF /* CC98Post.swift in Sources */,
+				CC1924261C1C7E85007F0669 /* AppDelegate.swift in Sources */,
+				CC1924281C1C7E85007F0669 /* FirstViewController.swift in Sources */,
+				CC5C234D1C1C808000ADF5CF /* CC98User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC1924341C1C7E85007F0669 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC19243D1C1C7E85007F0669 /* CC98Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC19243F1C1C7E85007F0669 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC1924481C1C7E86007F0669 /* CC98UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CC19243A1C1C7E85007F0669 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC1924211C1C7E85007F0669 /* CC98 */;
+			targetProxy = CC1924391C1C7E85007F0669 /* PBXContainerItemProxy */;
+		};
+		CC1924451C1C7E86007F0669 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC1924211C1C7E85007F0669 /* CC98 */;
+			targetProxy = CC1924441C1C7E86007F0669 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CC19242B1C1C7E85007F0669 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CC19242C1C1C7E85007F0669 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CC1924301C1C7E85007F0669 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CC1924311C1C7E85007F0669 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CC19244A1C1C7E86007F0669 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CC19244B1C1C7E86007F0669 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CC19244D1C1C7E86007F0669 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EA22B8EC066ED6C5D53FF27 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CC98/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Orpine.CC98;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CC19244E1C1C7E86007F0669 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23E8F5C119735D6D5A2F7974 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CC98/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Orpine.CC98;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CC1924501C1C7E86007F0669 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CC98Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Orpine.CC98Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CC98.app/CC98";
+			};
+			name = Debug;
+		};
+		CC1924511C1C7E86007F0669 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CC98Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Orpine.CC98Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CC98.app/CC98";
+			};
+			name = Release;
+		};
+		CC1924531C1C7E86007F0669 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CC98UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Orpine.CC98UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CC98;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		CC1924541C1C7E86007F0669 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CC98UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Orpine.CC98UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CC98;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CC19241D1C1C7E85007F0669 /* Build configuration list for PBXProject "CC98" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC19244A1C1C7E86007F0669 /* Debug */,
+				CC19244B1C1C7E86007F0669 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC19244C1C1C7E86007F0669 /* Build configuration list for PBXNativeTarget "CC98" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC19244D1C1C7E86007F0669 /* Debug */,
+				CC19244E1C1C7E86007F0669 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC19244F1C1C7E86007F0669 /* Build configuration list for PBXNativeTarget "CC98Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC1924501C1C7E86007F0669 /* Debug */,
+				CC1924511C1C7E86007F0669 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC1924521C1C7E86007F0669 /* Build configuration list for PBXNativeTarget "CC98UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC1924531C1C7E86007F0669 /* Debug */,
+				CC1924541C1C7E86007F0669 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CC19241A1C1C7E85007F0669 /* Project object */;
+}
