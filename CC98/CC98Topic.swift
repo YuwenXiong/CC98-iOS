@@ -16,7 +16,7 @@ class CC98Topic {
         self.ID = ID
         self.title = data["title"].stringValue
         self.author = data["authorName"].stringValue
-        self.time = data["time"].stringValue.stringByReplacingOccurrencesOfString("T", withString: " ")
+        self.time = data["createTime"].stringValue.stringByReplacingOccurrencesOfString("T", withString: " ")
         self.boardID = data["boardId"].intValue
         self.boardName = globalDataProcessor.GetBoardInfo(boardID)["name"].stringValue
         self.from = 0
