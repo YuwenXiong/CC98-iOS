@@ -116,13 +116,13 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="board" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGK-Em-m7k">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="board" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGK-Em-m7k">
                                                     <rect key="frame" x="135" y="77" width="154" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOY-x3-5Th">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOY-x3-5Th">
                                                     <rect key="frame" x="425" y="75" width="114" height="26"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -131,10 +131,15 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="czu-iD-vkB" secondAttribute="bottom" constant="24" id="S1P-k6-lsF"/>
+                                                <constraint firstAttribute="bottom" secondItem="zOY-x3-5Th" secondAttribute="bottom" constant="12" id="58i-4R-2ZX"/>
+                                                <constraint firstItem="czu-iD-vkB" firstAttribute="height" secondItem="zOY-x3-5Th" secondAttribute="height" id="9Y8-GR-Mt2"/>
+                                                <constraint firstAttribute="bottom" secondItem="EGK-Em-m7k" secondAttribute="bottom" constant="12" id="JHI-jU-pvN"/>
+                                                <constraint firstAttribute="bottom" secondItem="czu-iD-vkB" secondAttribute="bottom" constant="12" id="S1P-k6-lsF"/>
                                                 <constraint firstItem="p3g-zY-cKy" firstAttribute="leading" secondItem="rMe-Tf-dWb" secondAttribute="leading" constant="8" id="UTn-2x-RkN"/>
+                                                <constraint firstAttribute="trailing" secondItem="zOY-x3-5Th" secondAttribute="trailing" constant="12" id="dkJ-8P-hk3"/>
                                                 <constraint firstItem="p3g-zY-cKy" firstAttribute="top" secondItem="rMe-Tf-dWb" secondAttribute="top" constant="24" id="eGF-ss-WeR"/>
                                                 <constraint firstAttribute="trailing" secondItem="p3g-zY-cKy" secondAttribute="trailing" constant="34" id="mOz-lC-UPS"/>
+                                                <constraint firstItem="czu-iD-vkB" firstAttribute="height" secondItem="EGK-Em-m7k" secondAttribute="height" id="wSn-DJ-O47"/>
                                             </constraints>
                                         </view>
                                     </subviews>

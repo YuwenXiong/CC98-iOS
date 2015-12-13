@@ -17,10 +17,12 @@ class HotTopicViewController:UITableViewController{
     var topics = Array<CC98Topic>()
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData(true)
+        
         self.tableView.estimatedRowHeight = 120;
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
-        loadData(true)
+        
         self.tableView.addHeaderWithCallback{
             self.loadData(true)
         }
