@@ -1,28 +1,28 @@
 //
-//  HotTopicViewController.swift
+//  PostDetailController.swift
 //  CC98
 //
-//  Created by CCNT on 12/8/15.
+//  Created by CCNT on 12/13/15.
 //  Copyright © 2015 Orpine. All rights reserved.
 //
+
+
 
 import Foundation
 import UIKit
 import SwiftyJSON
 
-class HotTopicViewController:UITableViewController{
+class TopicDetailController:UITableViewController{
     
     var loading:Bool = false
-    
-    var topics = Array<CC98Topic>()
+    var topic:CC98Topic?
+    var posts=Array<CC98Post>()
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData(true)
-        
         self.tableView.estimatedRowHeight = 120;
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
-        
+        loadData(true)
         self.tableView.addHeaderWithCallback{
             self.loadData(true)
         }
@@ -30,7 +30,8 @@ class HotTopicViewController:UITableViewController{
     }
     
     func loadData(isPullRefresh:Bool){
-        topics=globalDataProcessor.GetHotTopic();
+//        data=X.GetHotTopic();
+        posts=topic!.loadPosts()
         self.loading = false
         
         if(isPullRefresh){
@@ -39,7 +40,7 @@ class HotTopicViewController:UITableViewController{
         else{
             self.tableView.footerEndRefreshing()
         }
-        if topics.count==0 {
+        if posts.count==0 {
             let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
             alert.show()
             return
@@ -60,8 +61,8 @@ class HotTopicViewController:UITableViewController{
         return 1
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TopicCell
-        cell.containerView.backgroundColor = UIColor(red: 0.85, green: 0.85, blue:0.85, alpha: 0.9)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PostCell
+        //TODO
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,18 +72,9 @@ class HotTopicViewController:UITableViewController{
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        //let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! TopicCell
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TopicCell
-        let topic=topics[indexPath.row]
-        cell.title.text=topic.title
-        if topic.author==""{
-            cell.authorName.text="匿名"
-        }
-        else{
-            cell.authorName.text=topic.author
-        }
-        cell.boardName.text=topic.boardName
-        cell.createTime.text=topic.time
+        //let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! PostCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PostCell
+        cell.webView.loadHTMLString(posts[indexPath.row].content,baseURL:nil)
         cell.updateConstraintsIfNeeded()
         // cell.contentView.backgroundColor = UIColor.grayColor()
         
@@ -91,19 +83,11 @@ class HotTopicViewController:UITableViewController{
         
         return cell
     }
-    var prototypeCell:TopicCell?
+    var prototypeCell:PostCell?
     
-    private func configureCell(cell:TopicCell,indexPath: NSIndexPath,isForOffscreenUse:Bool){
+    private func configureCell(cell:PostCell,indexPath: NSIndexPath,isForOffscreenUse:Bool){
         
-        let topic=topics[indexPath.row]
-        cell.title.text=topic.title
-        if topic.author==""{
-            cell.authorName.text="匿名"
-        }
-        else{
-            cell.authorName.text=topic.author
-        }
-        cell.createTime.text=topic.time
+        
         cell.selectionStyle = .None;
     }
     
@@ -111,7 +95,7 @@ class HotTopicViewController:UITableViewController{
         
         if prototypeCell == nil
         {
-            self.prototypeCell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as? TopicCell
+            self.prototypeCell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as? PostCell
         }
         
         
@@ -129,20 +113,5 @@ class HotTopicViewController:UITableViewController{
         
         return size.height;
         
-    }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        
-        if segue.identifier == "topicDetail" {
-            
-          
-                let view = segue.destinationViewController as! TopicDetailController
-                let indexPath = self.tableView.indexPathForSelectedRow
-                
-                let topic = self.topics[indexPath!.row]
-                view.topic=topic
-                
-                
-            
-        }
     }
 }

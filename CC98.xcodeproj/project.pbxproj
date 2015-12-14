@@ -140,7 +140,8 @@
 		FFB124D61C1C8D2E00F4ECB2 /* arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB124D21C1C8D2E00F4ECB2 /* arrow_up@2x.png */; };
 		FFB124D71C1C8D2E00F4ECB2 /* shadow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB124D31C1C8D2E00F4ECB2 /* shadow_up.png */; };
 		FFB124D81C1C8D2E00F4ECB2 /* shadow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB124D41C1C8D2E00F4ECB2 /* shadow_up@2x.png */; };
-		FFE422CF1C1CABB30034B879 /* PostDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE422CE1C1CABB30034B879 /* PostDetailController.swift */; };
+		FFE422D11C1DBB120034B879 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE422D01C1DBB120034B879 /* PostCell.swift */; };
+		FFE422D21C1E9F3C0034B879 /* TopicDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE422CE1C1CABB30034B879 /* TopicDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -302,7 +303,8 @@
 		FFB124D21C1C8D2E00F4ECB2 /* arrow_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_up@2x.png"; sourceTree = "<group>"; };
 		FFB124D31C1C8D2E00F4ECB2 /* shadow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow_up.png; sourceTree = "<group>"; };
 		FFB124D41C1C8D2E00F4ECB2 /* shadow_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shadow_up@2x.png"; sourceTree = "<group>"; };
-		FFE422CE1C1CABB30034B879 /* PostDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailController.swift; sourceTree = "<group>"; };
+		FFE422CE1C1CABB30034B879 /* TopicDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailController.swift; sourceTree = "<group>"; };
+		FFE422D01C1DBB120034B879 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -552,7 +554,7 @@
 		FFB124B81C1C8B4D00F4ECB2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FFE422CE1C1CABB30034B879 /* PostDetailController.swift */,
+				FFE422CE1C1CABB30034B879 /* TopicDetailController.swift */,
 				FFB124BC1C1C8C0B00F4ECB2 /* HotTopicViewController.swift */,
 			);
 			name = Controller;
@@ -562,6 +564,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB124BA1C1C8BAF00F4ECB2 /* TopicCell.swift */,
+				FFE422D01C1DBB120034B879 /* PostCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -895,12 +898,13 @@
 				CC5C23501C1C9BC500ADF5CF /* CC98Topic.swift in Sources */,
 				CC1924261C1C7E85007F0669 /* AppDelegate.swift in Sources */,
 				FFB124C81C1C8CA800F4ECB2 /* RefreshFooterView.swift in Sources */,
+				FFE422D11C1DBB120034B879 /* PostCell.swift in Sources */,
 				FFB124CD1C1C8CBF00F4ECB2 /* SwiftNotice.swift in Sources */,
 				CC1924281C1C7E85007F0669 /* FirstViewController.swift in Sources */,
-				FFE422CF1C1CABB30034B879 /* PostDetailController.swift in Sources */,
 				FFB124C91C1C8CA800F4ECB2 /* RefreshHeaderView.swift in Sources */,
 				CC5C234D1C1C808000ADF5CF /* CC98User.swift in Sources */,
 				FFB124BB1C1C8BAF00F4ECB2 /* TopicCell.swift in Sources */,
+				FFE422D21C1E9F3C0034B879 /* TopicDetailController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

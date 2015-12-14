@@ -28,4 +28,5 @@ class CC98Topic {
         to += 10
         return ret
     }
+    
 }
