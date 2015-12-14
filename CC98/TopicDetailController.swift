@@ -19,7 +19,7 @@ class TopicDetailController:UITableViewController{
     var posts=Array<CC98Post>()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.estimatedRowHeight = 120;
+        self.tableView.estimatedRowHeight = 150;
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
         loadData(true)
@@ -74,11 +74,18 @@ class TopicDetailController:UITableViewController{
         
         //let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! PostCell
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PostCell
-        let baseURL = NSURL(fileURLWithPath: NSBundle.mainBundle().bundlePath)
-        cell.webView.loadHTMLString(posts[indexPath.row].content, baseURL: baseURL)
-        cell.webView.scrollView.bounces = false
-        cell.webView.layer.cornerRadius = 6;
-        cell.webView.layer.masksToBounds = true
+        cell.content=posts[indexPath.row].content
+        cell.setView()
+//        let baseURL = NSURL(fileURLWithPath: NSBundle.mainBundle().bundlePath)
+//        cell.webView.loadHTMLString(posts[indexPath.row].content, baseURL: baseURL)
+//        cell.webView.scrollView.bounces = false
+//        cell.webView.layer.cornerRadius = 6;
+//        cell.webView.layer.masksToBounds = true
+//        let height=cell.webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")
+//        let size=cell.webView.sizeThatFits(CGSizeZero)
+//        var frame=cell.webView.frame
+//        frame.size.height=size.height
+//        cell.webView.frame=frame
 //        cell.webView.loadHTMLString(posts[indexPath.row].content,baseURL:nil)
         cell.updateConstraintsIfNeeded()
         // cell.contentView.backgroundColor = UIColor.grayColor()

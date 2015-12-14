@@ -14,6 +14,25 @@ class PostCell:UITableViewCell,UIWebViewDelegate{
     
     
     @IBOutlet weak var webView: UIWebView!
+    var content:String?
+    func webViewDidFinishLoad(webView: UIWebView) {
+        let height=webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")
+        
+    }
+    func setView(){
+        let baseURL = NSURL(fileURLWithPath: NSBundle.mainBundle().bundlePath)
+        webView.loadHTMLString(content!, baseURL: baseURL)
+        webView.scrollView.bounces = false
+        webView.layer.cornerRadius = 6;
+        webView.layer.masksToBounds = true
+        let height=webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")
+        
+                var frame=webView.frame
+        frame.size.height=CGFloat((height! as NSString).doubleValue);
+                webView.frame=frame
+
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -25,6 +44,7 @@ class PostCell:UITableViewCell,UIWebViewDelegate{
         //self.backgroundColor = UIColor.greenColor()
         
     }
+    
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
