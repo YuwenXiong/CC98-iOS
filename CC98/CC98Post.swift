@@ -17,7 +17,7 @@ class CC98Post {
         self.postTime = postInfo["time"].stringValue.stringByReplacingOccurrencesOfString("T", withString: " ")
         self.author = CC98User(userID: postInfo["userId"].intValue)
         self.floor = postInfo["floor"].stringValue
-        self.content = postInfo["content"].stringValue
+        self.content = postInfo["content"].stringValue.stringByReplacingOccurrencesOfString("\r\n", withString: "<br>")
         self.content = dataProcessor.ParsePostContent(self)
 //        print(self.content)
     }
