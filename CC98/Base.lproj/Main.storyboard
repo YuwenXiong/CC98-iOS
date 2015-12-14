@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -98,7 +98,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZFE-BY-uKZ" id="IV2-tO-J7r">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="94"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="93.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rMe-Tf-dWb">
@@ -184,11 +184,11 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="123"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ADp-wR-N9M" id="bGT-at-WDu">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="123"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="122.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U1a-Xp-nMw">
-                                            <rect key="frame" x="8" y="-6" width="584" height="128"/>
+                                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1a-Xp-nMw">
+                                            <rect key="frame" x="8" y="-4" width="584" height="130.5"/>
                                             <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                                             <connections>
                                                 <outlet property="delegate" destination="ADp-wR-N9M" id="b79-Ig-Kae"/>
@@ -196,8 +196,10 @@
                                         </webView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="U1a-Xp-nMw" firstAttribute="height" secondItem="bGT-at-WDu" secondAttribute="height" id="Yhb-X2-fro"/>
-                                        <constraint firstItem="U1a-Xp-nMw" firstAttribute="width" secondItem="bGT-at-WDu" secondAttribute="width" id="caw-b7-cWu"/>
+                                        <constraint firstItem="U1a-Xp-nMw" firstAttribute="top" secondItem="bGT-at-WDu" secondAttribute="topMargin" constant="-12" id="4Yz-XW-8We"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="U1a-Xp-nMw" secondAttribute="trailing" id="Qcr-8l-1Qd"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="U1a-Xp-nMw" secondAttribute="bottom" constant="-12" id="V0h-T1-YVT"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="U1a-Xp-nMw" secondAttribute="leading" id="ual-aZ-3dx"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
