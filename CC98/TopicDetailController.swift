@@ -74,7 +74,9 @@ class TopicDetailController:UITableViewController{
         
         //let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! PostCell
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PostCell
-        cell.webView.loadHTMLString(posts[indexPath.row].content,baseURL:nil)
+        let baseURL = NSURL(fileURLWithPath: NSBundle.mainBundle().bundlePath)
+        cell.webView.loadHTMLString(posts[indexPath.row].content, baseURL: baseURL)
+//        cell.webView.loadHTMLString(posts[indexPath.row].content,baseURL:nil)
         cell.updateConstraintsIfNeeded()
         // cell.contentView.backgroundColor = UIColor.grayColor()
         

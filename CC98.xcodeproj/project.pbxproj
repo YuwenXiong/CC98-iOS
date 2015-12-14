@@ -21,102 +21,7 @@
 		CC5C22E11C1C7FE100ADF5CF /* CC98PostListStyle.css in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22781C1C7FE100ADF5CF /* CC98PostListStyle.css */; };
 		CC5C22E21C1C7FE100ADF5CF /* CC98PostListWebPage.html in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22791C1C7FE100ADF5CF /* CC98PostListWebPage.html */; };
 		CC5C22E31C1C7FE100ADF5CF /* clientubb.js in Resources */ = {isa = PBXBuildFile; fileRef = CC5C227A1C1C7FE100ADF5CF /* clientubb.js */; };
-		CC5C22E41C1C7FE100ADF5CF /* emot00.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C227C1C1C7FE100ADF5CF /* emot00.gif */; };
-		CC5C22E51C1C7FE100ADF5CF /* emot01.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C227D1C1C7FE100ADF5CF /* emot01.gif */; };
-		CC5C22E61C1C7FE100ADF5CF /* emot02.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C227E1C1C7FE100ADF5CF /* emot02.gif */; };
-		CC5C22E71C1C7FE100ADF5CF /* emot03.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C227F1C1C7FE100ADF5CF /* emot03.gif */; };
-		CC5C22E81C1C7FE100ADF5CF /* emot04.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22801C1C7FE100ADF5CF /* emot04.gif */; };
-		CC5C22E91C1C7FE100ADF5CF /* emot05.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22811C1C7FE100ADF5CF /* emot05.gif */; };
-		CC5C22EA1C1C7FE100ADF5CF /* emot06.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22821C1C7FE100ADF5CF /* emot06.gif */; };
-		CC5C22EB1C1C7FE100ADF5CF /* emot07.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22831C1C7FE100ADF5CF /* emot07.gif */; };
-		CC5C22EC1C1C7FE100ADF5CF /* emot08.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22841C1C7FE100ADF5CF /* emot08.gif */; };
-		CC5C22ED1C1C7FE100ADF5CF /* emot09.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22851C1C7FE100ADF5CF /* emot09.gif */; };
-		CC5C22EE1C1C7FE100ADF5CF /* emot10.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22861C1C7FE100ADF5CF /* emot10.gif */; };
-		CC5C22EF1C1C7FE100ADF5CF /* emot11.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22871C1C7FE100ADF5CF /* emot11.gif */; };
-		CC5C22F01C1C7FE100ADF5CF /* emot12.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22881C1C7FE100ADF5CF /* emot12.gif */; };
-		CC5C22F11C1C7FE100ADF5CF /* emot13.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22891C1C7FE100ADF5CF /* emot13.gif */; };
-		CC5C22F21C1C7FE100ADF5CF /* emot14.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C228A1C1C7FE100ADF5CF /* emot14.gif */; };
-		CC5C22F31C1C7FE100ADF5CF /* emot15.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C228B1C1C7FE100ADF5CF /* emot15.gif */; };
-		CC5C22F41C1C7FE100ADF5CF /* emot16.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C228C1C1C7FE100ADF5CF /* emot16.gif */; };
-		CC5C22F51C1C7FE100ADF5CF /* emot17.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C228D1C1C7FE100ADF5CF /* emot17.gif */; };
-		CC5C22F61C1C7FE100ADF5CF /* emot18.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C228E1C1C7FE100ADF5CF /* emot18.gif */; };
-		CC5C22F71C1C7FE100ADF5CF /* emot19.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C228F1C1C7FE100ADF5CF /* emot19.gif */; };
-		CC5C22F81C1C7FE100ADF5CF /* emot20.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22901C1C7FE100ADF5CF /* emot20.gif */; };
-		CC5C22F91C1C7FE100ADF5CF /* emot21.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22911C1C7FE100ADF5CF /* emot21.gif */; };
-		CC5C22FA1C1C7FE100ADF5CF /* emot22.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22921C1C7FE100ADF5CF /* emot22.gif */; };
-		CC5C22FB1C1C7FE100ADF5CF /* emot23.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22931C1C7FE100ADF5CF /* emot23.gif */; };
-		CC5C22FC1C1C7FE100ADF5CF /* emot24.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22941C1C7FE100ADF5CF /* emot24.gif */; };
-		CC5C22FD1C1C7FE100ADF5CF /* emot25.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22951C1C7FE100ADF5CF /* emot25.gif */; };
-		CC5C22FE1C1C7FE100ADF5CF /* emot26.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22961C1C7FE100ADF5CF /* emot26.gif */; };
-		CC5C22FF1C1C7FE100ADF5CF /* emot27.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22971C1C7FE100ADF5CF /* emot27.gif */; };
-		CC5C23001C1C7FE100ADF5CF /* emot28.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22981C1C7FE100ADF5CF /* emot28.gif */; };
-		CC5C23011C1C7FE100ADF5CF /* emot29.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22991C1C7FE100ADF5CF /* emot29.gif */; };
-		CC5C23021C1C7FE100ADF5CF /* emot30.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C229A1C1C7FE100ADF5CF /* emot30.gif */; };
-		CC5C23031C1C7FE100ADF5CF /* emot31.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C229B1C1C7FE100ADF5CF /* emot31.gif */; };
-		CC5C23041C1C7FE100ADF5CF /* emot32.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C229C1C1C7FE100ADF5CF /* emot32.gif */; };
-		CC5C23051C1C7FE100ADF5CF /* emot33.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C229D1C1C7FE100ADF5CF /* emot33.gif */; };
-		CC5C23061C1C7FE100ADF5CF /* emot34.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C229E1C1C7FE100ADF5CF /* emot34.gif */; };
-		CC5C23071C1C7FE100ADF5CF /* emot35.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C229F1C1C7FE100ADF5CF /* emot35.gif */; };
-		CC5C23081C1C7FE100ADF5CF /* emot36.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A01C1C7FE100ADF5CF /* emot36.gif */; };
-		CC5C23091C1C7FE100ADF5CF /* emot37.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A11C1C7FE100ADF5CF /* emot37.gif */; };
-		CC5C230A1C1C7FE100ADF5CF /* emot38.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A21C1C7FE100ADF5CF /* emot38.gif */; };
-		CC5C230B1C1C7FE100ADF5CF /* emot39.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A31C1C7FE100ADF5CF /* emot39.gif */; };
-		CC5C230C1C1C7FE100ADF5CF /* emot40.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A41C1C7FE100ADF5CF /* emot40.gif */; };
-		CC5C230D1C1C7FE100ADF5CF /* emot41.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A51C1C7FE100ADF5CF /* emot41.gif */; };
-		CC5C230E1C1C7FE100ADF5CF /* emot42.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A61C1C7FE100ADF5CF /* emot42.gif */; };
-		CC5C230F1C1C7FE100ADF5CF /* emot43.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A71C1C7FE100ADF5CF /* emot43.gif */; };
-		CC5C23101C1C7FE100ADF5CF /* emot44.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A81C1C7FE100ADF5CF /* emot44.gif */; };
-		CC5C23111C1C7FE100ADF5CF /* emot45.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22A91C1C7FE100ADF5CF /* emot45.gif */; };
-		CC5C23121C1C7FE100ADF5CF /* emot46.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22AA1C1C7FE100ADF5CF /* emot46.gif */; };
-		CC5C23131C1C7FE100ADF5CF /* emot47.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22AB1C1C7FE100ADF5CF /* emot47.gif */; };
-		CC5C23141C1C7FE100ADF5CF /* emot48.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22AC1C1C7FE100ADF5CF /* emot48.gif */; };
-		CC5C23151C1C7FE100ADF5CF /* emot49.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22AD1C1C7FE100ADF5CF /* emot49.gif */; };
-		CC5C23161C1C7FE100ADF5CF /* emot50.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22AE1C1C7FE100ADF5CF /* emot50.gif */; };
-		CC5C23171C1C7FE100ADF5CF /* emot51.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22AF1C1C7FE100ADF5CF /* emot51.gif */; };
-		CC5C23181C1C7FE100ADF5CF /* emot52.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B01C1C7FE100ADF5CF /* emot52.gif */; };
-		CC5C23191C1C7FE100ADF5CF /* emot53.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B11C1C7FE100ADF5CF /* emot53.gif */; };
-		CC5C231A1C1C7FE100ADF5CF /* emot54.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B21C1C7FE100ADF5CF /* emot54.gif */; };
-		CC5C231B1C1C7FE100ADF5CF /* emot55.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B31C1C7FE100ADF5CF /* emot55.gif */; };
-		CC5C231C1C1C7FE100ADF5CF /* emot56.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B41C1C7FE100ADF5CF /* emot56.gif */; };
-		CC5C231D1C1C7FE100ADF5CF /* emot57.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B51C1C7FE100ADF5CF /* emot57.gif */; };
-		CC5C231E1C1C7FE100ADF5CF /* emot58.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B61C1C7FE100ADF5CF /* emot58.gif */; };
-		CC5C231F1C1C7FE100ADF5CF /* emot59.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B71C1C7FE100ADF5CF /* emot59.gif */; };
-		CC5C23201C1C7FE100ADF5CF /* emot60.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B81C1C7FE100ADF5CF /* emot60.gif */; };
-		CC5C23211C1C7FE100ADF5CF /* emot61.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22B91C1C7FE100ADF5CF /* emot61.gif */; };
-		CC5C23221C1C7FE100ADF5CF /* emot62.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22BA1C1C7FE100ADF5CF /* emot62.gif */; };
-		CC5C23231C1C7FE100ADF5CF /* emot63.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22BB1C1C7FE100ADF5CF /* emot63.gif */; };
-		CC5C23241C1C7FE100ADF5CF /* emot64.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22BC1C1C7FE100ADF5CF /* emot64.gif */; };
-		CC5C23251C1C7FE100ADF5CF /* emot65.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22BD1C1C7FE100ADF5CF /* emot65.gif */; };
-		CC5C23261C1C7FE100ADF5CF /* emot66.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22BE1C1C7FE100ADF5CF /* emot66.gif */; };
-		CC5C23271C1C7FE100ADF5CF /* emot67.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22BF1C1C7FE100ADF5CF /* emot67.gif */; };
-		CC5C23281C1C7FE100ADF5CF /* emot68.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C01C1C7FE100ADF5CF /* emot68.gif */; };
-		CC5C23291C1C7FE100ADF5CF /* emot69.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C11C1C7FE100ADF5CF /* emot69.gif */; };
-		CC5C232A1C1C7FE100ADF5CF /* emot70.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C21C1C7FE100ADF5CF /* emot70.gif */; };
-		CC5C232B1C1C7FE100ADF5CF /* emot71.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C31C1C7FE100ADF5CF /* emot71.gif */; };
-		CC5C232C1C1C7FE100ADF5CF /* emot72.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C41C1C7FE100ADF5CF /* emot72.gif */; };
-		CC5C232D1C1C7FE100ADF5CF /* emot73.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C51C1C7FE100ADF5CF /* emot73.gif */; };
-		CC5C232E1C1C7FE100ADF5CF /* emot74.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C61C1C7FE100ADF5CF /* emot74.gif */; };
-		CC5C232F1C1C7FE100ADF5CF /* emot75.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C71C1C7FE100ADF5CF /* emot75.gif */; };
-		CC5C23301C1C7FE100ADF5CF /* emot76.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C81C1C7FE100ADF5CF /* emot76.gif */; };
-		CC5C23311C1C7FE100ADF5CF /* emot77.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22C91C1C7FE100ADF5CF /* emot77.gif */; };
-		CC5C23321C1C7FE100ADF5CF /* emot78.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22CA1C1C7FE100ADF5CF /* emot78.gif */; };
-		CC5C23331C1C7FE100ADF5CF /* emot79.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22CB1C1C7FE100ADF5CF /* emot79.gif */; };
-		CC5C23341C1C7FE100ADF5CF /* emot80.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22CC1C1C7FE100ADF5CF /* emot80.gif */; };
-		CC5C23351C1C7FE100ADF5CF /* emot81.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22CD1C1C7FE100ADF5CF /* emot81.gif */; };
-		CC5C23361C1C7FE100ADF5CF /* emot82.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22CE1C1C7FE100ADF5CF /* emot82.gif */; };
-		CC5C23371C1C7FE100ADF5CF /* emot83.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22CF1C1C7FE100ADF5CF /* emot83.gif */; };
-		CC5C23381C1C7FE100ADF5CF /* emot84.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D01C1C7FE100ADF5CF /* emot84.gif */; };
-		CC5C23391C1C7FE100ADF5CF /* emot85.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D11C1C7FE100ADF5CF /* emot85.gif */; };
-		CC5C233A1C1C7FE100ADF5CF /* emot86.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D21C1C7FE100ADF5CF /* emot86.gif */; };
-		CC5C233B1C1C7FE100ADF5CF /* emot87.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D31C1C7FE100ADF5CF /* emot87.gif */; };
-		CC5C233C1C1C7FE100ADF5CF /* emot88.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D41C1C7FE100ADF5CF /* emot88.gif */; };
-		CC5C233D1C1C7FE100ADF5CF /* emot89.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D51C1C7FE100ADF5CF /* emot89.gif */; };
-		CC5C233E1C1C7FE100ADF5CF /* emot90.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D61C1C7FE100ADF5CF /* emot90.gif */; };
-		CC5C233F1C1C7FE100ADF5CF /* emot91.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D71C1C7FE100ADF5CF /* emot91.gif */; };
 		CC5C23401C1C7FE100ADF5CF /* mootools.core.js in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D81C1C7FE100ADF5CF /* mootools.core.js */; };
-		CC5C23411C1C7FE100ADF5CF /* jpg.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22DA1C1C7FE100ADF5CF /* jpg.gif */; };
-		CC5C23421C1C7FE100ADF5CF /* png.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22DB1C1C7FE100ADF5CF /* png.gif */; };
-		CC5C23431C1C7FE100ADF5CF /* url.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22DC1C1C7FE100ADF5CF /* url.gif */; };
 		CC5C23441C1C7FE100ADF5CF /* temp.html in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22DD1C1C7FE100ADF5CF /* temp.html */; };
 		CC5C23451C1C7FE100ADF5CF /* temp2.html in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22DE1C1C7FE100ADF5CF /* temp2.html */; };
 		CC5C234B1C1C808000ADF5CF /* DataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C23471C1C808000ADF5CF /* DataProcessor.swift */; };
@@ -125,6 +30,8 @@
 		CC5C234E1C1C808000ADF5CF /* configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C234A1C1C808000ADF5CF /* configure.swift */; };
 		CC5C23501C1C9BC500ADF5CF /* CC98Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C234F1C1C9BC500ADF5CF /* CC98Topic.swift */; };
 		CC5C23521C1C9F2F00ADF5CF /* CC98Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C23511C1C9F2F00ADF5CF /* CC98Board.swift */; };
+		CC71DF701C1EB5BF00276D0D /* face in Resources */ = {isa = PBXBuildFile; fileRef = CC71DF6E1C1EB5BF00276D0D /* face */; };
+		CC71DF711C1EB5BF00276D0D /* pic in Resources */ = {isa = PBXBuildFile; fileRef = CC71DF6F1C1EB5BF00276D0D /* pic */; };
 		F9A7B39895763995670457FC /* Pods_CC98.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 680525184E7802334BE2B88A /* Pods_CC98.framework */; };
 		FFB124BB1C1C8BAF00F4ECB2 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB124BA1C1C8BAF00F4ECB2 /* TopicCell.swift */; };
 		FFB124BD1C1C8C0B00F4ECB2 /* HotTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB124BC1C1C8C0B00F4ECB2 /* HotTopicViewController.swift */; };
@@ -185,102 +92,7 @@
 		CC5C22781C1C7FE100ADF5CF /* CC98PostListStyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = CC98PostListStyle.css; sourceTree = "<group>"; };
 		CC5C22791C1C7FE100ADF5CF /* CC98PostListWebPage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CC98PostListWebPage.html; sourceTree = "<group>"; };
 		CC5C227A1C1C7FE100ADF5CF /* clientubb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = clientubb.js; sourceTree = "<group>"; };
-		CC5C227C1C1C7FE100ADF5CF /* emot00.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot00.gif; sourceTree = "<group>"; };
-		CC5C227D1C1C7FE100ADF5CF /* emot01.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot01.gif; sourceTree = "<group>"; };
-		CC5C227E1C1C7FE100ADF5CF /* emot02.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot02.gif; sourceTree = "<group>"; };
-		CC5C227F1C1C7FE100ADF5CF /* emot03.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot03.gif; sourceTree = "<group>"; };
-		CC5C22801C1C7FE100ADF5CF /* emot04.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot04.gif; sourceTree = "<group>"; };
-		CC5C22811C1C7FE100ADF5CF /* emot05.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot05.gif; sourceTree = "<group>"; };
-		CC5C22821C1C7FE100ADF5CF /* emot06.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot06.gif; sourceTree = "<group>"; };
-		CC5C22831C1C7FE100ADF5CF /* emot07.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot07.gif; sourceTree = "<group>"; };
-		CC5C22841C1C7FE100ADF5CF /* emot08.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot08.gif; sourceTree = "<group>"; };
-		CC5C22851C1C7FE100ADF5CF /* emot09.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot09.gif; sourceTree = "<group>"; };
-		CC5C22861C1C7FE100ADF5CF /* emot10.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot10.gif; sourceTree = "<group>"; };
-		CC5C22871C1C7FE100ADF5CF /* emot11.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot11.gif; sourceTree = "<group>"; };
-		CC5C22881C1C7FE100ADF5CF /* emot12.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot12.gif; sourceTree = "<group>"; };
-		CC5C22891C1C7FE100ADF5CF /* emot13.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot13.gif; sourceTree = "<group>"; };
-		CC5C228A1C1C7FE100ADF5CF /* emot14.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot14.gif; sourceTree = "<group>"; };
-		CC5C228B1C1C7FE100ADF5CF /* emot15.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot15.gif; sourceTree = "<group>"; };
-		CC5C228C1C1C7FE100ADF5CF /* emot16.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot16.gif; sourceTree = "<group>"; };
-		CC5C228D1C1C7FE100ADF5CF /* emot17.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot17.gif; sourceTree = "<group>"; };
-		CC5C228E1C1C7FE100ADF5CF /* emot18.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot18.gif; sourceTree = "<group>"; };
-		CC5C228F1C1C7FE100ADF5CF /* emot19.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot19.gif; sourceTree = "<group>"; };
-		CC5C22901C1C7FE100ADF5CF /* emot20.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot20.gif; sourceTree = "<group>"; };
-		CC5C22911C1C7FE100ADF5CF /* emot21.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot21.gif; sourceTree = "<group>"; };
-		CC5C22921C1C7FE100ADF5CF /* emot22.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot22.gif; sourceTree = "<group>"; };
-		CC5C22931C1C7FE100ADF5CF /* emot23.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot23.gif; sourceTree = "<group>"; };
-		CC5C22941C1C7FE100ADF5CF /* emot24.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot24.gif; sourceTree = "<group>"; };
-		CC5C22951C1C7FE100ADF5CF /* emot25.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot25.gif; sourceTree = "<group>"; };
-		CC5C22961C1C7FE100ADF5CF /* emot26.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot26.gif; sourceTree = "<group>"; };
-		CC5C22971C1C7FE100ADF5CF /* emot27.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot27.gif; sourceTree = "<group>"; };
-		CC5C22981C1C7FE100ADF5CF /* emot28.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot28.gif; sourceTree = "<group>"; };
-		CC5C22991C1C7FE100ADF5CF /* emot29.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot29.gif; sourceTree = "<group>"; };
-		CC5C229A1C1C7FE100ADF5CF /* emot30.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot30.gif; sourceTree = "<group>"; };
-		CC5C229B1C1C7FE100ADF5CF /* emot31.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot31.gif; sourceTree = "<group>"; };
-		CC5C229C1C1C7FE100ADF5CF /* emot32.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot32.gif; sourceTree = "<group>"; };
-		CC5C229D1C1C7FE100ADF5CF /* emot33.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot33.gif; sourceTree = "<group>"; };
-		CC5C229E1C1C7FE100ADF5CF /* emot34.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot34.gif; sourceTree = "<group>"; };
-		CC5C229F1C1C7FE100ADF5CF /* emot35.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot35.gif; sourceTree = "<group>"; };
-		CC5C22A01C1C7FE100ADF5CF /* emot36.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot36.gif; sourceTree = "<group>"; };
-		CC5C22A11C1C7FE100ADF5CF /* emot37.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot37.gif; sourceTree = "<group>"; };
-		CC5C22A21C1C7FE100ADF5CF /* emot38.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot38.gif; sourceTree = "<group>"; };
-		CC5C22A31C1C7FE100ADF5CF /* emot39.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot39.gif; sourceTree = "<group>"; };
-		CC5C22A41C1C7FE100ADF5CF /* emot40.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot40.gif; sourceTree = "<group>"; };
-		CC5C22A51C1C7FE100ADF5CF /* emot41.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot41.gif; sourceTree = "<group>"; };
-		CC5C22A61C1C7FE100ADF5CF /* emot42.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot42.gif; sourceTree = "<group>"; };
-		CC5C22A71C1C7FE100ADF5CF /* emot43.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot43.gif; sourceTree = "<group>"; };
-		CC5C22A81C1C7FE100ADF5CF /* emot44.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot44.gif; sourceTree = "<group>"; };
-		CC5C22A91C1C7FE100ADF5CF /* emot45.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot45.gif; sourceTree = "<group>"; };
-		CC5C22AA1C1C7FE100ADF5CF /* emot46.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot46.gif; sourceTree = "<group>"; };
-		CC5C22AB1C1C7FE100ADF5CF /* emot47.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot47.gif; sourceTree = "<group>"; };
-		CC5C22AC1C1C7FE100ADF5CF /* emot48.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot48.gif; sourceTree = "<group>"; };
-		CC5C22AD1C1C7FE100ADF5CF /* emot49.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot49.gif; sourceTree = "<group>"; };
-		CC5C22AE1C1C7FE100ADF5CF /* emot50.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot50.gif; sourceTree = "<group>"; };
-		CC5C22AF1C1C7FE100ADF5CF /* emot51.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot51.gif; sourceTree = "<group>"; };
-		CC5C22B01C1C7FE100ADF5CF /* emot52.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot52.gif; sourceTree = "<group>"; };
-		CC5C22B11C1C7FE100ADF5CF /* emot53.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot53.gif; sourceTree = "<group>"; };
-		CC5C22B21C1C7FE100ADF5CF /* emot54.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot54.gif; sourceTree = "<group>"; };
-		CC5C22B31C1C7FE100ADF5CF /* emot55.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot55.gif; sourceTree = "<group>"; };
-		CC5C22B41C1C7FE100ADF5CF /* emot56.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot56.gif; sourceTree = "<group>"; };
-		CC5C22B51C1C7FE100ADF5CF /* emot57.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot57.gif; sourceTree = "<group>"; };
-		CC5C22B61C1C7FE100ADF5CF /* emot58.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot58.gif; sourceTree = "<group>"; };
-		CC5C22B71C1C7FE100ADF5CF /* emot59.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot59.gif; sourceTree = "<group>"; };
-		CC5C22B81C1C7FE100ADF5CF /* emot60.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot60.gif; sourceTree = "<group>"; };
-		CC5C22B91C1C7FE100ADF5CF /* emot61.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot61.gif; sourceTree = "<group>"; };
-		CC5C22BA1C1C7FE100ADF5CF /* emot62.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot62.gif; sourceTree = "<group>"; };
-		CC5C22BB1C1C7FE100ADF5CF /* emot63.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot63.gif; sourceTree = "<group>"; };
-		CC5C22BC1C1C7FE100ADF5CF /* emot64.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot64.gif; sourceTree = "<group>"; };
-		CC5C22BD1C1C7FE100ADF5CF /* emot65.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot65.gif; sourceTree = "<group>"; };
-		CC5C22BE1C1C7FE100ADF5CF /* emot66.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot66.gif; sourceTree = "<group>"; };
-		CC5C22BF1C1C7FE100ADF5CF /* emot67.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot67.gif; sourceTree = "<group>"; };
-		CC5C22C01C1C7FE100ADF5CF /* emot68.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot68.gif; sourceTree = "<group>"; };
-		CC5C22C11C1C7FE100ADF5CF /* emot69.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot69.gif; sourceTree = "<group>"; };
-		CC5C22C21C1C7FE100ADF5CF /* emot70.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot70.gif; sourceTree = "<group>"; };
-		CC5C22C31C1C7FE100ADF5CF /* emot71.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot71.gif; sourceTree = "<group>"; };
-		CC5C22C41C1C7FE100ADF5CF /* emot72.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot72.gif; sourceTree = "<group>"; };
-		CC5C22C51C1C7FE100ADF5CF /* emot73.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot73.gif; sourceTree = "<group>"; };
-		CC5C22C61C1C7FE100ADF5CF /* emot74.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot74.gif; sourceTree = "<group>"; };
-		CC5C22C71C1C7FE100ADF5CF /* emot75.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot75.gif; sourceTree = "<group>"; };
-		CC5C22C81C1C7FE100ADF5CF /* emot76.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot76.gif; sourceTree = "<group>"; };
-		CC5C22C91C1C7FE100ADF5CF /* emot77.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot77.gif; sourceTree = "<group>"; };
-		CC5C22CA1C1C7FE100ADF5CF /* emot78.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot78.gif; sourceTree = "<group>"; };
-		CC5C22CB1C1C7FE100ADF5CF /* emot79.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot79.gif; sourceTree = "<group>"; };
-		CC5C22CC1C1C7FE100ADF5CF /* emot80.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot80.gif; sourceTree = "<group>"; };
-		CC5C22CD1C1C7FE100ADF5CF /* emot81.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot81.gif; sourceTree = "<group>"; };
-		CC5C22CE1C1C7FE100ADF5CF /* emot82.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot82.gif; sourceTree = "<group>"; };
-		CC5C22CF1C1C7FE100ADF5CF /* emot83.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot83.gif; sourceTree = "<group>"; };
-		CC5C22D01C1C7FE100ADF5CF /* emot84.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot84.gif; sourceTree = "<group>"; };
-		CC5C22D11C1C7FE100ADF5CF /* emot85.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot85.gif; sourceTree = "<group>"; };
-		CC5C22D21C1C7FE100ADF5CF /* emot86.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot86.gif; sourceTree = "<group>"; };
-		CC5C22D31C1C7FE100ADF5CF /* emot87.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot87.gif; sourceTree = "<group>"; };
-		CC5C22D41C1C7FE100ADF5CF /* emot88.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot88.gif; sourceTree = "<group>"; };
-		CC5C22D51C1C7FE100ADF5CF /* emot89.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot89.gif; sourceTree = "<group>"; };
-		CC5C22D61C1C7FE100ADF5CF /* emot90.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot90.gif; sourceTree = "<group>"; };
-		CC5C22D71C1C7FE100ADF5CF /* emot91.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = emot91.gif; sourceTree = "<group>"; };
 		CC5C22D81C1C7FE100ADF5CF /* mootools.core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = mootools.core.js; sourceTree = "<group>"; };
-		CC5C22DA1C1C7FE100ADF5CF /* jpg.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jpg.gif; sourceTree = "<group>"; };
-		CC5C22DB1C1C7FE100ADF5CF /* png.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = png.gif; sourceTree = "<group>"; };
-		CC5C22DC1C1C7FE100ADF5CF /* url.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = url.gif; sourceTree = "<group>"; };
 		CC5C22DD1C1C7FE100ADF5CF /* temp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = temp.html; sourceTree = "<group>"; };
 		CC5C22DE1C1C7FE100ADF5CF /* temp2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = temp2.html; sourceTree = "<group>"; };
 		CC5C23471C1C808000ADF5CF /* DataProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProcessor.swift; sourceTree = "<group>"; };
@@ -289,6 +101,8 @@
 		CC5C234A1C1C808000ADF5CF /* configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = configure.swift; sourceTree = "<group>"; };
 		CC5C234F1C1C9BC500ADF5CF /* CC98Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CC98Topic.swift; sourceTree = "<group>"; };
 		CC5C23511C1C9F2F00ADF5CF /* CC98Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CC98Board.swift; sourceTree = "<group>"; };
+		CC71DF6E1C1EB5BF00276D0D /* face */ = {isa = PBXFileReference; lastKnownFileType = folder; path = face; sourceTree = "<group>"; };
+		CC71DF6F1C1EB5BF00276D0D /* pic */ = {isa = PBXFileReference; lastKnownFileType = folder; path = pic; sourceTree = "<group>"; };
 		FFB124BA1C1C8BAF00F4ECB2 /* TopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
 		FFB124BC1C1C8C0B00F4ECB2 /* HotTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotTopicViewController.swift; sourceTree = "<group>"; };
 		FFB124BF1C1C8CA800F4ECB2 /* BreakOutToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakOutToRefreshView.swift; sourceTree = "<group>"; };
@@ -409,124 +223,15 @@
 				CC5C22761C1C7FE100ADF5CF /* bootstrap.css */,
 				CC5C22771C1C7FE100ADF5CF /* CC98MessageWebPage.html */,
 				CC5C22781C1C7FE100ADF5CF /* CC98PostListStyle.css */,
+				CC71DF6E1C1EB5BF00276D0D /* face */,
+				CC71DF6F1C1EB5BF00276D0D /* pic */,
 				CC5C22791C1C7FE100ADF5CF /* CC98PostListWebPage.html */,
 				CC5C227A1C1C7FE100ADF5CF /* clientubb.js */,
-				CC5C227B1C1C7FE100ADF5CF /* face */,
 				CC5C22D81C1C7FE100ADF5CF /* mootools.core.js */,
-				CC5C22D91C1C7FE100ADF5CF /* pic */,
 				CC5C22DD1C1C7FE100ADF5CF /* temp.html */,
 				CC5C22DE1C1C7FE100ADF5CF /* temp2.html */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		CC5C227B1C1C7FE100ADF5CF /* face */ = {
-			isa = PBXGroup;
-			children = (
-				CC5C227C1C1C7FE100ADF5CF /* emot00.gif */,
-				CC5C227D1C1C7FE100ADF5CF /* emot01.gif */,
-				CC5C227E1C1C7FE100ADF5CF /* emot02.gif */,
-				CC5C227F1C1C7FE100ADF5CF /* emot03.gif */,
-				CC5C22801C1C7FE100ADF5CF /* emot04.gif */,
-				CC5C22811C1C7FE100ADF5CF /* emot05.gif */,
-				CC5C22821C1C7FE100ADF5CF /* emot06.gif */,
-				CC5C22831C1C7FE100ADF5CF /* emot07.gif */,
-				CC5C22841C1C7FE100ADF5CF /* emot08.gif */,
-				CC5C22851C1C7FE100ADF5CF /* emot09.gif */,
-				CC5C22861C1C7FE100ADF5CF /* emot10.gif */,
-				CC5C22871C1C7FE100ADF5CF /* emot11.gif */,
-				CC5C22881C1C7FE100ADF5CF /* emot12.gif */,
-				CC5C22891C1C7FE100ADF5CF /* emot13.gif */,
-				CC5C228A1C1C7FE100ADF5CF /* emot14.gif */,
-				CC5C228B1C1C7FE100ADF5CF /* emot15.gif */,
-				CC5C228C1C1C7FE100ADF5CF /* emot16.gif */,
-				CC5C228D1C1C7FE100ADF5CF /* emot17.gif */,
-				CC5C228E1C1C7FE100ADF5CF /* emot18.gif */,
-				CC5C228F1C1C7FE100ADF5CF /* emot19.gif */,
-				CC5C22901C1C7FE100ADF5CF /* emot20.gif */,
-				CC5C22911C1C7FE100ADF5CF /* emot21.gif */,
-				CC5C22921C1C7FE100ADF5CF /* emot22.gif */,
-				CC5C22931C1C7FE100ADF5CF /* emot23.gif */,
-				CC5C22941C1C7FE100ADF5CF /* emot24.gif */,
-				CC5C22951C1C7FE100ADF5CF /* emot25.gif */,
-				CC5C22961C1C7FE100ADF5CF /* emot26.gif */,
-				CC5C22971C1C7FE100ADF5CF /* emot27.gif */,
-				CC5C22981C1C7FE100ADF5CF /* emot28.gif */,
-				CC5C22991C1C7FE100ADF5CF /* emot29.gif */,
-				CC5C229A1C1C7FE100ADF5CF /* emot30.gif */,
-				CC5C229B1C1C7FE100ADF5CF /* emot31.gif */,
-				CC5C229C1C1C7FE100ADF5CF /* emot32.gif */,
-				CC5C229D1C1C7FE100ADF5CF /* emot33.gif */,
-				CC5C229E1C1C7FE100ADF5CF /* emot34.gif */,
-				CC5C229F1C1C7FE100ADF5CF /* emot35.gif */,
-				CC5C22A01C1C7FE100ADF5CF /* emot36.gif */,
-				CC5C22A11C1C7FE100ADF5CF /* emot37.gif */,
-				CC5C22A21C1C7FE100ADF5CF /* emot38.gif */,
-				CC5C22A31C1C7FE100ADF5CF /* emot39.gif */,
-				CC5C22A41C1C7FE100ADF5CF /* emot40.gif */,
-				CC5C22A51C1C7FE100ADF5CF /* emot41.gif */,
-				CC5C22A61C1C7FE100ADF5CF /* emot42.gif */,
-				CC5C22A71C1C7FE100ADF5CF /* emot43.gif */,
-				CC5C22A81C1C7FE100ADF5CF /* emot44.gif */,
-				CC5C22A91C1C7FE100ADF5CF /* emot45.gif */,
-				CC5C22AA1C1C7FE100ADF5CF /* emot46.gif */,
-				CC5C22AB1C1C7FE100ADF5CF /* emot47.gif */,
-				CC5C22AC1C1C7FE100ADF5CF /* emot48.gif */,
-				CC5C22AD1C1C7FE100ADF5CF /* emot49.gif */,
-				CC5C22AE1C1C7FE100ADF5CF /* emot50.gif */,
-				CC5C22AF1C1C7FE100ADF5CF /* emot51.gif */,
-				CC5C22B01C1C7FE100ADF5CF /* emot52.gif */,
-				CC5C22B11C1C7FE100ADF5CF /* emot53.gif */,
-				CC5C22B21C1C7FE100ADF5CF /* emot54.gif */,
-				CC5C22B31C1C7FE100ADF5CF /* emot55.gif */,
-				CC5C22B41C1C7FE100ADF5CF /* emot56.gif */,
-				CC5C22B51C1C7FE100ADF5CF /* emot57.gif */,
-				CC5C22B61C1C7FE100ADF5CF /* emot58.gif */,
-				CC5C22B71C1C7FE100ADF5CF /* emot59.gif */,
-				CC5C22B81C1C7FE100ADF5CF /* emot60.gif */,
-				CC5C22B91C1C7FE100ADF5CF /* emot61.gif */,
-				CC5C22BA1C1C7FE100ADF5CF /* emot62.gif */,
-				CC5C22BB1C1C7FE100ADF5CF /* emot63.gif */,
-				CC5C22BC1C1C7FE100ADF5CF /* emot64.gif */,
-				CC5C22BD1C1C7FE100ADF5CF /* emot65.gif */,
-				CC5C22BE1C1C7FE100ADF5CF /* emot66.gif */,
-				CC5C22BF1C1C7FE100ADF5CF /* emot67.gif */,
-				CC5C22C01C1C7FE100ADF5CF /* emot68.gif */,
-				CC5C22C11C1C7FE100ADF5CF /* emot69.gif */,
-				CC5C22C21C1C7FE100ADF5CF /* emot70.gif */,
-				CC5C22C31C1C7FE100ADF5CF /* emot71.gif */,
-				CC5C22C41C1C7FE100ADF5CF /* emot72.gif */,
-				CC5C22C51C1C7FE100ADF5CF /* emot73.gif */,
-				CC5C22C61C1C7FE100ADF5CF /* emot74.gif */,
-				CC5C22C71C1C7FE100ADF5CF /* emot75.gif */,
-				CC5C22C81C1C7FE100ADF5CF /* emot76.gif */,
-				CC5C22C91C1C7FE100ADF5CF /* emot77.gif */,
-				CC5C22CA1C1C7FE100ADF5CF /* emot78.gif */,
-				CC5C22CB1C1C7FE100ADF5CF /* emot79.gif */,
-				CC5C22CC1C1C7FE100ADF5CF /* emot80.gif */,
-				CC5C22CD1C1C7FE100ADF5CF /* emot81.gif */,
-				CC5C22CE1C1C7FE100ADF5CF /* emot82.gif */,
-				CC5C22CF1C1C7FE100ADF5CF /* emot83.gif */,
-				CC5C22D01C1C7FE100ADF5CF /* emot84.gif */,
-				CC5C22D11C1C7FE100ADF5CF /* emot85.gif */,
-				CC5C22D21C1C7FE100ADF5CF /* emot86.gif */,
-				CC5C22D31C1C7FE100ADF5CF /* emot87.gif */,
-				CC5C22D41C1C7FE100ADF5CF /* emot88.gif */,
-				CC5C22D51C1C7FE100ADF5CF /* emot89.gif */,
-				CC5C22D61C1C7FE100ADF5CF /* emot90.gif */,
-				CC5C22D71C1C7FE100ADF5CF /* emot91.gif */,
-			);
-			path = face;
-			sourceTree = "<group>";
-		};
-		CC5C22D91C1C7FE100ADF5CF /* pic */ = {
-			isa = PBXGroup;
-			children = (
-				CC5C22DA1C1C7FE100ADF5CF /* jpg.gif */,
-				CC5C22DB1C1C7FE100ADF5CF /* png.gif */,
-				CC5C22DC1C1C7FE100ADF5CF /* url.gif */,
-			);
-			path = pic;
 			sourceTree = "<group>";
 		};
 		CC5C23461C1C806B00ADF5CF /* Data */ = {
@@ -703,115 +408,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC1924321C1C7E85007F0669 /* LaunchScreen.storyboard in Resources */,
-				CC5C22F71C1C7FE100ADF5CF /* emot19.gif in Resources */,
-				CC5C23351C1C7FE100ADF5CF /* emot81.gif in Resources */,
-				CC5C23121C1C7FE100ADF5CF /* emot46.gif in Resources */,
-				CC5C232F1C1C7FE100ADF5CF /* emot75.gif in Resources */,
-				CC5C230D1C1C7FE100ADF5CF /* emot41.gif in Resources */,
-				CC5C23391C1C7FE100ADF5CF /* emot85.gif in Resources */,
-				CC5C23291C1C7FE100ADF5CF /* emot69.gif in Resources */,
 				CC5C23441C1C7FE100ADF5CF /* temp.html in Resources */,
-				CC5C230A1C1C7FE100ADF5CF /* emot38.gif in Resources */,
-				CC5C231F1C1C7FE100ADF5CF /* emot59.gif in Resources */,
-				CC5C23421C1C7FE100ADF5CF /* png.gif in Resources */,
-				CC5C22F91C1C7FE100ADF5CF /* emot21.gif in Resources */,
 				CC5C22E01C1C7FE100ADF5CF /* CC98MessageWebPage.html in Resources */,
-				CC5C23411C1C7FE100ADF5CF /* jpg.gif in Resources */,
-				CC5C233A1C1C7FE100ADF5CF /* emot86.gif in Resources */,
-				CC5C23021C1C7FE100ADF5CF /* emot30.gif in Resources */,
-				CC5C22FD1C1C7FE100ADF5CF /* emot25.gif in Resources */,
-				CC5C22F41C1C7FE100ADF5CF /* emot16.gif in Resources */,
-				CC5C23031C1C7FE100ADF5CF /* emot31.gif in Resources */,
-				CC5C23271C1C7FE100ADF5CF /* emot67.gif in Resources */,
-				CC5C23211C1C7FE100ADF5CF /* emot61.gif in Resources */,
-				CC5C22E51C1C7FE100ADF5CF /* emot01.gif in Resources */,
-				CC5C23301C1C7FE100ADF5CF /* emot76.gif in Resources */,
-				CC5C23141C1C7FE100ADF5CF /* emot48.gif in Resources */,
+				CC71DF701C1EB5BF00276D0D /* face in Resources */,
 				FFB124D81C1C8D2E00F4ECB2 /* shadow_up@2x.png in Resources */,
-				CC5C233D1C1C7FE100ADF5CF /* emot89.gif in Resources */,
-				CC5C231B1C1C7FE100ADF5CF /* emot55.gif in Resources */,
-				CC5C22E61C1C7FE100ADF5CF /* emot02.gif in Resources */,
-				CC5C231A1C1C7FE100ADF5CF /* emot54.gif in Resources */,
-				CC5C232A1C1C7FE100ADF5CF /* emot70.gif in Resources */,
-				CC5C232D1C1C7FE100ADF5CF /* emot73.gif in Resources */,
-				CC5C23111C1C7FE100ADF5CF /* emot45.gif in Resources */,
-				CC5C231C1C1C7FE100ADF5CF /* emot56.gif in Resources */,
-				CC5C22FF1C1C7FE100ADF5CF /* emot27.gif in Resources */,
 				CC5C23401C1C7FE100ADF5CF /* mootools.core.js in Resources */,
-				CC5C233E1C1C7FE100ADF5CF /* emot90.gif in Resources */,
-				CC5C22ED1C1C7FE100ADF5CF /* emot09.gif in Resources */,
-				CC5C23171C1C7FE100ADF5CF /* emot51.gif in Resources */,
-				CC5C22FC1C1C7FE100ADF5CF /* emot24.gif in Resources */,
-				CC5C232B1C1C7FE100ADF5CF /* emot71.gif in Resources */,
-				CC5C22FB1C1C7FE100ADF5CF /* emot23.gif in Resources */,
-				CC5C23221C1C7FE100ADF5CF /* emot62.gif in Resources */,
-				CC5C23011C1C7FE100ADF5CF /* emot29.gif in Resources */,
-				CC5C230C1C1C7FE100ADF5CF /* emot40.gif in Resources */,
-				CC5C23251C1C7FE100ADF5CF /* emot65.gif in Resources */,
-				CC5C22F61C1C7FE100ADF5CF /* emot18.gif in Resources */,
-				CC5C23151C1C7FE100ADF5CF /* emot49.gif in Resources */,
-				CC5C22F21C1C7FE100ADF5CF /* emot14.gif in Resources */,
-				CC5C231E1C1C7FE100ADF5CF /* emot58.gif in Resources */,
-				CC5C22E81C1C7FE100ADF5CF /* emot04.gif in Resources */,
-				CC5C23201C1C7FE100ADF5CF /* emot60.gif in Resources */,
 				CC5C23451C1C7FE100ADF5CF /* temp2.html in Resources */,
 				FFB124D51C1C8D2E00F4ECB2 /* arrow_up.png in Resources */,
-				CC5C23361C1C7FE100ADF5CF /* emot82.gif in Resources */,
+				CC71DF711C1EB5BF00276D0D /* pic in Resources */,
 				CC5C22E11C1C7FE100ADF5CF /* CC98PostListStyle.css in Resources */,
 				FFB124D61C1C8D2E00F4ECB2 /* arrow_up@2x.png in Resources */,
-				CC5C23001C1C7FE100ADF5CF /* emot28.gif in Resources */,
-				CC5C23371C1C7FE100ADF5CF /* emot83.gif in Resources */,
 				CC19242F1C1C7E85007F0669 /* Assets.xcassets in Resources */,
-				CC5C233B1C1C7FE100ADF5CF /* emot87.gif in Resources */,
-				CC5C23041C1C7FE100ADF5CF /* emot32.gif in Resources */,
-				CC5C23281C1C7FE100ADF5CF /* emot68.gif in Resources */,
-				CC5C233C1C1C7FE100ADF5CF /* emot88.gif in Resources */,
-				CC5C23311C1C7FE100ADF5CF /* emot77.gif in Resources */,
-				CC5C22F31C1C7FE100ADF5CF /* emot15.gif in Resources */,
-				CC5C232C1C1C7FE100ADF5CF /* emot72.gif in Resources */,
-				CC5C22EA1C1C7FE100ADF5CF /* emot06.gif in Resources */,
-				CC5C22F81C1C7FE100ADF5CF /* emot20.gif in Resources */,
-				CC5C23131C1C7FE100ADF5CF /* emot47.gif in Resources */,
-				CC5C23051C1C7FE100ADF5CF /* emot33.gif in Resources */,
-				CC5C22FA1C1C7FE100ADF5CF /* emot22.gif in Resources */,
-				CC5C232E1C1C7FE100ADF5CF /* emot74.gif in Resources */,
-				CC5C23101C1C7FE100ADF5CF /* emot44.gif in Resources */,
-				CC5C230F1C1C7FE100ADF5CF /* emot43.gif in Resources */,
-				CC5C23431C1C7FE100ADF5CF /* url.gif in Resources */,
-				CC5C23071C1C7FE100ADF5CF /* emot35.gif in Resources */,
-				CC5C23331C1C7FE100ADF5CF /* emot79.gif in Resources */,
-				CC5C22E41C1C7FE100ADF5CF /* emot00.gif in Resources */,
-				CC5C22EC1C1C7FE100ADF5CF /* emot08.gif in Resources */,
-				CC5C23341C1C7FE100ADF5CF /* emot80.gif in Resources */,
-				CC5C230E1C1C7FE100ADF5CF /* emot42.gif in Resources */,
-				CC5C230B1C1C7FE100ADF5CF /* emot39.gif in Resources */,
-				CC5C23321C1C7FE100ADF5CF /* emot78.gif in Resources */,
 				FFB124D71C1C8D2E00F4ECB2 /* shadow_up.png in Resources */,
-				CC5C23261C1C7FE100ADF5CF /* emot66.gif in Resources */,
-				CC5C22F11C1C7FE100ADF5CF /* emot13.gif in Resources */,
-				CC5C233F1C1C7FE100ADF5CF /* emot91.gif in Resources */,
-				CC5C23231C1C7FE100ADF5CF /* emot63.gif in Resources */,
 				CC5C22E21C1C7FE100ADF5CF /* CC98PostListWebPage.html in Resources */,
-				CC5C22EE1C1C7FE100ADF5CF /* emot10.gif in Resources */,
-				CC5C22F51C1C7FE100ADF5CF /* emot17.gif in Resources */,
-				CC5C22EB1C1C7FE100ADF5CF /* emot07.gif in Resources */,
-				CC5C22FE1C1C7FE100ADF5CF /* emot26.gif in Resources */,
 				CC5C22DF1C1C7FE100ADF5CF /* bootstrap.css in Resources */,
-				CC5C23181C1C7FE100ADF5CF /* emot52.gif in Resources */,
-				CC5C23191C1C7FE100ADF5CF /* emot53.gif in Resources */,
-				CC5C23081C1C7FE100ADF5CF /* emot36.gif in Resources */,
-				CC5C23161C1C7FE100ADF5CF /* emot50.gif in Resources */,
-				CC5C22F01C1C7FE100ADF5CF /* emot12.gif in Resources */,
-				CC5C22E91C1C7FE100ADF5CF /* emot05.gif in Resources */,
 				CC19242D1C1C7E85007F0669 /* Main.storyboard in Resources */,
-				CC5C22EF1C1C7FE100ADF5CF /* emot11.gif in Resources */,
-				CC5C23381C1C7FE100ADF5CF /* emot84.gif in Resources */,
-				CC5C23061C1C7FE100ADF5CF /* emot34.gif in Resources */,
-				CC5C23091C1C7FE100ADF5CF /* emot37.gif in Resources */,
-				CC5C22E71C1C7FE100ADF5CF /* emot03.gif in Resources */,
-				CC5C23241C1C7FE100ADF5CF /* emot64.gif in Resources */,
 				CC5C22E31C1C7FE100ADF5CF /* clientubb.js in Resources */,
-				CC5C231D1C1C7FE100ADF5CF /* emot57.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
