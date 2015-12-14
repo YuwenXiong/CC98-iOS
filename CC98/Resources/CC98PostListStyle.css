@@ -23,14 +23,17 @@ img {
 }
 
 .bg-wrapper {
-    /*margin-left: 6px;
+    margin-right: 6px;
+    margin-left: -4px;
+/*    border-radius:25px;
+*//*    margin-left: 6px;
     margin-right: 6px;
     margin-top: 30px;
     margin-bottom: 48px;
     padding: 10px 10px 10px 10px;
     border: 1px solid #d1d1d1;
-    background-color: #fbfbfb;*/
-}
+    background-color: #fbfbfb;
+*/}
 
 .img-avatar {
     float: left;
@@ -51,23 +54,24 @@ img {
 .gender {
     float: right;
     color: grey;
-    font-size: 13pt;
+/*    width: 20px;
+    height: 20px;    
+*//*    font-size: 13pt;
     line-height: 14pt;
+*/    
 }
 
 .floor-num {
     float: left;
     color: grey;
-    margin: 7px 0 0 0;
+    margin: -10px 0 0 0;
     font-size: 13pt;
 }
 
 .time {
-    position: absolute;
-    right: 0;
-    top: 21px;
+    float: right;
     color: grey;
-    margin: 7px 0 0 0;
+    margin: -10px 0 0 0;
     font-size: 13pt;
 }
 
@@ -97,10 +101,10 @@ img {
 .topic {
     font-size: 10pt;
     font-weight: bold;
-    margin: 10px 0 0 0;
-    padding: 10px 0 0 0;
-    border-top: 1px solid #e3e3e3;
-}
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+/*    border-top: 1px solid #e3e3e3;
+*/}
 
 .post-content {
     margin: 10px 0 0 0;
@@ -108,8 +112,8 @@ img {
 }
 
 .post {
-    margin: 10px 0 10px 0;
-    padding: 10px 10px 10px 10px;
+    margin: 0px 0 0px 0;
+    padding: 5px 5px 0 5px;
     background-color: white;
     border: 1px solid #d1d1d1;
     border-radius: 5px;

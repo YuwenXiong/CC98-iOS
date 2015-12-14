@@ -15,7 +15,7 @@ class CC98User {
         self.nickName = userInfo["name"].stringValue
         let avatar = userInfo["portraitUrl"].stringValue
         self.avatar = avatar.hasPrefix("PresetFace") ? siteURL + avatar : avatar
-        self.gender = userInfo["gender"] == 0 ? "male" : "female"
+        self.gender = NSBundle.mainBundle().bundlePath + "/" + (userInfo["isOnline"].boolValue ? "" : "of") + (userInfo["gender"] == 0 ? "Male.gif" : "FeMale.gif")
     }
     convenience init(userID: Int) {
         let userInfo = globalDataProcessor.GetUserByID(userID)
