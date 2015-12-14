@@ -167,6 +167,7 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
 //        
 //    }
     func webViewDidFinishLoad(webView: UIWebView) {
+//        webView.sizeToFit()
 //        NSLog("reach")
         let height = CGFloat((webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")! as NSString).doubleValue + 10)
 //        print(webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight"))
@@ -177,9 +178,11 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
             return
         }
 //        webView.frame.size = webView.sizeThatFits(CGSize.zero)
+//        webView.frame.size.height = height
         postHeight[webView.tag] = height//CGFloat((height! as NSString).doubleValue) + 10
+        self.tableView.reloadData()
 //        tableView.hidden = true
-        tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: webView.tag, inSection: 0)], withRowAnimation: .None)
+//        tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: webView.tag, inSection: 0)], withRowAnimation: .None)
 //        print("\(webView.tag), \(postHeight[webView.tag])")
         //        var frame=self.frame
         //        frame.size.height = CGFloat((height! as NSString).doubleValue)+20
