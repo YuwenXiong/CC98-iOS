@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -187,8 +187,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="122.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U1a-Xp-nMw">
-                                            <rect key="frame" x="8" y="-4" width="584" height="130.5"/>
+                                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1a-Xp-nMw">
+                                            <rect key="frame" x="13" y="8" width="584" height="106.5"/>
                                             <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                                             <connections>
                                                 <outlet property="delegate" destination="G5P-2E-eGp" id="skk-H4-H7g"/>
@@ -196,8 +196,12 @@
                                         </webView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="U1a-Xp-nMw" firstAttribute="height" secondItem="bGT-at-WDu" secondAttribute="height" id="XYU-Bw-qhp"/>
-                                        <constraint firstItem="U1a-Xp-nMw" firstAttribute="width" secondItem="bGT-at-WDu" secondAttribute="width" id="Y3s-NP-NFW"/>
+                                        <constraint firstItem="U1a-Xp-nMw" firstAttribute="top" secondItem="bGT-at-WDu" secondAttribute="topMargin" id="ANp-Tc-t2f"/>
+                                        <constraint firstItem="U1a-Xp-nMw" firstAttribute="centerY" secondItem="bGT-at-WDu" secondAttribute="centerY" id="BcP-p7-dj9"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="U1a-Xp-nMw" secondAttribute="trailing" constant="-5" id="IYM-s3-ych"/>
+                                        <constraint firstItem="U1a-Xp-nMw" firstAttribute="centerX" secondItem="bGT-at-WDu" secondAttribute="centerX" id="XGf-wq-ycQ"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="U1a-Xp-nMw" secondAttribute="leading" constant="-5" id="ffq-PU-zXB"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="U1a-Xp-nMw" secondAttribute="bottom" id="wc0-ay-d6E"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

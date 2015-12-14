@@ -20,9 +20,9 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
     var postHeight = Array<CGFloat>()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.estimatedRowHeight = 150;
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        
+//        self.tableView.estimatedRowHeight = 150;
+//        self.tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.separatorStyle = .None
         loadData(true)
         self.tableView.addHeaderWithCallback{
             self.loadData(true)
@@ -34,6 +34,7 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
             }
         }
         self.tableView.headerBeginRefreshing()
+//        tableView.hidden = false
     }
     
     func loadData(isPullRefresh:Bool){
@@ -139,7 +140,7 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
 //        return cell.frame.height
 //        return posts[indexPath.row].
 //        return 500
-        return postHeight[indexPath.row]
+        return postHeight[indexPath.row]+20
     }
 //    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 //        
@@ -167,14 +168,19 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
 //    }
     func webViewDidFinishLoad(webView: UIWebView) {
 //        NSLog("reach")
-        let height = webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")
+        let height = CGFloat((webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")! as NSString).doubleValue + 10)
+//        print(webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight"))
+//        print(webView.stringByEvaluatingJavaScriptFromString("document.body.scrollHeight"))
+//        print(webView.stringByEvaluatingJavaScriptFromString("document.body.clientHeight"))
 //        let width = webView.stringByEvaluatingJavaScriptFromString("document.body.offsetWidth")
-        if (postHeight[webView.tag] != 0.0) {
+        if (postHeight[webView.tag] == height) {
             return
         }
-        webView.sizeToFit()
-        postHeight[webView.tag] = CGFloat((height! as NSString).doubleValue) + 10
-        tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: webView.tag, inSection: 0)], withRowAnimation: .Automatic)
+//        webView.frame.size = webView.sizeThatFits(CGSize.zero)
+        postHeight[webView.tag] = height//CGFloat((height! as NSString).doubleValue) + 10
+//        tableView.hidden = true
+        tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: webView.tag, inSection: 0)], withRowAnimation: .None)
+//        print("\(webView.tag), \(postHeight[webView.tag])")
         //        var frame=self.frame
         //        frame.size.height = CGFloat((height! as NSString).doubleValue)+20
         //        frame.size.width = CGFloat((width! as NSString).doubleValue)+20
