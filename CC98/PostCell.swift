@@ -9,14 +9,27 @@
 import Foundation
 import UIKit
 
+
+
 class PostCell:UITableViewCell,UIWebViewDelegate{
     
     
     
     @IBOutlet weak var webView: UIWebView!
     var content:String?
+    
     func webViewDidFinishLoad(webView: UIWebView) {
-        let height=webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")
+        NSLog("reach")
+        let height = webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")
+        let width = webView.stringByEvaluatingJavaScriptFromString("document.body.offsetWidth")
+        if height != "" {
+            var frame=self.frame
+            frame.size.height = CGFloat((height! as NSString).doubleValue)
+            frame.size.width = CGFloat((width! as NSString).doubleValue)
+//            frame.size.width
+            self.frame = frame
+//            webView.frame=frame
+        }
         
     }
     func setView(){
@@ -25,11 +38,9 @@ class PostCell:UITableViewCell,UIWebViewDelegate{
         webView.scrollView.bounces = false
         webView.layer.cornerRadius = 6;
         webView.layer.masksToBounds = true
-        let height=webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")
+//        let height = webView.stringByEvaluatingJavaScriptFromString("document.bo")
+//        let height=webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")
         
-                var frame=webView.frame
-        frame.size.height=CGFloat((height! as NSString).doubleValue);
-                webView.frame=frame
 
     }
     
