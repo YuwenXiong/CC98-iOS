@@ -26,12 +26,23 @@ class TopicDetailController:UITableViewController{
         self.tableView.addHeaderWithCallback{
             self.loadData(true)
         }
+        self.tableView.addFooterWithCallback{
+            
+            if(self.posts.count>0) {
+                self.loadData(false)
+            }
+        }
         self.tableView.headerBeginRefreshing()
     }
     
     func loadData(isPullRefresh:Bool){
 //        data=X.GetHotTopic();
-        posts=topic!.loadPosts()
+        
+        if self.loading {
+            return
+        }
+        self.loading = true
+        let posts=topic!.loadPosts(isPullRefresh)
         self.loading = false
         
         if(isPullRefresh){
@@ -40,13 +51,28 @@ class TopicDetailController:UITableViewController{
         else{
             self.tableView.footerEndRefreshing()
         }
-        if posts.count==0 {
+        if posts.count==0 && isPullRefresh{
             let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
             alert.show()
             return
         }
         
+        if(posts.count==0){
+            return
+        }
         
+        if(isPullRefresh){
+            
+            self.posts.removeAll(keepCapacity: false)
+        }
+        
+        
+        for  it in posts {
+            
+            self.posts.append(it);
+        }
+        
+        self.tableView.reloadData()
         
         
         
@@ -68,7 +94,7 @@ class TopicDetailController:UITableViewController{
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 10
+        return self.posts.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -98,11 +124,17 @@ class TopicDetailController:UITableViewController{
     var prototypeCell:PostCell?
     
     private func configureCell(cell:PostCell,indexPath: NSIndexPath,isForOffscreenUse:Bool){
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PostCell
+        cell.content=posts[indexPath.row].content
+        cell.setView()
         
         cell.selectionStyle = .None;
     }
-    
+//    override func tableView(tableView: UITableView,heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
+//        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PostCell
+//        return cell.webView.frame.height
+//        
+//    }
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         if prototypeCell == nil
@@ -114,6 +146,7 @@ class TopicDetailController:UITableViewController{
         
         
         self.configureCell(prototypeCell!, indexPath: indexPath, isForOffscreenUse: false)
+        
         
         self.prototypeCell?.setNeedsUpdateConstraints()
         self.prototypeCell?.updateConstraintsIfNeeded()
