@@ -12,11 +12,12 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-class TopicDetailController:UITableViewController{
+class TopicDetailController:UITableViewController, UIWebViewDelegate{
     
     var loading:Bool = false
     var topic:CC98Topic?
     var posts=Array<CC98Post>()
+    var postHeight = Array<CGFloat>()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.estimatedRowHeight = 150;
@@ -69,7 +70,8 @@ class TopicDetailController:UITableViewController{
         
         for  it in posts {
             
-            self.posts.append(it);
+            self.posts.append(it)
+            self.postHeight.append(0)
         }
         
         self.tableView.reloadData()
@@ -101,7 +103,7 @@ class TopicDetailController:UITableViewController{
         //let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! PostCell
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PostCell
         cell.content=posts[indexPath.row].content
-        cell.setView()
+        cell.setView(indexPath.row)
 //        let baseURL = NSURL(fileURLWithPath: NSBundle.mainBundle().bundlePath)
 //        cell.webView.loadHTMLString(posts[indexPath.row].content, baseURL: baseURL)
 //        cell.webView.scrollView.bounces = false
@@ -126,37 +128,66 @@ class TopicDetailController:UITableViewController{
     private func configureCell(cell:PostCell,indexPath: NSIndexPath,isForOffscreenUse:Bool){
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PostCell
         cell.content=posts[indexPath.row].content
-        cell.setView()
+        cell.setView(indexPath.row)
         
         cell.selectionStyle = .None;
     }
-//    override func tableView(tableView: UITableView,heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
+    
+    
+    override func tableView(tableView: UITableView,heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
 //        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PostCell
-//        return cell.webView.frame.height
+//        return cell.frame.height
+//        return posts[indexPath.row].
+//        return 500
+        return postHeight[indexPath.row]
+    }
+//    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        
+//        if prototypeCell == nil
+//        {
+//            self.prototypeCell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as? PostCell
+//        }
+//        
+//        
+//        
+//        
+//        self.configureCell(prototypeCell!, indexPath: indexPath, isForOffscreenUse: false)
+//        
+//        
+//        self.prototypeCell?.setNeedsUpdateConstraints()
+//        self.prototypeCell?.updateConstraintsIfNeeded()
+//        self.prototypeCell?.setNeedsLayout()
+//        self.prototypeCell?.layoutIfNeeded()
+//        
+//        
+//        let size = self.prototypeCell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+//        
+//        return size.height;
 //        
 //    }
-    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        if prototypeCell == nil
-        {
-            self.prototypeCell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as? PostCell
+    func webViewDidFinishLoad(webView: UIWebView) {
+//        NSLog("reach")
+        let height = webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")
+//        let width = webView.stringByEvaluatingJavaScriptFromString("document.body.offsetWidth")
+        if (postHeight[webView.tag] != 0.0) {
+            return
         }
-        
-        
-        
-        
-        self.configureCell(prototypeCell!, indexPath: indexPath, isForOffscreenUse: false)
-        
-        
-        self.prototypeCell?.setNeedsUpdateConstraints()
-        self.prototypeCell?.updateConstraintsIfNeeded()
-        self.prototypeCell?.setNeedsLayout()
-        self.prototypeCell?.layoutIfNeeded()
-        
-        
-        let size = self.prototypeCell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
-        
-        return size.height;
+        webView.sizeToFit()
+        postHeight[webView.tag] = CGFloat((height! as NSString).doubleValue) + 10
+        tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: webView.tag, inSection: 0)], withRowAnimation: .Automatic)
+        //        var frame=self.frame
+        //        frame.size.height = CGFloat((height! as NSString).doubleValue)+20
+        //        frame.size.width = CGFloat((width! as NSString).doubleValue)+20
+//        webView.reload()
+//        var frame = webView.frame
+//        frame.size.height += 20
+//        self.frame = frame
+        //        if height != "" {
+        ////            frame.size.width
+        //            self.frame = frame
+        ////            webView.frame=frame
+        //        }
         
     }
+    
 }

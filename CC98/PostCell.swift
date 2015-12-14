@@ -22,22 +22,30 @@ class PostCell:UITableViewCell,UIWebViewDelegate{
         NSLog("reach")
         let height = webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")
         let width = webView.stringByEvaluatingJavaScriptFromString("document.body.offsetWidth")
-        if height != "" {
-            var frame=self.frame
-            frame.size.height = CGFloat((height! as NSString).doubleValue)+20
-            frame.size.width = CGFloat((width! as NSString).doubleValue)+20
-//            frame.size.width
-            self.frame = frame
-//            webView.frame=frame
-        }
+        webView.sizeToFit()
+//        var frame=self.frame
+//        frame.size.height = CGFloat((height! as NSString).doubleValue)+20
+//        frame.size.width = CGFloat((width! as NSString).doubleValue)+20
+        webView.reload()
+        var frame = webView.frame
+        frame.size.height += 20
+        self.frame = frame
+//        if height != "" {
+////            frame.size.width
+//            self.frame = frame
+////            webView.frame=frame
+//        }
         
     }
-    func setView(){
+    func setView(tag: Int){
         let baseURL = NSURL(fileURLWithPath: NSBundle.mainBundle().bundlePath)
         webView.loadHTMLString(content!, baseURL: baseURL)
         webView.scrollView.scrollEnabled = false
         webView.layer.cornerRadius = 6;
         webView.layer.masksToBounds = true
+        webView.opaque = false
+        webView.backgroundColor = UIColor.clearColor()
+        webView.tag = tag
 //        let height = webView.stringByEvaluatingJavaScriptFromString("document.bo")
 //        let height=webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")
         
