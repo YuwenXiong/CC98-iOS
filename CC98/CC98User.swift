@@ -13,7 +13,7 @@ class CC98User {
     let nickName: String, avatar: String, gender: String
     init(userInfo: JSON) {
         self.nickName = userInfo["name"].stringValue
-        let avatar = userInfo["portraitUrl"].stringValue
+        let avatar = userInfo["portraitUrl"].stringValue == "" ? "face/anonymous.gif" : userInfo["portraitUrl"].stringValue
         self.avatar = avatar.hasPrefix("PresetFace") ? siteURL + avatar : avatar
         self.gender = NSBundle.mainBundle().bundlePath + "/" + (userInfo["isOnline"].boolValue ? "" : "of") + (userInfo["gender"] == 0 ? "Male.gif" : "FeMale.gif")
     }
