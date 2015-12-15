@@ -74,15 +74,18 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
             self.postHeight.append(0)
         }
         
-        if isPullRefresh {
+//        if isPullRefresh {
             self.tableView.reloadData()
-        } else {
-            self.tableView.beginUpdates()
-            for i in (self.posts.count - posts.count)...(self.posts.count - 1) {
-            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .None)
-            }
-            self.tableView.endUpdates()
-        }
+//        } else {
+//            self.tableView.beginUpdates()
+//            for i in (self.posts.count - posts.count)...(self.posts.count - 1) {
+//            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .None)
+//            }
+//            self.tableView.endUpdates()
+//            for i in (self.posts.count - posts.count)...(self.posts.count - 1) {
+//                self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .None)
+//            }
+//        }
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -112,6 +115,11 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
     }
 
     func webViewDidFinishLoad(webView: UIWebView) {
+//        webView.stringByEvaluatingJavaScriptFromString("showAllImages();")
+        print(webView.stringByEvaluatingJavaScriptFromString("document.body.scrollHeight"))
+        print(webView.stringByEvaluatingJavaScriptFromString("document.body.scrollHeight"))
+        print(webView.stringByEvaluatingJavaScriptFromString("document.body.clientHeight"))
+        print(webView.stringByEvaluatingJavaScriptFromString("document.html.height"))
         let height = CGFloat((webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")! as NSString).doubleValue + 10)
         if (postHeight[webView.tag] == height) {
             return

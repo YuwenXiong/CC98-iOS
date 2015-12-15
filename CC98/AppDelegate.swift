@@ -7,35 +7,54 @@
 //
 
 import UIKit
+import ReachabilitySwift
 //import p2_OAuth2
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var reachability: Reachability?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-//        let X = DataProcessor()
-        let temp = globalDataProcessor.GetPost(791141672)
-        print(temp.content)
-//        X.GetHotTopic()
-//        X.GetBoardTopic(744, from: 0, to: 19)
-//        X.GetTopicInfo(4582400)
-//        let posts = X.GetTopicPost(4582400, from: 0, to: 19)
-//        X.ParsePostContent(posts[0]["content"].string!)
-//        let boards = X.GetRootBoard()
-//        let posts = X.GetTopicPost(4582400, from: 0, to: 19)
+////        let X = DataProcessor()
+//        let temp = globalDataProcessor.GetPost(791153221)
+//        print(temp.content)
+////        X.GetHotTopic()
+////        X.GetBoardTopic(744, from: 0, to: 19)
+////        X.GetTopicInfo(4582400)
+////        let posts = X.GetTopicPost(4582400, from: 0, to: 19)
+////        X.ParsePostContent(posts[0]["content"].string!)
+////        let boards = X.GetRootBoard()
+////        let posts = X.GetTopicPost(4582400, from: 0, to: 19)
+//        
+////        X.ParsePostContent(posts[0].content)
+////        X.GetPost(791058817)
+////        X.GetUserByName("Orpine")
+////        X.GetUserByID(524166)
+////        X.GetBoardRoot()
+////        X.GetSubBoards(2)
+////        X.GetBoardInfo(744)
+//
         
-//        X.ParsePostContent(posts[0].content)
-//        X.GetPost(791058817)
-//        X.GetUserByName("Orpine")
-//        X.GetUserByID(524166)
-//        X.GetBoardRoot()
-//        X.GetSubBoards(2)
-//        X.GetBoardInfo(744)
-
+        do {
+            reachability = try Reachability(hostname: "api.cc98.org")
+            NSNotificationCenter.defaultCenter().addObserver(self,
+                selector: "reachabilityChanged:",
+                name: ReachabilityChangedNotification,
+                object: reachability)
+            do {
+                try reachability!.startNotifier()
+            } catch {
+                print("Unable to start Notifier")
+            }
+        } catch {
+            print("Unable to create Reachability")
+        }
+        
+        
         return true
     }
     
@@ -61,6 +80,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as! Reachability
+        print(reachability.currentReachabilityStatus.description)
+        globalDataProcessor.SetNetworkStatus(reachability.currentReachabilityStatus.description)
+        if reachability.isReachable() {
+            if  reachability.isReachableViaWiFi() {
+                print("Reachable via WiFi")
+            } else {
+                print("Reachable via Cellular")
+            }
+        } else {
+            print("Not reachable")
+        }
+        
     }
     
 }

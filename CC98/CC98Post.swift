@@ -12,13 +12,13 @@ import SwiftyJSON
 class CC98Post {
     let title: String, author: CC98User, postTime: String, floor: String
     var content: String
-    init(postInfo: JSON, dataProcessor: DataProcessor) {
+    init(postInfo: JSON) {
         self.title = postInfo["title"].stringValue
         self.postTime = postInfo["time"].stringValue.stringByReplacingOccurrencesOfString("T", withString: " ")
         self.author = CC98User(userID: postInfo["userId"].intValue)
         self.floor = postInfo["floor"].stringValue
         self.content = postInfo["content"].stringValue.stringByReplacingOccurrencesOfString("\r\n", withString: "<br>")
-        self.content = dataProcessor.ParsePostContent(self)
+        self.content = globalDataProcessor.ParsePostContent(self)
 //        print(self.content)
     }
 }

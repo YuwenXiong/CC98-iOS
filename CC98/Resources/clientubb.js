@@ -322,10 +322,11 @@ window.addEvent('domready', function () {
 	if ($('showAllImages')) {
 		$('showAllImages').addEvent('click', function () {
 			$$('a.clickloadImage').each(function (item) {
-				(function () { item.innerHTML = loadImg(item.href); }).delay(100);
+				(function () { item.innerHTML = loadImg(item.href); }).delay(0);
 			})
 		})
 	}
+	// showAllImages()
 })
 
 var codeUbb = function (source, language) {
@@ -623,6 +624,8 @@ var ubb = {
 				pattern = /\[IMG(=1)?\](.[^\[\'\"\(\)]*)(gif|jpg|jpeg|bmp|png)\[\/IMG\]/gi;
 				str = str.replace(pattern, '<br /><a onfocus="this.blur();" href="$2$3" target="_blank" title="按此浏览图片" class="clickloadImage" onclick="this.innerHTML=loadImg(this.href);this.onclick=function(){}; return false;"><img src="' + icondir + '$3.gif" border="0">$2$3</a>');
 				pattern = /\[UPLOAD=(gif|jpg|jpeg|bmp|png)\](http:\/\/file\.cc98\.org\/.[^\[\'\"\:\(\)]*)(gif|jpg|jpeg|bmp|png)\[\/UPLOAD\]/gi;
+				str = str.replace(pattern, "<br /><a href=\"$2$1\" target=\"_blank\"><img src=\"$2$1\" border=0 alt=\"按此在新窗口浏览图片\" class=\"resizeable\"></a>");
+				pattern = /\[UPLOAD=(gif|jpg|jpeg|bmp|png)\](https:\/\/rvpn.zju.edu.cn\/web\/1\/http\/0\/file\.cc98\.org\/.[^\[\'\"\:\(\)]*)(gif|jpg|jpeg|bmp|png)\[\/UPLOAD\]/gi;
 				str = str.replace(pattern, "<br /><a href=\"$2$1\" target=\"_blank\"><img src=\"$2$1\" border=0 alt=\"按此在新窗口浏览图片\" class=\"resizeable\"></a>");
 				pattern = /\[UPLOAD=(gif|jpg|jpeg|bmp|png),0\](http:\/\/file\.cc98\.org\/.[^\[\'\"\:\(\)]*)(gif|jpg|jpeg|bmp|png)\[\/UPLOAD\]/gi;
 				str = str.replace(pattern, "<br /><a href=\"$2$1\" target=\"_blank\"><img src=\"$2$1\" border=0 alt=\"按此在新窗口浏览图片\" class=\"resizeable\"></a>");

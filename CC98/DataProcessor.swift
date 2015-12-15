@@ -12,7 +12,29 @@ import Alamofire
 
 class DataProcessor {
     var json: JSON = nil
+    var networkStatus: String = ""
+    func SetNetworkStatus(networkStatus: String) {
+        self.networkStatus = networkStatus
+        if networkStatus == "Cellular" {
+            baseURL = "https://rvpn.zju.edu.cn/web/1/http/0/api.cc98.org:80/"
+            var flag = false
+            Alamofire.request(.POST, "https://rvpn.zju.edu.cn/por/login_psw.csp", parameters: ["svpn_name": "3130000829", "svpn_password": "19950723xyw"], headers: ["Content-Type": "application/x-www-form-urlencoded"]).responseData {
+                response in
+                NSLog("Success: \(response.response)")
+                NSLog("Success: \(response.request)")
+                flag = true
+            }
+//            while (!flag) {
+//                NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture())
+//            }
+        } else if networkStatus == "WiFi" {
+            baseURL = "http://api.cc98.org/"
+        }
+    }
     func GetJSON(URL: String) -> JSON {
+        if networkStatus == "No Connection" {
+            return "" as JSON
+        }
         var flag = false
         Alamofire.request(.GET, URL, headers: ["Content-Type": "application/json"]).responseJSON {
             response in
@@ -72,7 +94,7 @@ class DataProcessor {
         var posts = Array<CC98Post>()
         if postsJSON.count > 0 {
             for i in 0...postsJSON.count-1 {
-                posts.append(CC98Post(postInfo: postsJSON[i], dataProcessor: self))
+                posts.append(CC98Post(postInfo: postsJSON[i]))
             }
         }
         return posts
@@ -80,7 +102,7 @@ class DataProcessor {
     
     // pass
     func GetPost(postID: Int) -> CC98Post {
-        return CC98Post(postInfo: GetJSON(baseURL + "Post/\(postID)"), dataProcessor: self)
+        return CC98Post(postInfo: GetJSON(baseURL + "Post/\(postID)"))
     }
     // User
     // pass
@@ -120,10 +142,16 @@ class DataProcessor {
     }
     
     func ParsePostContent(post: CC98Post) -> String {
-        // todo: support rich text
-//        let regrex = try! NSRegularExpression(pattern: "\\[[^\\]]+\\]", options: NSRegularExpressionOptions.CaseInsensitive)
-//        let ret = regrex.stringByReplacingMatchesInString(content, options: NSMatchingOptions(rawValue: 0), range: NSMakeRange(0, content.characters.count), withTemplate: "")
-//        return ret
+        var content = post.content
+        var avatar = post.author.avatar
+        content = content.stringByReplacingOccurrencesOfString("[upload=jpg,1]", withString: "[upload=jpg]")
+        if networkStatus == "Cellular" {
+            content = content.stringByReplacingOccurrencesOfString("http://file.cc98.org", withString: "https://rvpn.zju.edu.cn/web/1/http/0/file.cc98.org")
+//            print(content)
+            avatar = avatar.stringByReplacingOccurrencesOfString("http://www.cc98.org", withString: "https://rvpn.zju.edu.cn/web/1/http/0/www.cc98.org")
+            print(avatar)
+        }
+
         let htmlPath = NSBundle.mainBundle().pathForResource("CC98PostListWebPage", ofType: "html")
         let htmlContent = try! NSMutableString(contentsOfFile: htmlPath!, encoding: NSUTF8StringEncoding)
         let frontRange = htmlContent.rangeOfString("$foreach$")
@@ -144,12 +172,12 @@ class DataProcessor {
         htmlText.replaceOccurrencesOfString("${gender}", withString: post.author.gender, options: NSStringCompareOptions(rawValue: 0), range: NSMakeRange(0, htmlText.length))
         htmlText.replaceOccurrencesOfString("${time}", withString: post.postTime, options: NSStringCompareOptions(rawValue: 0), range: NSMakeRange(0, htmlText.length))
         htmlText.replaceOccurrencesOfString("${floor}", withString: post.floor, options: NSStringCompareOptions(rawValue: 0), range: NSMakeRange(0, htmlText.length))
-        htmlText.replaceOccurrencesOfString("${avatar}", withString: post.author.avatar, options: NSStringCompareOptions(rawValue: 0), range: NSMakeRange(0, htmlText.length))
-        htmlText.replaceOccurrencesOfString("${content}", withString: "<div id=\"ubbcode1\">" + post.content + "</div><script>searchubb('ubbcode1',1,'tablebody1');</script>", options: NSStringCompareOptions(rawValue: 0), range: NSMakeRange(0, htmlText.length))
+        htmlText.replaceOccurrencesOfString("${avatar}", withString: avatar, options: NSStringCompareOptions(rawValue: 0), range: NSMakeRange(0, htmlText.length))
+        htmlText.replaceOccurrencesOfString("${content}", withString: "<div id=\"ubbcode1\">" + content + "</div><script>searchubb('ubbcode1',1,'tablebody1');</script>", options: NSStringCompareOptions(rawValue: 0), range: NSMakeRange(0, htmlText.length))
         htmlText.replaceOccurrencesOfString("${i}", withString: post.floor, options: NSStringCompareOptions(rawValue: 0), range: NSMakeRange(0, htmlText.length))
         finalText.appendString(htmlText as String)
         finalText.appendString(endPart)
-//        print(finalText)
+        print(finalText)
         return finalText as String
     }
 }

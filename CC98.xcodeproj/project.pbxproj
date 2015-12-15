@@ -36,6 +36,7 @@
 		CC71DF771C1EC2F900276D0D /* ofFeMale.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC71DF731C1EC2F900276D0D /* ofFeMale.gif */; };
 		CC71DF781C1EC2F900276D0D /* Male.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC71DF741C1EC2F900276D0D /* Male.gif */; };
 		CC71DF791C1EC2F900276D0D /* FeMale.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC71DF751C1EC2F900276D0D /* FeMale.gif */; };
+		CC71DF7D1C20309900276D0D /* ReachabilityNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71DF7C1C20309900276D0D /* ReachabilityNotifications.swift */; };
 		F9A7B39895763995670457FC /* Pods_CC98.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 680525184E7802334BE2B88A /* Pods_CC98.framework */; };
 		FFB124BB1C1C8BAF00F4ECB2 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB124BA1C1C8BAF00F4ECB2 /* TopicCell.swift */; };
 		FFB124BD1C1C8C0B00F4ECB2 /* HotTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB124BC1C1C8C0B00F4ECB2 /* HotTopicViewController.swift */; };
@@ -111,6 +112,7 @@
 		CC71DF731C1EC2F900276D0D /* ofFeMale.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ofFeMale.gif; sourceTree = "<group>"; };
 		CC71DF741C1EC2F900276D0D /* Male.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Male.gif; sourceTree = "<group>"; };
 		CC71DF751C1EC2F900276D0D /* FeMale.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FeMale.gif; sourceTree = "<group>"; };
+		CC71DF7C1C20309900276D0D /* ReachabilityNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityNotifications.swift; sourceTree = "<group>"; };
 		FFB124BA1C1C8BAF00F4ECB2 /* TopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
 		FFB124BC1C1C8C0B00F4ECB2 /* HotTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotTopicViewController.swift; sourceTree = "<group>"; };
 		FFB124BF1C1C8CA800F4ECB2 /* BreakOutToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakOutToRefreshView.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 		CC5C23461C1C806B00ADF5CF /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CC71DF7C1C20309900276D0D /* ReachabilityNotifications.swift */,
 				CC5C23471C1C808000ADF5CF /* DataProcessor.swift */,
 				CC5C23481C1C808000ADF5CF /* CC98Post.swift */,
 				CC5C23511C1C9F2F00ADF5CF /* CC98Board.swift */,
@@ -523,6 +526,7 @@
 				CC19242A1C1C7E85007F0669 /* SecondViewController.swift in Sources */,
 				CC5C234C1C1C808000ADF5CF /* CC98Post.swift in Sources */,
 				FFB124C71C1C8CA800F4ECB2 /* RefreshConst.swift in Sources */,
+				CC71DF7D1C20309900276D0D /* ReachabilityNotifications.swift in Sources */,
 				CC5C23501C1C9BC500ADF5CF /* CC98Topic.swift in Sources */,
 				CC1924261C1C7E85007F0669 /* AppDelegate.swift in Sources */,
 				FFB124C81C1C8CA800F4ECB2 /* RefreshFooterView.swift in Sources */,
