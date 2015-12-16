@@ -116,10 +116,10 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
 
     func webViewDidFinishLoad(webView: UIWebView) {
 //        webView.stringByEvaluatingJavaScriptFromString("showAllImages();")
-        print(webView.stringByEvaluatingJavaScriptFromString("document.body.scrollHeight"))
-        print(webView.stringByEvaluatingJavaScriptFromString("document.body.scrollHeight"))
-        print(webView.stringByEvaluatingJavaScriptFromString("document.body.clientHeight"))
-        print(webView.stringByEvaluatingJavaScriptFromString("document.html.height"))
+//        print(webView.stringByEvaluatingJavaScriptFromString("document.body.scrollHeight"))
+//        print(webView.stringByEvaluatingJavaScriptFromString("document.body.scrollHeight"))
+//        print(webView.stringByEvaluatingJavaScriptFromString("document.body.clientHeight"))
+//        print(webView.stringByEvaluatingJavaScriptFromString("document.html.height"))
         let height = CGFloat((webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")! as NSString).doubleValue + 10)
         if (postHeight[webView.tag] == height) {
             return
