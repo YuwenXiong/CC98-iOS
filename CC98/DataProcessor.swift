@@ -17,12 +17,12 @@ class DataProcessor {
         self.networkStatus = networkStatus
         if networkStatus == "Cellular" {
             baseURL = "https://rvpn.zju.edu.cn/web/1/http/0/api.cc98.org:80/"
-            var flag = false
+//            var flag = false
             Alamofire.request(.POST, "https://rvpn.zju.edu.cn/por/login_psw.csp", parameters: ["svpn_name": "3130000829", "svpn_password": "19950723xyw"], headers: ["Content-Type": "application/x-www-form-urlencoded"]).responseData {
                 response in
                 NSLog("Success: \(response.response)")
                 NSLog("Success: \(response.request)")
-                flag = true
+//                flag = true
             }
 //            while (!flag) {
 //                NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture())
