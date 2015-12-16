@@ -22,7 +22,7 @@ class HotTopicViewController:UITableViewController{
         self.tableView.estimatedRowHeight = 120;
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
-        
+//        tableView.separatorStyle = .None
         self.tableView.addHeaderWithCallback{
             self.loadData(true)
         }
@@ -94,16 +94,18 @@ class HotTopicViewController:UITableViewController{
     var prototypeCell:TopicCell?
     
     private func configureCell(cell:TopicCell,indexPath: NSIndexPath,isForOffscreenUse:Bool){
+        if topics.count>0{
+            let topic=topics[indexPath.row]
+            cell.title.text=topic.title
+            if topic.author==""{
+                cell.authorName.text="匿名"
+            }
+            else{
+                cell.authorName.text=topic.author
+            }
+            cell.createTime.text=topic.time
+        }
         
-        let topic=topics[indexPath.row]
-        cell.title.text=topic.title
-        if topic.author==""{
-            cell.authorName.text="匿名"
-        }
-        else{
-            cell.authorName.text=topic.author
-        }
-        cell.createTime.text=topic.time
         cell.selectionStyle = .None;
     }
     

@@ -9,16 +9,13 @@
 import Foundation
 import UIKit
 
-class TopicCell:UITableViewCell{
-
+class BoardCell:UITableViewCell{
     
-    @IBOutlet weak var createTime: UILabel!
-    @IBOutlet weak var boardName: UILabel!
+    var board:CC98Board?
 
-    @IBOutlet weak var authorName: UILabel!
+    @IBOutlet weak var boardName: UILabel!
+    
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var title: UILabel!
- 
     override func awakeFromNib() {
         super.awakeFromNib()
         
