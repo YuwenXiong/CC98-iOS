@@ -57,10 +57,10 @@ class BoardViewController:UITableViewController{
         return 1
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.dequeueReusableCellWithIdentifier("BoardCell", forIndexPath: indexPath) as! BoardCell
-        if cell.board!.isCategory{
+        let board = subBoards[indexPath.row]
+        if board.isCategory{
            let boardView=BoardViewController()
-            boardView.thisBoard=cell.board
+            boardView.thisBoard=board
             boardView.isRoot=false
             self.navigationController?.pushViewController(boardView, animated: true)
         }
