@@ -30,7 +30,11 @@ class CC98Board {
             }
         }
     }
-    func loadTopics() -> Array<CC98Topic> {
+    func loadTopics(reset:Bool=false) -> Array<CC98Topic> {
+        if reset {
+            from = 0
+            to = 9
+        }
         let ret = globalDataProcessor.GetBoardTopic(ID, from: from, to: to)
         from += 10
         to += 10

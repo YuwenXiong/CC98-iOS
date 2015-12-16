@@ -59,13 +59,15 @@ class BoardViewController:UITableViewController{
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let board = subBoards[indexPath.row]
         if board.isCategory{
-           let boardView=BoardViewController()
+            let boardView:BoardViewController=UITools.GetViewController("boardViewController")
             boardView.thisBoard=board
             boardView.isRoot=false
             self.navigationController?.pushViewController(boardView, animated: true)
         }
         else{
-            
+            let topicView:TopicListViewController=UITools.GetViewController("topicListViewController")
+            topicView.board=board
+            self.navigationController?.pushViewController(topicView, animated: true)
         }
         
         //TODO
