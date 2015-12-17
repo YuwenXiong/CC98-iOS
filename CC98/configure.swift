@@ -28,4 +28,4 @@ let settings = [
     "title": "CC98 OAuth Login"                     // optional title to show in views
     ] as OAuth2JSON                                 // the "as" part may or may not be needed
 
-let oauth = OAuthrCodeGrant(settings: settings)
+let oauth = OAuth2CodeGrant(settings: settings)

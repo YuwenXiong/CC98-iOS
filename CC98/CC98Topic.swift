@@ -7,27 +7,31 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class CC98Topic {
-    let ID: Int, dataProcessor = DataProcessor(), title: String, author: String, time: String, boardName: String, boardID: Int
+    var ID: Int, title: String, author: String, time: String, boardName: String, boardID: Int
     var from = 0, to = 0
     init(ID: Int) {
-        let data = dataProcessor.GetTopicInfo(ID)
-        self.ID = ID
-        self.title = data["title"].stringValue
-        self.author = data["authorName"].stringValue
-        self.time = data["createTime"].stringValue.stringByReplacingOccurrencesOfString("T", withString: " ")
-        self.boardID = data["boardId"].intValue
-        self.boardName = globalDataProcessor.GetBoardInfo(boardID)["name"].stringValue
-        self.from = 0
-        self.to = 9
+        globalDataProcessor.GetTopicInfo(ID, callback: { (data: JSON) -> Void in {
+                self.ID = ID
+                self.title = data["title"].stringValue
+                self.author = data["authorName"].stringValue
+                self.time = data["createTime"].stringValue.stringByReplacingOccurrencesOfString("T", withString: " ")
+                self.boardID = data["boardId"].intValue
+                self.boardName = globalDataProcessor.GetBoardInfo(self.boardID)["name"].stringValue
+                self.from = 0
+                self.to = 9
+            }
+        })
     }
     func loadPosts(reset: Bool = false) -> Array<CC98Post> {
         if reset {
             from = 0
             to = 9
         }
-        let ret = dataProcessor.GetTopicPost(ID, from: from, to: to)
+//        globalDataProcessor.GetTopicInfo(<#T##topicID: Int##Int#>, callback: <#T##(JSON) -> Void#>)
+        let ret = globalDataProcessor.GetTopicPost(ID, from: from, to: to)
         from += 10
         to += 10
         return ret

@@ -30,26 +30,27 @@ class HotTopicViewController:UITableViewController{
     }
     
     func loadData(isPullRefresh:Bool){
-        topics=globalDataProcessor.GetHotTopic();
-        self.loading = false
-        
-        if(isPullRefresh){
-            self.tableView.headerEndRefreshing()
-        }
-        else{
-            self.tableView.footerEndRefreshing()
-        }
-        if topics.count==0 {
-            let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
-            alert.show()
-            return
-        }
-        
-        
-        
-        
-        
-        
+//        self.loading = true
+        dispatch_async(dispatch_get_main_queue(), {
+            globalDataProcessor.GetHotTopic {
+                (topicData: Array<CC98Topic>) -> Void in
+                    self.topics=topicData;
+                    self.loading = false
+                    
+                    if(isPullRefresh){
+                        self.tableView.headerEndRefreshing()
+                    }
+                    else{
+                        self.tableView.footerEndRefreshing()
+                    }
+                    if self.topics.count==0 {
+                        let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
+                        alert.show()
+                        return
+                    }
+            }
+            
+        })
     }
     
     
@@ -67,10 +68,15 @@ class HotTopicViewController:UITableViewController{
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
+        guard self.topics.count != 0 else {
+            return 0
+        }
         return 10
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+//        while self.loading {
+//            
+//        }
         //let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! TopicCell
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TopicCell
         let topic=topics[indexPath.row]
