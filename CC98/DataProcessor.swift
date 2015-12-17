@@ -144,6 +144,7 @@ class DataProcessor {
     func ParsePostContent(post: CC98Post) -> String {
         var content = post.content
         var avatar = post.author.avatar
+        var signature = post.author.signature
         content = content.stringByReplacingOccurrencesOfString("[upload=jpg,1]", withString: "[upload=jpg]")
         content = content.stringByReplacingOccurrencesOfString("[upload=jpeg,1]", withString: "[upload=jpeg]")
         content = content.stringByReplacingOccurrencesOfString("[upload=gif,1]", withString: "[upload=gif]")
@@ -152,9 +153,10 @@ class DataProcessor {
 //        content = content.stringByReplacingOccurrencesOfString("quote]", withString: "quotex]")
         if networkStatus == "Cellular" {
             content = content.stringByReplacingOccurrencesOfString("http://file.cc98.org", withString: "https://rvpn.zju.edu.cn/web/1/http/0/file.cc98.org")
-//            print(content)
             avatar = avatar.stringByReplacingOccurrencesOfString("http://file.cc98.org", withString: "https://rvpn.zju.edu.cn/web/1/http/0/file.cc98.org")
             avatar = avatar.stringByReplacingOccurrencesOfString("http://www.cc98.org", withString: "https://rvpn.zju.edu.cn/web/1/http/0/www.cc98.org")
+            signature = signature.stringByReplacingOccurrencesOfString("http://file.cc98.org", withString: "https://rvpn.zju.edu.cn/web/1/http/0/file.cc98.org")
+            signature = signature.stringByReplacingOccurrencesOfString("http://www.cc98.org", withString: "https://rvpn.zju.edu.cn/web/1/http/0/www.cc98.org")
             print(avatar)
         }
 
@@ -182,12 +184,45 @@ class DataProcessor {
         htmlText.replaceOccurrencesOfString("${content}", withString: "<div id=\"ubbcode1\">" + content + "</div><script>searchubb('ubbcode1',1,'tablebody1');</script>", options: NSStringCompareOptions(rawValue: 0), range: NSMakeRange(0, htmlText.length))
         htmlText.replaceOccurrencesOfString("${i}", withString: post.floor, options: NSStringCompareOptions(rawValue: 0), range: NSMakeRange(0, htmlText.length))
         finalText.appendString(htmlText as String)
-        if post.author.signature != "" {
+        if signature != "" {
             finalText.appendString("<div class=\"post-content\">-------------------------------------------------------</div><div class=\"post-content\">")
-            finalText.appendString("<div id=\"ubbcode2\">" + post.author.signature + "</div><script>searchubb('ubbcode2', 1, 'tablebody1');</script></div>")
+            finalText.appendString("<div id=\"ubbcode2\">" + signature + "</div><script>searchubb('ubbcode2', 1, 'tablebody1');</script></div>")
         }
         finalText.appendString(endPart)
-        print(finalText)
+//        print(finalText)
         return finalText as String
+    }
+    
+    func GetImageUrls(content: String) -> Array<String> {
+        var result = Array<String>()
+        do {
+            
+            var begin = 0
+            let pattern1 = "https?://(?:[a-z0-9\\-]+\\.)+[a-z]{2,6}(?:/[^/#?]+)+\\.(?:jpg|gif|png|jpeg|bmp)"
+            let regex1 = try NSRegularExpression(pattern: pattern1, options: NSRegularExpressionOptions.CaseInsensitive)
+            
+            var res1 = regex1.rangeOfFirstMatchInString(content, options: NSMatchingOptions(rawValue: 0), range: NSMakeRange(begin,content.characters.count))
+            while (true) {
+                let myNSString = content as NSString
+                if (res1.location + res1.length >= content.characters.count) {
+                    break;
+                }
+                result.append(myNSString.substringWithRange(NSMakeRange(res1.location, res1.length)))
+                begin = res1.location+res1.length
+                if (begin >= content.characters.count) {
+                    break
+                }
+                
+                res1 = regex1.rangeOfFirstMatchInString(content, options: NSMatchingOptions(rawValue: 0), range: NSMakeRange(begin,content.characters.count-begin))
+                print(res1)
+                if (res1.length == 0) {
+                    break
+                }
+            }
+        }
+        catch {
+            print(error)
+        }
+        return Array(Set(result))
     }
 }

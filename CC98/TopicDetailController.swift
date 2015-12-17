@@ -16,7 +16,9 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
     
     var loading:Bool = false
     var topic:CC98Topic?
-    var posts=Array<CC98Post>()
+    var posts = Array<CC98Post>()
+    var postContent = Array<String>()
+    var postImgs = Array<Array<String>>()
     var postHeight = Array<CGFloat>()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,14 +66,18 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
         }
         
         if(isPullRefresh){
-            
             self.posts.removeAll(keepCapacity: false)
+            self.postHeight.removeAll(keepCapacity: false)
+            self.postContent.removeAll(keepCapacity: false)
+            self.postImgs.removeAll(keepCapacity: false)
         }
         
         
         for it in posts {
             self.posts.append(it)
             self.postHeight.append(0)
+            self.postContent.append("")
+            self.postImgs.append(Array<String>())
         }
         
         if isPullRefresh {
@@ -115,17 +121,25 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
     }
 
     func webViewDidFinishLoad(webView: UIWebView) {
-//        webView.stringByEvaluatingJavaScriptFromString("showAllImages();")
-//        print(webView.stringByEvaluatingJavaScriptFromString("document.body.scrollHeight"))
-//        print(webView.stringByEvaluatingJavaScriptFromString("document.body.scrollHeight"))
-//        print(webView.stringByEvaluatingJavaScriptFromString("document.body.clientHeight"))
-//        print(webView.stringByEvaluatingJavaScriptFromString("document.html.height"))
         let height = CGFloat((webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")! as NSString).doubleValue + 10)
+//        print(postContent[webView.tag])
+        
         if (postHeight[webView.tag] == height) {
             return
         }
         postHeight[webView.tag] = height
+//        postContent[webView.tag] =
+        postImgs[webView.tag] = globalDataProcessor.GetImageUrls(webView.stringByEvaluatingJavaScriptFromString("document.body.getElementsByClassName('post-content')[0].innerHTML")!)
+        print(postImgs)
         tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: webView.tag, inSection: 0)], withRowAnimation: .None)
     }
-    
+
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if request.URL!.absoluteString.hasPrefix("http") {
+            print(request.URL?.absoluteString)
+            return false
+        } else {
+            return true
+        }
+    }
 }
