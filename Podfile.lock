@@ -1,10 +1,16 @@
 PODS:
   - Alamofire (3.1.3)
+  - NYTPhotoViewer (0.1.2)
+  - p2.OAuth2 (2.1):
+    - SwiftKeychain (~> 0.1.5)
   - ReachabilitySwift (2.3.3)
+  - SwiftKeychain (0.1.5)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
+  - NYTPhotoViewer
+  - p2.OAuth2
   - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`)
   - SwiftyJSON
 
@@ -19,7 +25,10 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 9f93b56389e48def9220dd57d1f44b1927229a5a
+  NYTPhotoViewer: 874a57dd833238b52ab2e8d1c827356c763626c3
+  p2.OAuth2: 78da70ba63515176a4f5273fad960f36bbeac6d9
   ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
+  SwiftKeychain: 1387edad8b56c659daa93d9ffc99526bac5b0088
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0
