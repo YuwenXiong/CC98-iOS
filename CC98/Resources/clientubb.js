@@ -510,7 +510,7 @@ var ubb = {
 		codeSource: []
 	},
 	color: function (str) {
-		return str.replace(/\[color=(.[^\[\"\'\\\(\)\:\;]*)\](.*?)\[\/color\]/gi, "<span style=\"color:$1;\">$2</span>");
+		return str.replace(/\[color=(.[^\[\"\'\\\(\)\:\;]*)\]([\w\W]*?)\[\/color\]/gm, "<span style=\"color:$1;\">$2</span>");
 	},
 	i: function (str) {
 		return str.replace(/\[i\](.*?)\[\/i\]/gi, "<i>$1</i>");
@@ -615,14 +615,14 @@ var ubb = {
 			if (canimgcode) {
 				//share image
 				pattern = /\[IMG=0\](http:\/\/share\.cc98\.org\/[A-Za-z0-9]+)(.file)?\[\/IMG\]/gi;
-				str = str.replace(pattern, "<br /><a onfocus=this.blur() href=\"$1\" target=_blank><img src=\"$1\" border=0 alt=\"按此在新窗口浏览图片\" class=\"resizeable\" /></a>");
+				str = str.replace(pattern, "<br /><img src=\"$1\" border=0 alt=\"按此在新窗口浏览图片\" class=\"resizeable\" />");
 				pattern = /\[IMG(=1)?\](http:\/\/share\.cc98\.org\/[A-Za-z0-9]+)(.file)?\[\/IMG\]/gi;
-				str = str.replace(pattern, '<br /><a onfocus="this.blur();" href="$2" target="_blank" title="按此浏览图片" class="clickloadImage" onclick="this.innerHTML=loadImg(this.href);this.onclick=function(){}; return false;"><img src="' + icondir + 'file.gif" border="0">$2</a>');
+				str = str.replace(pattern, '<br /><img src="$2" border="0" class="resizeable">');
 				//end share image
 				pattern = /\[IMG=0\](.[^\[\'\"\(\)]*)(gif|jpg|jpeg|bmp|png)\[\/IMG\]/gi;
-				str = str.replace(pattern, "<br /><a onfocus=this.blur() href=\"$1$2\" target=_blank><img src=\"$1$2\" border=0 alt=\"按此在新窗口浏览图片\" class=\"resizeable\" /></a>");
+				str = str.replace(pattern, "<br /><img src=\"$1$2\" border=0 alt=\"按此在新窗口浏览图片\" class=\"resizeable\" />");
 				pattern = /\[IMG(=1)?\](.[^\[\'\"\(\)]*)(gif|jpg|jpeg|bmp|png)\[\/IMG\]/gi;
-				str = str.replace(pattern, '<br /><a onfocus="this.blur();" href="$2$3" target="_blank" title="按此浏览图片" class="clickloadImage" onclick="this.innerHTML=loadImg(this.href);this.onclick=function(){}; return false;"><img src="' + icondir + '$3.gif" border="0">$2$3</a>');
+				str = str.replace(pattern, '<br /><img src="$2$3" border="0" class="resizeable">');
 				pattern = /\[UPLOAD=(gif|jpg|jpeg|bmp|png)\](http:\/\/file\.cc98\.org\/.[^\[\'\"\:\(\)]*)(gif|jpg|jpeg|bmp|png)\[\/UPLOAD\]/gi;
 				str = str.replace(pattern, "<br /><a href=\"$2$1\" target=\"_blank\"><img src=\"$2$1\" border=0 alt=\"按此在新窗口浏览图片\" class=\"resizeable\"></a>");
 				pattern = /\[UPLOAD=(gif|jpg|jpeg|bmp|png)\](https:\/\/rvpn.zju.edu.cn\/web\/1\/http\/0\/file\.cc98\.org\/.[^\[\'\"\:\(\)]*)(gif|jpg|jpeg|bmp|png)\[\/UPLOAD\]/gi;
@@ -633,9 +633,9 @@ var ubb = {
 				str = str.replace(pattern, '<br /><a onfocus="this.blur();" href="$2$1" target="_blank" title="按此浏览图片" class="clickloadImage" onclick="this.innerHTML=loadImg(this.href);this.onclick=function(){}; return false;"><img src="' + icondir + '$1.gif" border="0">$2$1</a>');
 			} else {
 				pattern = /\[IMG([=]*)([01]*)\](http|https|ftp):\/\/(.[^\[\'\"\:\(\)]*)\[\/IMG\]/gi;
-				str = str.replace(pattern, '<br><a onfocus="this.blur();" href="$3://$4" target="_blank" onclick="this.innerHTML=loadImg(this.href);this.onclick=function(){}; return false;"><img src="' + icondir + 'gif.gif" border="0">$3://$4</a>');
+				str = str.replace(pattern, '<br><img src="$3://$4" border="0">');
 				pattern = /\[UPLOAD=(gif|jpg|jpeg|bmp|png)([,]*)([01]*)\](http:\/\/file\.cc98\.org\/.[^\[\'\"\:\(\)]*)(gif|jpg|jpeg|bmp|png)\[\/UPLOAD\]/gi;
-				str = str.replace(pattern, '<br><a href="$4$5" target="_blank" class="clickloadImage"  onclick="this.innerHTML=loadImg(this.href);this.onclick=function(){}; return false;"><img src="' + icondir + '$5.gif" border=0>$4$5</a>');
+				str = str.replace(pattern, '<br><img src="$4$5" border=0>');
 			}
 		}
 		return str;
@@ -650,10 +650,10 @@ var ubb = {
 		return str;
 	},
 	quote: function (str) {
-		str = str.replace(/\[QUOTE=1\](.*?)\[\/QUOTE\]/gi, "<div style=\"width:100%\" class=\"" + tdclass + "\"><div class=\"quoteMaxHeightDiv\" style=\"overflow:auto; padding:5px 5px 5px 5px;\">$1</div></div>");
-		str = str.replace(/\[QUOTE=0\](.*?)\[\/QUOTE\]/gi, "<div style=\"width:100%\" class=\"" + tdclass + "\"><div style=\"overflow:auto; padding:5px 5px 5px 5px;\">$1</div></div>");
-		str = str.replace(/\[QUOTE\](.*?)\[\/QUOTE\]/gi, "<div style=\"width:100%\" class=\"" + tdclass + "\"><div style=\"overflow:auto; padding:5px 5px 5px 5px;\">$1</div></div>");
-		str = str.replace(/\[QUOTEX\](.*?)<BR>(.*?)\[\/QUOTEX\]/gi, "<div style=\"width:100%\" class=\"" + tdclass + "\"><div style=\"padding-left:5px; line-height:21px;\"><b>$1</b></div><div class=\"quoteMaxHeightDiv\" style=\"overflow:auto; padding-left:5px;\">$2</div></div>");
+		str = str.replace(/\[QUOTE=1\]([\w\W]*?)\[\/QUOTE\]/gim, "<div style=\"width:100%\" class=\"" + tdclass + "\"><div class=\"quoteMaxHeightDiv\" style=\"overflow:auto; padding:5px 5px 5px 5px;\">$1</div></div>");
+		str = str.replace(/\[QUOTE=0\]([\w\W]*?)\[\/QUOTE\]/gim, "<div style=\"width:100%\" class=\"" + tdclass + "\"><div style=\"overflow:auto; padding:5px 5px 5px 5px;\">$1</div></div>");
+		str = str.replace(/\[QUOTE\]([\w\W]*?)\[\/QUOTE\]/gim, "<div style=\"width:100%\" class=\"" + tdclass + "\"><div style=\"overflow:auto; padding:5px 5px 5px 5px;\">$1</div></div>");
+		str = str.replace(/\[QUOTEX\]([\w\W]*?)<BR>(.*?)\[\/QUOTEX\]/gim, "<div style=\"width:100%\" class=\"" + tdclass + "\"><div style=\"padding-left:5px; line-height:21px;\"><b>$1</b></div><div class=\"quoteMaxHeightDiv\" style=\"overflow:auto; padding-left:5px;\">$2</div></div>");
 		return str;
 	},
 	table: function (str) {
@@ -770,8 +770,8 @@ var ubb = {
 			str = str.replace(/\[url\](http\:\/\/((([a-z]+)\.cc98\.org)|(([a-z\.]+)\.zju\.edu\.cn))\/(.[^\[\'\"\:\(\)]*))\[\/url\]/ig, '<a href="$1" target="_blank">$1</a>');
 			str = str.replace(/\[url=(http\:\/\/((([a-z]+)\.cc98\.org)|(([a-z\.]+)\.zju\.edu\.cn))\/(.[^\[\'\"\:\(\)]*))\](.*?)\[\/url\]/ig, '<a href="$1" target="_blank">$8</a>');
 
-			// str = str.replace(/\[url\](([a-z0-9\.\/])+((\/)?(.[^\[\'\"\:\(\)]*))?)\[\/url\]/ig, '<a href="$1" target="_blank">$1</a>');
-			// str = str.replace(/\[url=(([a-z0-9\.\/])+((\/)?(.[^\[\'\"\:\(\)]*))?)\](.*?)\[\/url\]/ig, '<a href="$1" target="_blank">$6</a>');
+//			 str = str.replace(/\[url\](([a-z0-9\.\/])+((\/)?(.[^\[\'\"\:\(\)]*))?)\[\/url\]/ig, '<a href="$1" target="_blank">$1</a>');
+//			 str = str.replace(/\[url=(([a-z0-9\.\/])+((\/)?(.[^\[\'\"\:\(\)]*))?)\](.*?)\[\/url\]/ig, '<a href="$1" target="_blank">$6</a>');
 
 			str = str.replace(/\[url\](.[^\[]*)\[\/url\]/ig, '');
 			str = str.replace(/\[url=(.[^\[\'\"\(\)]*)\](.*?)\[\/url\]/ig, '');

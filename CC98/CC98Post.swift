@@ -15,7 +15,12 @@ class CC98Post {
     init(postInfo: JSON) {
         self.title = postInfo["title"].stringValue
         self.postTime = postInfo["time"].stringValue.stringByReplacingOccurrencesOfString("T", withString: " ")
-        self.author = CC98User(userID: postInfo["userId"].intValue)
+        if postInfo["isAnomynous"].boolValue {
+            self.author = CC98User()
+        }
+        else {
+            self.author = CC98User(userID: postInfo["userId"].intValue)
+        }
         self.floor = postInfo["floor"].stringValue
         self.content = postInfo["content"].stringValue.stringByReplacingOccurrencesOfString("\r\n", withString: "<br>")
         self.content = globalDataProcessor.ParsePostContent(self)

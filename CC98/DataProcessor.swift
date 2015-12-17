@@ -32,9 +32,9 @@ class DataProcessor {
         }
     }
     func GetJSON(URL: String) -> JSON {
-        if networkStatus == "No Connection" {
-            return "" as JSON
-        }
+//        if networkStatus == "No Connection" {
+//            return "" as JSON
+//        }
         var flag = false
         Alamofire.request(.GET, URL, headers: ["Content-Type": "application/json"]).responseJSON {
             response in
@@ -145,6 +145,11 @@ class DataProcessor {
         var content = post.content
         var avatar = post.author.avatar
         content = content.stringByReplacingOccurrencesOfString("[upload=jpg,1]", withString: "[upload=jpg]")
+        content = content.stringByReplacingOccurrencesOfString("[upload=jpeg,1]", withString: "[upload=jpeg]")
+        content = content.stringByReplacingOccurrencesOfString("[upload=gif,1]", withString: "[upload=gif]")
+        content = content.stringByReplacingOccurrencesOfString("[upload=bmp,1]", withString: "[upload=bmp]")
+        content = content.stringByReplacingOccurrencesOfString("[upload=png,1]", withString: "[upload=png]")
+//        content = content.stringByReplacingOccurrencesOfString("quote]", withString: "quotex]")
         if networkStatus == "Cellular" {
             content = content.stringByReplacingOccurrencesOfString("http://file.cc98.org", withString: "https://rvpn.zju.edu.cn/web/1/http/0/file.cc98.org")
 //            print(content)
@@ -177,6 +182,10 @@ class DataProcessor {
         htmlText.replaceOccurrencesOfString("${content}", withString: "<div id=\"ubbcode1\">" + content + "</div><script>searchubb('ubbcode1',1,'tablebody1');</script>", options: NSStringCompareOptions(rawValue: 0), range: NSMakeRange(0, htmlText.length))
         htmlText.replaceOccurrencesOfString("${i}", withString: post.floor, options: NSStringCompareOptions(rawValue: 0), range: NSMakeRange(0, htmlText.length))
         finalText.appendString(htmlText as String)
+        if post.author.signature != "" {
+            finalText.appendString("<div class=\"post-content\">-------------------------------------------------------</div><div class=\"post-content\">")
+            finalText.appendString("<div id=\"ubbcode2\">" + post.author.signature + "</div><script>searchubb('ubbcode2', 1, 'tablebody1');</script></div>")
+        }
         finalText.appendString(endPart)
         print(finalText)
         return finalText as String

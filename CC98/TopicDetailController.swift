@@ -74,18 +74,18 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
             self.postHeight.append(0)
         }
         
-//        if isPullRefresh {
+        if isPullRefresh {
             self.tableView.reloadData()
-//        } else {
-//            self.tableView.beginUpdates()
-//            for i in (self.posts.count - posts.count)...(self.posts.count - 1) {
-//            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .None)
-//            }
-//            self.tableView.endUpdates()
-//            for i in (self.posts.count - posts.count)...(self.posts.count - 1) {
-//                self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .None)
-//            }
-//        }
+        } else {
+            self.tableView.beginUpdates()
+            for i in (self.posts.count - posts.count)...(self.posts.count - 1) {
+            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .None)
+            }
+            self.tableView.endUpdates()
+            for i in (self.posts.count - posts.count)...(self.posts.count - 1) {
+                self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .None)
+            }
+        }
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
