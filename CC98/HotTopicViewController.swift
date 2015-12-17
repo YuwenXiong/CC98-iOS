@@ -83,7 +83,12 @@ class HotTopicViewController:UITableViewController{
         }
         cell.boardName.text=topic.boardName
         cell.createTime.text=topic.time
+        cell.title.adjustsFontSizeToFitWidth=true;
+        cell.authorName.adjustsFontSizeToFitWidth=true;
+        cell.boardName.adjustsFontSizeToFitWidth=true;
+        cell.createTime.adjustsFontSizeToFitWidth=true;
         cell.updateConstraintsIfNeeded()
+        
         // cell.contentView.backgroundColor = UIColor.grayColor()
         
         // cell.selectedBackgroundView = cell.containerView

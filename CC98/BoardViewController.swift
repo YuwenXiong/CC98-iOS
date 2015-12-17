@@ -14,9 +14,16 @@ class BoardViewController:UITableViewController{
     var thisBoard:CC98Board?
     var isRoot:Bool=true
     var loading:Bool = false
+    @IBOutlet weak var thisBoardView: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadData(true)
+        if isRoot{
+            thisBoardView.title="所有版面"
+        }
+        else{
+            thisBoardView.title=thisBoard?.name
+        }
         
         self.tableView.estimatedRowHeight = 120;
         self.tableView.rowHeight = UITableViewAutomaticDimension
