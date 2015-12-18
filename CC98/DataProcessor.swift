@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 import Haneke
+import JLToast
 
 class DataProcessor {
     var json: SwiftyJSON.JSON = nil
@@ -17,60 +18,69 @@ class DataProcessor {
     let cache = Shared.JSONCache
     func SetNetworkStatus(networkStatus: String) {
         self.networkStatus = networkStatus
-        if networkStatus == "Cellular" {
+        if networkStatus == "Cellular" && userDefaults.valueForKey("VPN_Switch") as! Bool {
+            
             baseURL = "https://rvpn.zju.edu.cn/web/1/http/0/api.cc98.org:80/"
-            //            var flag = false
-            Alamofire.request(.POST, "https://rvpn.zju.edu.cn/por/login_psw.csp", parameters: ["svpn_name": "3130000829", "svpn_password": "19950723xyw"], headers: ["Content-Type": "application/x-www-form-urlencoded"]).responseData {
+            baseURLS = "https://rvpn.zju.edu.cn/web/1/http/0/api.cc98.org:80/"
+            Alamofire.request(.POST, "https://rvpn.zju.edu.cn/por/login_psw.csp", parameters: ["svpn_name": userDefaults.valueForKey("VPN_Username") as! String, "svpn_password": userDefaults.valueForKey("VPN_Password") as! String], headers: ["Content-Type": "application/x-www-form-urlencoded"]).responseData {
                 response in
                 NSLog("Success: \(response.response)")
                 NSLog("Success: \(response.request)")
-                //                flag = true
             }
-            //            while (!flag) {
-            //                NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture())
-            //            }
         } else if networkStatus == "WiFi" {
             baseURL = "http://api.cc98.org/"
+            baseURLS = "https://api.cc98.org/"
         }
     }
     func GetJSON(URL: String) -> SwiftyJSON.JSON {
-        //        if networkStatus == "No Connection" {
-        //            return "" as JSON
-        //        }
         var flag = false
-        //        let semaphore = dispatch_semaphore_create(0)
-        //        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
         self.cache.fetch(URL: NSURL(string: URL)!).onSuccess {
             JSON in
             self.json = SwiftyJSON.JSON(data: JSON.asData())
-            //                dispatch_semaphore_signal(semaphore)
             flag = true
             } .onFailure {
                 failer in
                 flag = true
                 self.json = JSON("")
         }
-        
-        //            Alamofire.request(.GET, URL, headers: ["Content-Type": "application/json"]).responseJSON {
-        //                response in
-        ////                if (response.response != nil) {
-        ////                    let cachedURLResponse = NSCachedURLResponse(response: response.response!, data: response.data!)
-        ////                    NSURLCache.sharedURLCache().storeCachedResponse(cachedURLResponse, forRequest: response.request!)
-        //                    NSLog("Success: \(response.request?.URL)")
-        //                    self.json = JSON(data: response.data!)
-        ////                    dispatch_semaphore_signal(semaphore)
-        //                    flag = true
-        ////                } else {
-        ////                    self.json = JSON("")
-        //////                    dispatch_semaphore_signal(semaphore)
-        ////                    flag = true
-        ////                }
-        //            }
-        //        }
         while (!flag) {
             NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture())
         }
-        //        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        return self.json
+    }
+    
+    func GetSecurityJSON(URL: String) -> SwiftyJSON.JSON {
+        var flag = false
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+            oauth.afterAuthorizeOrFailure = { wasFailure, error in
+                if (wasFailure == false) {
+                    let req = oauth.request(forURL: NSURL(string: URL)!)
+                    req.addValue("Application/json", forHTTPHeaderField: "Accept")
+                    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+                    let session = NSURLSession.sharedSession()
+                    let task = session.dataTaskWithRequest(req) { data, response, error in
+                        if nil != error {
+                            JLToast.makeText("获取数据失败！").show()
+                        }
+                        else {
+                            // check the response and the data
+                            // you have just received data with an OAuth2-signed request!
+                            let data = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+                            //                print(json)
+                            JLToast.makeText("获取数据成功！").show()
+                            self.json = JSON(data)
+                            flag = true
+                        }
+                    }
+                    task.resume()
+                    }
+                }
+            }
+            oauth.authorize()
+        }
+        while (!flag) {
+            NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture())
+        }
         return self.json
     }
     
@@ -266,6 +276,22 @@ class DataProcessor {
             }
         }
         return result
+    }
+    
+    func getUserBoard() -> Array<CC98Board> {
+        var boards = Array<CC98Board>()
+        let boardsJSON = GetSecurityJSON(baseURLS + "Me/CustomBoards")
+        if boardsJSON.count > 0 {
+            for i in 0...boardsJSON.count-1 {
+                boards.append(CC98Board(data: boardsJSON[i]))
+            }
+        }
+        return boards
+    }
+
+    func getMe() -> CC98User {
+        let meJSON = GetSecurityJSON(baseURLS + "Me")
+        return CC98User(userInfo: meJSON)
     }
     
 }

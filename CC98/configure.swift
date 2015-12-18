@@ -10,12 +10,14 @@ import Foundation
 import ReachabilitySwift
 import p2_OAuth2
 var baseURL = "http://api.cc98.org/"
+var baseURLS = "https://api.cc98.org/"
 let siteURL = "http://www.cc98.org/"
 
 let globalDataProcessor = DataProcessor()
 let textDuration = 1.0
 //let globalReachabilityCheck = Reach()
 
+let userDefaults = NSUserDefaults.standardUserDefaults()
 
 
 let settings = [
@@ -30,3 +32,4 @@ let settings = [
     ] as OAuth2JSON                                 // the "as" part may or may not be needed
 
 let oauth = OAuth2CodeGrant(settings: settings)
+

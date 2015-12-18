@@ -31,28 +31,19 @@ class HotTopicViewController:UITableViewController{
     }
     
     func loadData(isPullRefresh:Bool){
-//        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
-            self.topics=globalDataProcessor.GetHotTopic();
-            self.loading = false
-            
-            if(isPullRefresh){
-                self.tableView.headerEndRefreshing()
-            }
-            else{
-                self.tableView.footerEndRefreshing()
-            }
-            if self.topics.count==0 {
-                JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
-//                let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
-//                alert.show()
-                return
-            }
-//        }
+        self.topics=globalDataProcessor.GetHotTopic();
+        self.loading = false
         
-        
-        
-        
-        
+        if(isPullRefresh){
+            self.tableView.headerEndRefreshing()
+        }
+        else{
+            self.tableView.footerEndRefreshing()
+        }
+        if self.topics.count==0 {
+            JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
+            return
+        }
     }
     
     

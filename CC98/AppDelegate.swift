@@ -19,26 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-////        let X = DataProcessor()
-//        let temp = globalDataProcessor.GetPost(791153221)
-//        print(temp.content)
-////        X.GetHotTopic()
-////        X.GetBoardTopic(744, from: 0, to: 19)
-////        X.GetTopicInfo(4582400)
-////        let posts = X.GetTopicPost(4582400, from: 0, to: 19)
-////        X.ParsePostContent(posts[0]["content"].string!)
-////        let boards = X.GetRootBoard()
-////        let posts = X.GetTopicPost(4582400, from: 0, to: 19)
-//        
-////        X.ParsePostContent(posts[0].content)
-////        X.GetPost(791058817)
-////        X.GetUserByName("Orpine")
-////        X.GetUserByID(524166)
-////        X.GetBoardRoot()
-////        X.GetSubBoards(2)
-////        X.GetBoardInfo(744)
-//
         
+        oauth.onAuthorize = { parameters in
+            print("Did authorize with parameters: \(parameters)")
+        }
+        oauth.onFailure = { error in        // `error` is nil on cancel
+            if nil != error {
+                print("Authorization went wrong: \(error.debugDescription)")
+            }
+        }
+        
+        oauth.authConfig.authorizeEmbedded = true
+        oauth.authConfig.ui.useSafariView = false
+
         do {
             reachability = try Reachability(hostname: "api.cc98.org")
             NSNotificationCenter.defaultCenter().addObserver(self,

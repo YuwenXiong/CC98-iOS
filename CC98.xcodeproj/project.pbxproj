@@ -39,6 +39,8 @@
 		CC71DF7D1C20309900276D0D /* ReachabilityNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71DF7C1C20309900276D0D /* ReachabilityNotifications.swift */; };
 		CC86424B1C23BD5D005FD7DF /* ExamplePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86424A1C23BD5D005FD7DF /* ExamplePhoto.swift */; };
 		CC86424D1C23BD75005FD7DF /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86424C1C23BD75005FD7DF /* PhotosProvider.swift */; };
+		CC86424F1C24344C005FD7DF /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86424E1C24344C005FD7DF /* SettingViewController.swift */; };
+		CC8642511C243CC9005FD7DF /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8642501C243CC9005FD7DF /* MeViewController.swift */; };
 		F9A7B39895763995670457FC /* Pods_CC98.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 680525184E7802334BE2B88A /* Pods_CC98.framework */; };
 		FF08252E1C205183007ED752 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF08252D1C205183007ED752 /* BoardViewController.swift */; };
 		FF0825301C205C62007ED752 /* TopicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF08252F1C205C62007ED752 /* TopicListViewController.swift */; };
@@ -130,6 +132,8 @@
 		CC71DF7C1C20309900276D0D /* ReachabilityNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityNotifications.swift; sourceTree = "<group>"; };
 		CC86424A1C23BD5D005FD7DF /* ExamplePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplePhoto.swift; sourceTree = "<group>"; };
 		CC86424C1C23BD75005FD7DF /* PhotosProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosProvider.swift; sourceTree = "<group>"; };
+		CC86424E1C24344C005FD7DF /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		CC8642501C243CC9005FD7DF /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		FF08252D1C205183007ED752 /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		FF08252F1C205C62007ED752 /* TopicListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListViewController.swift; sourceTree = "<group>"; };
 		FF0825311C2065A2007ED752 /* BoardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCell.swift; sourceTree = "<group>"; };
@@ -313,6 +317,8 @@
 				FFE221E01C2414EB00ED4D5B /* BookMarkViewController.swift */,
 				FFE221DE1C24149A00ED4D5B /* UserViewController.swift */,
 				FF08252D1C205183007ED752 /* BoardViewController.swift */,
+				CC86424E1C24344C005FD7DF /* SettingViewController.swift */,
+				CC8642501C243CC9005FD7DF /* MeViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -578,6 +584,7 @@
 				CC5C23521C1C9F2F00ADF5CF /* CC98Board.swift in Sources */,
 				FFB124BD1C1C8C0B00F4ECB2 /* HotTopicViewController.swift in Sources */,
 				FFB124C61C1C8CA800F4ECB2 /* RefreshBaseView.swift in Sources */,
+				CC8642511C243CC9005FD7DF /* MeViewController.swift in Sources */,
 				CC19242A1C1C7E85007F0669 /* SecondViewController.swift in Sources */,
 				FF0825321C2065A2007ED752 /* BoardCell.swift in Sources */,
 				CC5C234C1C1C808000ADF5CF /* CC98Post.swift in Sources */,
@@ -585,6 +592,7 @@
 				CC71DF7D1C20309900276D0D /* ReachabilityNotifications.swift in Sources */,
 				CC86424D1C23BD75005FD7DF /* PhotosProvider.swift in Sources */,
 				CC86424B1C23BD5D005FD7DF /* ExamplePhoto.swift in Sources */,
+				CC86424F1C24344C005FD7DF /* SettingViewController.swift in Sources */,
 				CC5C23501C1C9BC500ADF5CF /* CC98Topic.swift in Sources */,
 				FF0825361C219455007ED752 /* TopicCell1.swift in Sources */,
 				CC1924261C1C7E85007F0669 /* AppDelegate.swift in Sources */,
