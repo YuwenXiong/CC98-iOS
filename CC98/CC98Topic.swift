@@ -10,11 +10,13 @@ import Foundation
 import SwiftyJSON
 
 class CC98Topic {
-    var ID: Int, title: String, author: String, time: String, boardName: String, boardID: Int
+    var ID: Int = 0, title: String = "", author: String = "", time: String = "", boardName: String = "", boardID: Int = 0
     var from = 0, to = 0
     init(ID: Int) {
-        globalDataProcessor.GetTopicInfo(ID, callback: { (data: JSON) -> Void in {
-                self.ID = ID
+//        var flag = false
+//        let sem = dispatch_semaphore_create(0)
+        globalDataProcessor.GetTopicInfo(ID, callback: { (data: JSON) -> Void in
+                self.ID = data["id"].intValue
                 self.title = data["title"].stringValue
                 self.author = data["authorName"].stringValue
                 self.time = data["createTime"].stringValue.stringByReplacingOccurrencesOfString("T", withString: " ")
@@ -22,8 +24,14 @@ class CC98Topic {
                 self.boardName = globalDataProcessor.GetBoardInfo(self.boardID)["name"].stringValue
                 self.from = 0
                 self.to = 9
-            }
+//            dispatch_semaphore_signal(sem)
+//            flag = true
+//                print(self.title)
         })
+//        dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER)
+//        while (!flag) {
+//            NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture())
+//        }
     }
     func loadPosts(reset: Bool = false) -> Array<CC98Post> {
         if reset {

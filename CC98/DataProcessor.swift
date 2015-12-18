@@ -23,7 +23,7 @@ class DataProcessor {
                 NSLog("Success: \(response.response)")
                 NSLog("Success: \(response.request)")
 //                flag = true
-            }
+            }.resume()
 //            while (!flag) {
 //                NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture())
 //            }
@@ -59,7 +59,8 @@ class DataProcessor {
     // pass
     func GetHotTopic(callback:(Array<CC98Topic>) -> Void) -> Void {
         GetJSON(baseURL + "Topic/Hot", callback: { (topicsJSON: JSON) -> Void in
-            var topics = Array<CC98Topic>()
+            var topics = Array<CC98Topic>(
+            let group = dispatch_group_create()
             if topicsJSON.count > 0 {
                 for i in 0...topicsJSON.count-1 {
                     topics.append(CC98Topic(ID: topicsJSON[i]["id"].intValue))

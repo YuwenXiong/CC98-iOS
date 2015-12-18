@@ -31,12 +31,12 @@ class HotTopicViewController:UITableViewController{
     
     func loadData(isPullRefresh:Bool){
 //        self.loading = true
-        dispatch_async(dispatch_get_main_queue(), {
+//        dispatch_async(dispatch_get_main_queue(), {
             globalDataProcessor.GetHotTopic {
                 (topicData: Array<CC98Topic>) -> Void in
                     self.topics=topicData;
                     self.loading = false
-                    
+                    print(self.topics.count)
                     if(isPullRefresh){
                         self.tableView.headerEndRefreshing()
                     }
@@ -48,9 +48,10 @@ class HotTopicViewController:UITableViewController{
                         alert.show()
                         return
                     }
+                    self.tableView.reloadData()
             }
             
-        })
+//        })
     }
     
     
