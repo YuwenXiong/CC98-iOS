@@ -9,10 +9,12 @@
 import Foundation
 import SwiftyJSON
 import Alamofire
+import Haneke
 
 class DataProcessor {
-    var json: JSON = nil
+    var json: SwiftyJSON.JSON = nil
     var networkStatus: String = ""
+    let cache = Shared.JSONCache
     func SetNetworkStatus(networkStatus: String) {
         self.networkStatus = networkStatus
         if networkStatus == "Cellular" {
@@ -31,25 +33,44 @@ class DataProcessor {
             baseURL = "http://api.cc98.org/"
         }
     }
-    func GetJSON(URL: String) -> JSON {
+    func GetJSON(URL: String) -> SwiftyJSON.JSON {
 //        if networkStatus == "No Connection" {
 //            return "" as JSON
 //        }
         var flag = false
-        Alamofire.request(.GET, URL, headers: ["Content-Type": "application/json"]).responseJSON {
-            response in
-            NSLog("Success: \(response.request?.URL)")
-            self.json = JSON(data: response.data!)
-//            print(self.json)
-            flag = true
-        }
+//        let semaphore = dispatch_semaphore_create(0)
+//        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+            self.cache.fetch(URL: NSURL(string: URL)!).onSuccess {
+                JSON in
+                self.json = SwiftyJSON.JSON(data: JSON.asData())
+//                dispatch_semaphore_signal(semaphore)
+                flag = true
+            }
+        
+//            Alamofire.request(.GET, URL, headers: ["Content-Type": "application/json"]).responseJSON {
+//                response in
+////                if (response.response != nil) {
+////                    let cachedURLResponse = NSCachedURLResponse(response: response.response!, data: response.data!)
+////                    NSURLCache.sharedURLCache().storeCachedResponse(cachedURLResponse, forRequest: response.request!)
+//                    NSLog("Success: \(response.request?.URL)")
+//                    self.json = JSON(data: response.data!)
+////                    dispatch_semaphore_signal(semaphore)
+//                    flag = true
+////                } else {
+////                    self.json = JSON("")
+//////                    dispatch_semaphore_signal(semaphore)
+////                    flag = true
+////                }
+//            }
+//        }
         while (!flag) {
             NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture())
         }
+//        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
         return self.json
     }
     
-    func PostJSON(URL: String, parameters: Dictionary<String, AnyObject>) -> JSON {
+    func PostJSON(URL: String, parameters: Dictionary<String, AnyObject>) -> SwiftyJSON.JSON {
         Alamofire.request(.POST, URL, parameters: parameters, encoding: .JSON).responseJSON {
             response in
             NSLog("Success: \(response.request?.URL)")
@@ -84,7 +105,7 @@ class DataProcessor {
     }
     
     // pass
-    func GetTopicInfo(topicID: Int) -> JSON {
+    func GetTopicInfo(topicID: Int) -> SwiftyJSON.JSON {
         return GetJSON(baseURL + "Topic/\(topicID)")
     }
     
@@ -106,12 +127,12 @@ class DataProcessor {
     }
     // User
     // pass
-    func GetUserByName(userName: String) -> JSON {
+    func GetUserByName(userName: String) -> SwiftyJSON.JSON {
         return GetJSON(baseURL + "User/Name/\(userName)")
     }
     
     // pass
-    func GetUserByID(userID: Int) -> JSON {
+    func GetUserByID(userID: Int) -> SwiftyJSON.JSON {
         return GetJSON(baseURL + "User/\(userID)")
     }
     
@@ -129,11 +150,11 @@ class DataProcessor {
         return boards
     }
     // pass
-    func GetSubBoards(boardID: Int) -> JSON {
+    func GetSubBoards(boardID: Int) -> SwiftyJSON.JSON {
         return GetJSON(baseURL + "Board/\(boardID)/Subs")
     }
     // pass
-    func GetBoardInfo(boardID: Int) -> JSON {
+    func GetBoardInfo(boardID: Int) -> SwiftyJSON.JSON {
         return GetJSON(baseURL + "Board/\(boardID)")
     }
     

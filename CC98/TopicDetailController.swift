@@ -117,7 +117,7 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
     }
     
     override func tableView(tableView: UITableView,heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
-        return postHeight[indexPath.row]+10
+        return postHeight[indexPath.row]+20
     }
 
     func webViewDidFinishLoad(webView: UIWebView) {
