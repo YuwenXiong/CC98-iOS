@@ -65,6 +65,8 @@
 		FFB124D61C1C8D2E00F4ECB2 /* arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB124D21C1C8D2E00F4ECB2 /* arrow_up@2x.png */; };
 		FFB124D71C1C8D2E00F4ECB2 /* shadow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB124D31C1C8D2E00F4ECB2 /* shadow_up.png */; };
 		FFB124D81C1C8D2E00F4ECB2 /* shadow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB124D41C1C8D2E00F4ECB2 /* shadow_up@2x.png */; };
+		FFE221DF1C24149A00ED4D5B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE221DE1C24149A00ED4D5B /* UserViewController.swift */; };
+		FFE221E11C2414EB00ED4D5B /* BookMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE221E01C2414EB00ED4D5B /* BookMarkViewController.swift */; };
 		FFE422D11C1DBB120034B879 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE422D01C1DBB120034B879 /* PostCell.swift */; };
 		FFE422D21C1E9F3C0034B879 /* TopicDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE422CE1C1CABB30034B879 /* TopicDetailController.swift */; };
 /* End PBXBuildFile section */
@@ -153,6 +155,8 @@
 		FFB124D21C1C8D2E00F4ECB2 /* arrow_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_up@2x.png"; sourceTree = "<group>"; };
 		FFB124D31C1C8D2E00F4ECB2 /* shadow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow_up.png; sourceTree = "<group>"; };
 		FFB124D41C1C8D2E00F4ECB2 /* shadow_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shadow_up@2x.png"; sourceTree = "<group>"; };
+		FFE221DE1C24149A00ED4D5B /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		FFE221E01C2414EB00ED4D5B /* BookMarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarkViewController.swift; sourceTree = "<group>"; };
 		FFE422CE1C1CABB30034B879 /* TopicDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailController.swift; sourceTree = "<group>"; };
 		FFE422D01C1DBB120034B879 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -306,6 +310,8 @@
 				FF0825331C2190BF007ED752 /* UITools.swift */,
 				FFB124BC1C1C8C0B00F4ECB2 /* HotTopicViewController.swift */,
 				FF08252F1C205C62007ED752 /* TopicListViewController.swift */,
+				FFE221E01C2414EB00ED4D5B /* BookMarkViewController.swift */,
+				FFE221DE1C24149A00ED4D5B /* UserViewController.swift */,
 				FF08252D1C205183007ED752 /* BoardViewController.swift */,
 			);
 			name = Controller;
@@ -561,9 +567,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFB124CA1C1C8CA800F4ECB2 /* SplotLightHelper.swift in Sources */,
+				FFE221DF1C24149A00ED4D5B /* UserViewController.swift in Sources */,
 				FF0825341C2190BF007ED752 /* UITools.swift in Sources */,
 				FF08252E1C205183007ED752 /* BoardViewController.swift in Sources */,
 				FFB124C51C1C8CA800F4ECB2 /* BreakOutToRefreshView.swift in Sources */,
+				FFE221E11C2414EB00ED4D5B /* BookMarkViewController.swift in Sources */,
 				CC5C234B1C1C808000ADF5CF /* DataProcessor.swift in Sources */,
 				CC5C234E1C1C808000ADF5CF /* configure.swift in Sources */,
 				FFB124CE1C1C8CBF00F4ECB2 /* UIScrollView+Refresh.swift in Sources */,

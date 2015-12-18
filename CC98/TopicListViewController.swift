@@ -22,8 +22,8 @@ class TopicListViewController:UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData(true)
-        
-        self.tableView.estimatedRowHeight = 120;
+        self.title=board?.name
+     
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
         //        tableView.separatorStyle = .None

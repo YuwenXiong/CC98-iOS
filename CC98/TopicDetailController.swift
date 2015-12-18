@@ -33,6 +33,7 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosV
 //        self.tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorStyle = .None
         loadData(true)
+        self.title=topic?.title
         self.tableView.addHeaderWithCallback{
             self.loadData(true)
         }

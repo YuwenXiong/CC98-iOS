@@ -22,7 +22,7 @@ class HotTopicViewController:UITableViewController{
         
         self.tableView.estimatedRowHeight = 120;
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        
+        tableView.separatorInset=UIEdgeInsetsZero
         //        tableView.separatorStyle = .None
         self.tableView.addHeaderWithCallback{
             self.loadData(true)
@@ -86,10 +86,10 @@ class HotTopicViewController:UITableViewController{
         }
         cell.boardName.text=topic.boardName
         cell.createTime.text=topic.time
-        cell.title.adjustsFontSizeToFitWidth=true;
-        cell.authorName.adjustsFontSizeToFitWidth=true;
-        cell.boardName.adjustsFontSizeToFitWidth=true;
-        cell.createTime.adjustsFontSizeToFitWidth=true;
+//        cell.title.adjustsFontSizeToFitWidth=true;
+//        cell.authorName.adjustsFontSizeToFitWidth=true;
+//        cell.boardName.adjustsFontSizeToFitWidth=true;
+//        cell.createTime.adjustsFontSizeToFitWidth=true;
         cell.updateConstraintsIfNeeded()
         
         // cell.contentView.backgroundColor = UIColor.grayColor()
