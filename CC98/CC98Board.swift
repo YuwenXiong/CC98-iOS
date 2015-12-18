@@ -19,7 +19,7 @@ class CC98Board {
         self.ID = data["id"].intValue
         self.parent = data["parentId"].intValue
         self.name = data["name"].stringValue
-        self.isCategory = data["isCategory"].boolValue
+        self.isCategory = data["childBoardCount"].intValue != 0
 //        self.subBoardCount = data["childBoardCount"].intValue
         self.todayPosts = data["todayPostCount"].intValue
     }

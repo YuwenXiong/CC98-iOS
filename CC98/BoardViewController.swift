@@ -35,25 +35,28 @@ class BoardViewController:UITableViewController{
         self.tableView.headerBeginRefreshing()
     }
     func loadData(isPullRefresh:Bool){
-        if isRoot{
-            subBoards=globalDataProcessor.GetRootBoard();
-        }
-        else{
-            thisBoard!.GetSubBoards();
-            subBoards=thisBoard!.boards
-        }
-        self.loading = false
-        
-        if(isPullRefresh){
-            self.tableView.headerEndRefreshing()
-        }
-        else{
-            self.tableView.footerEndRefreshing()
-        }
-        if subBoards.count==0 {
-            let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
-            alert.show()
-            return
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+            if self.isRoot{
+                self.subBoards=globalDataProcessor.GetRootBoard();
+            }
+            else{
+                self.thisBoard!.GetSubBoards();
+                self.subBoards=self.thisBoard!.boards
+            }
+            self.loading = false
+            
+            if(isPullRefresh){
+                self.tableView.headerEndRefreshing()
+            }
+            else{
+                self.tableView.footerEndRefreshing()
+            }
+            if self.subBoards.count==0 {
+                let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
+                alert.show()
+                return
+            }
+            self.tableView.reloadData()
         }
     }
     

@@ -22,7 +22,7 @@ class HotTopicViewController:UITableViewController{
         self.tableView.estimatedRowHeight = 120;
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
-//        tableView.separatorStyle = .None
+        //        tableView.separatorStyle = .None
         self.tableView.addHeaderWithCallback{
             self.loadData(true)
         }
@@ -30,21 +30,22 @@ class HotTopicViewController:UITableViewController{
     }
     
     func loadData(isPullRefresh:Bool){
-        topics=globalDataProcessor.GetHotTopic();
-        self.loading = false
-        
-        if(isPullRefresh){
-            self.tableView.headerEndRefreshing()
-        }
-        else{
-            self.tableView.footerEndRefreshing()
-        }
-        if topics.count==0 {
-            let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
-            alert.show()
-            return
-        }
-        
+//        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+            self.topics=globalDataProcessor.GetHotTopic();
+            self.loading = false
+            
+            if(isPullRefresh){
+                self.tableView.headerEndRefreshing()
+            }
+            else{
+                self.tableView.footerEndRefreshing()
+            }
+            if self.topics.count==0 {
+                let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
+                alert.show()
+                return
+            }
+//        }
         
         
         
@@ -141,14 +142,14 @@ class HotTopicViewController:UITableViewController{
         
         if segue.identifier == "topicDetail" {
             
-          
-                let view = segue.destinationViewController as! TopicDetailController
-                let indexPath = self.tableView.indexPathForSelectedRow
-                
-                let topic = self.topics[indexPath!.row]
-                view.topic=topic
-                
-                
+            
+            let view = segue.destinationViewController as! TopicDetailController
+            let indexPath = self.tableView.indexPathForSelectedRow
+            
+            let topic = self.topics[indexPath!.row]
+            view.topic=topic
+            
+            
             
         }
     }
