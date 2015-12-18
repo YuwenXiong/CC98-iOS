@@ -7,14 +7,15 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class CC98Board {
     let ID: Int, parent: Int, name: String, isCategory: Bool, subBoardCount: Int, todayPosts: Int
     var from = 0, to = 9
     var boards = Array<CC98Board>()
-    init(ID: Int) {
-        let data = globalDataProcessor.GetBoardInfo(ID)
-        self.ID = ID
+    init(data: JSON) {
+//        let data = globalDataProcessor.GetBoardInfo(ID)
+        self.ID = data["id"].intValue
         self.parent = data["parentId"].intValue
         self.name = data["name"].stringValue
         self.isCategory = data["isCategory"].boolValue
@@ -26,7 +27,7 @@ class CC98Board {
             self.boards.removeAll()
             let subBoardData = globalDataProcessor.GetSubBoards(self.ID)
             for i in 0...self.subBoardCount-1 {
-                self.boards.append(CC98Board(ID: subBoardData[i]["id"].intValue))
+                self.boards.append(CC98Board(data: subBoardData[i]))
             }
         }
     }

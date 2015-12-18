@@ -23,7 +23,7 @@ class DataProcessor {
                 NSLog("Success: \(response.response)")
                 NSLog("Success: \(response.request)")
 //                flag = true
-            }.resume()
+            }
 //            while (!flag) {
 //                NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture())
 //            }
@@ -31,19 +31,22 @@ class DataProcessor {
             baseURL = "http://api.cc98.org/"
         }
     }
-    func GetJSON(URL: String, callback: (JSON) -> Void) -> Void {
-//        var flag = false
+    func GetJSON(URL: String) -> JSON {
+//        if networkStatus == "No Connection" {
+//            return "" as JSON
+//        }
+        var flag = false
         Alamofire.request(.GET, URL, headers: ["Content-Type": "application/json"]).responseJSON {
             response in
             NSLog("Success: \(response.request?.URL)")
-//            self.json =
-            callback(JSON(data: response.data!))
-//            flag = true
+            self.json = JSON(data: response.data!)
+//            print(self.json)
+            flag = true
         }
-//        while (!flag) {
-//            NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture())
-//        }
-//        return self.json
+        while (!flag) {
+            NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture())
+        }
+        return self.json
     }
     
     func PostJSON(URL: String, parameters: Dictionary<String, AnyObject>) -> JSON {
@@ -57,98 +60,86 @@ class DataProcessor {
     }
     
     // pass
-    func GetHotTopic(callback:(Array<CC98Topic>) -> Void) -> Void {
-        GetJSON(baseURL + "Topic/Hot", callback: { (topicsJSON: JSON) -> Void in
-            var topics = Array<CC98Topic>(
-            let group = dispatch_group_create()
-            if topicsJSON.count > 0 {
-                for i in 0...topicsJSON.count-1 {
-                    topics.append(CC98Topic(ID: topicsJSON[i]["id"].intValue))
-                }
-            }
-            callback(topics)
-        })
-//        return topics
-    }
-    
-    // pass
-    func GetBoardTopic(boardID: Int, from: Int, to: Int) -> Array<CC98Topic> {
-//        let topicsJSON = GetJSON(baseURL + "Topic/Board/\(boardID)?from=\(from)&to=\(to)")
+    func GetHotTopic() -> Array<CC98Topic> {
+        let topicsJSON = GetJSON(baseURL + "Topic/Hot")
         var topics = Array<CC98Topic>()
-//        if topicsJSON.count > 0 {
-//            for i in 0...topicsJSON.count-1 {
-//                topics.append(CC98Topic(ID: topicsJSON[i]["id"].intValue))
-//            }
-//        }
+        if topicsJSON.count > 0 {
+            for i in 0...topicsJSON.count-1 {
+                topics.append(CC98Topic(data: topicsJSON[i]))
+            }
+        }
         return topics
     }
     
     // pass
-    func GetTopicInfo(topicID: Int, callback: (JSON) -> Void) -> Void {
-        GetJSON(baseURL + "Topic/\(topicID)", callback: { (data: JSON) -> Void in
-            callback(data)
-        })
-//        return JSON("")
-//        return GetJSON()
+    func GetBoardTopic(boardID: Int, from: Int, to: Int) -> Array<CC98Topic> {
+        let topicsJSON = GetJSON(baseURL + "Topic/Board/\(boardID)?from=\(from)&to=\(to)")
+        var topics = Array<CC98Topic>()
+        if topicsJSON.count > 0 {
+            for i in 0...topicsJSON.count-1 {
+                topics.append(CC98Topic(data: topicsJSON[i]))
+            }
+        }
+        return topics
+    }
+    
+    // pass
+    func GetTopicInfo(topicID: Int) -> JSON {
+        return GetJSON(baseURL + "Topic/\(topicID)")
     }
     
     // pass
     func GetTopicPost(topicID: Int, from: Int, to: Int) -> Array<CC98Post> {
-//        let postsJSON = GetJSON(baseURL + "Post/Topic/\(topicID)?from=\(from)&to=\(to)")
+        let postsJSON = GetJSON(baseURL + "Post/Topic/\(topicID)?from=\(from)&to=\(to)")
         var posts = Array<CC98Post>()
-//        if postsJSON.count > 0 {
-//            for i in 0...postsJSON.count-1 {
-//                posts.append(CC98Post(postInfo: postsJSON[i]))
-//            }
-//        }
+        if postsJSON.count > 0 {
+            for i in 0...postsJSON.count-1 {
+                posts.append(CC98Post(postInfo: postsJSON[i]))
+            }
+        }
         return posts
     }
     
     // pass
     func GetPost(postID: Int) -> CC98Post {
-        return CC98Post(postInfo: JSON(""))
-//        return CC98Post(postInfo: GetJSON(baseURL + "Post/\(postID)"))
+        return CC98Post(postInfo: GetJSON(baseURL + "Post/\(postID)"))
     }
     // User
     // pass
     func GetUserByName(userName: String) -> JSON {
-        return JSON("")
-//        return GetJSON(baseURL + "User/Name/\(userName)")
+        return GetJSON(baseURL + "User/Name/\(userName)")
     }
     
     // pass
     func GetUserByID(userID: Int) -> JSON {
-        return JSON("")
-//        return GetJSON(baseURL + "User/\(userID)")
+        return GetJSON(baseURL + "User/\(userID)")
     }
     
     
     // Board
     // pass
     func GetRootBoard() -> Array<CC98Board> {
-//        let boardsJSON = GetJSON(baseURL + "Board/Root")
+        let boardsJSON = GetJSON(baseURL + "Board/Root")
         var boards = Array<CC98Board>()
-//        if boardsJSON.count > 0 {
-//            for i in 0...boardsJSON.count-1 {
-//                boards.append(CC98Board(ID: boardsJSON[i]["id"].intValue))
-//            }
-//        }
+        if boardsJSON.count > 0 {
+            for i in 0...boardsJSON.count-1 {
+                boards.append(CC98Board(data: boardsJSON[i]))
+            }
+        }
         return boards
     }
     // pass
     func GetSubBoards(boardID: Int) -> JSON {
-        return JSON("")
-//        return GetJSON(baseURL + "Board/\(boardID)/Subs")
+        return GetJSON(baseURL + "Board/\(boardID)/Subs")
     }
     // pass
     func GetBoardInfo(boardID: Int) -> JSON {
-        return JSON("")
-//        return GetJSON(baseURL + "Board/\(boardID)")
+        return GetJSON(baseURL + "Board/\(boardID)")
     }
     
-    func GetBoard(boardID: Int) -> CC98Board {
-        return CC98Board(ID: boardID)
-    }
+//    func GetBoard(boardID: Int) -> CC98Board {
+//        return CC98Board(ID: boardID)
+//    }
     
     func ParsePostContent(post: CC98Post) -> String {
         var content = post.content
