@@ -219,7 +219,8 @@ class DataProcessor {
         do {
             
             var begin = 0
-            let pattern1 = "https?://(?:[a-z0-9\\-]+\\.)+[a-z]{2,6}(?:/[^/#?]+)+\\.(?:jpg|gif|png|jpeg|bmp)"
+            let pattern1 = "(http(s?):)([/|.|\\w|\\s])*\\.(?:jpg|gif|png)"
+//            let pattern1 = "https?://(?:[a-z0-9\\-]+\\.)+[a-z]{2,6}(?:/[^/#?]+)+\\.(?:jpg|gif|png|jpeg|bmp)"
             let regex1 = try NSRegularExpression(pattern: pattern1, options: NSRegularExpressionOptions.CaseInsensitive)
             
             var res1 = regex1.rangeOfFirstMatchInString(content, options: NSMatchingOptions(rawValue: 0), range: NSMakeRange(begin,content.characters.count))
@@ -244,6 +245,23 @@ class DataProcessor {
         catch {
             print(error)
         }
-        return Array(Set(result))
+        return removeDuplicates(result)
     }
+    func removeDuplicates(array: [String]) -> [String] {
+        var encountered = Set<String>()
+        var result: [String] = []
+        for value in array {
+            if encountered.contains(value) {
+                // Do not add a duplicate element.
+            }
+            else {
+                // Add value to the set.
+                encountered.insert(value)
+                // ... Append the value.
+                result.append(value)
+            }
+        }
+        return result
+    }
+
 }

@@ -11,15 +11,19 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import NYTPhotoViewer
 
-class TopicDetailController:UITableViewController, UIWebViewDelegate{
+class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosViewControllerDelegate {
     
     var loading:Bool = false
     var topic:CC98Topic?
     var posts = Array<CC98Post>()
     var postContent = Array<String>()
-    var postImgs = Array<Array<String>>()
+    var postImgs = Array<Array<ExamplePhoto>>()
+    var postImgUrls = Array<Array<String>>()
     var postHeight = Array<CGFloat>()
+    let photosProvider = PhotosProvider()
+    var photosViewController: NYTPhotosViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.tableView.opaque = false
@@ -69,6 +73,7 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
             self.posts.removeAll(keepCapacity: false)
             self.postHeight.removeAll(keepCapacity: false)
             self.postContent.removeAll(keepCapacity: false)
+            self.postImgUrls.removeAll(keepCapacity: false)
             self.postImgs.removeAll(keepCapacity: false)
         }
         
@@ -77,7 +82,8 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
             self.posts.append(it)
             self.postHeight.append(0)
             self.postContent.append("")
-            self.postImgs.append(Array<String>())
+            self.postImgs.append(Array<ExamplePhoto>())
+            self.postImgUrls.append(Array<String>())
         }
         
         if isPullRefresh {
@@ -128,18 +134,89 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate{
             return
         }
         postHeight[webView.tag] = height
-//        postContent[webView.tag] =
-        postImgs[webView.tag] = globalDataProcessor.GetImageUrls(webView.stringByEvaluatingJavaScriptFromString("document.body.getElementsByClassName('post-content')[0].innerHTML")!)
-        print(postImgs)
+        postImgUrls[webView.tag] = globalDataProcessor.GetImageUrls(webView.stringByEvaluatingJavaScriptFromString("document.body.getElementsByClassName('post-content')[0].innerHTML")!)
+        postImgs[webView.tag] = self.photosProvider.getImages(postImgUrls[webView.tag])
+        
+//        print(postImgs)
         tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: webView.tag, inSection: 0)], withRowAnimation: .None)
     }
 
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if request.URL!.absoluteString.hasPrefix("http") {
             print(request.URL?.absoluteString)
+            if (postImgUrls[webView.tag].contains((request.URL?.absoluteString)!)) {
+                self.photosViewController = NYTPhotosViewController(photos: postImgs[webView.tag])
+                self.photosViewController!.delegate = self
+                self.presentViewController(photosViewController!, animated: true, completion: nil)
+            }
             return false
         } else {
             return true
         }
     }
+    
+    func photosViewController(photosViewController: NYTPhotosViewController!, handleActionButtonTappedForPhoto photo: NYTPhoto!) -> Bool {
+        
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            
+            let shareActivityViewController = UIActivityViewController(activityItems: [photo.image!], applicationActivities: nil)
+            
+            shareActivityViewController.completionWithItemsHandler = {(activityType: String?, completed: Bool, items: [AnyObject]?, error: NSError?) in
+                if completed {
+                    photosViewController.delegate?.photosViewController!(photosViewController, actionCompletedWithActivityType: activityType!)
+                }
+            }
+            
+            shareActivityViewController.popoverPresentationController?.barButtonItem = photosViewController.rightBarButtonItem
+            photosViewController.presentViewController(shareActivityViewController, animated: true, completion: nil)
+            
+            return true
+        }
+        
+        return false
+    }
+    
+    func photosViewController(photosViewController: NYTPhotosViewController!, referenceViewForPhoto photo: NYTPhoto!) -> UIView! {
+        //        if photo as? ExamplePhoto == photos[NoReferenceViewPhotoIndex] {
+        //            /** Swift 1.2
+        //             *  if photo as! ExamplePhoto == photos[PhotosProvider.NoReferenceViewPhotoIndex]
+        //             */
+        //            return nil
+        //        }
+        return nil
+    }
+    
+    func photosViewController(photosViewController: NYTPhotosViewController!, loadingViewForPhoto photo: NYTPhoto!) -> UIView! {
+        //        if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
+        //            let label = UILabel()
+        //            label.text = "Custom Loading..."
+        //            label.textColor = UIColor.greenColor()
+        //            return label
+        //        }
+        return nil
+    }
+    
+    func photosViewController(photosViewController: NYTPhotosViewController!, captionViewForPhoto photo: NYTPhoto!) -> UIView! {
+        //        if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
+        //            let label = UILabel()
+        //            label.text = "Custom Caption View"
+        //            label.textColor = UIColor.whiteColor()
+        //            label.backgroundColor = UIColor.redColor()
+        //            return label
+        //        }
+        return nil
+    }
+    
+    func photosViewController(photosViewController: NYTPhotosViewController!, didNavigateToPhoto photo: NYTPhoto!, atIndex photoIndex: UInt) {
+        print("Did Navigate To Photo: \(photo) identifier: \(photoIndex)")
+    }
+    
+    func photosViewController(photosViewController: NYTPhotosViewController!, actionCompletedWithActivityType activityType: String!) {
+        print("Action Completed With Activity Type: \(activityType)")
+    }
+    
+    func photosViewControllerDidDismiss(photosViewController: NYTPhotosViewController!) {
+        print("Did dismiss Photo Viewer: \(photosViewController)")
+    }
+    
 }
