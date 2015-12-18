@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import JLToast
 
 class BoardViewController:UITableViewController{
     var subBoards=Array<CC98Board>()
@@ -52,8 +53,9 @@ class BoardViewController:UITableViewController{
                 self.tableView.footerEndRefreshing()
             }
             if self.subBoards.count==0 {
-                let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
-                alert.show()
+//                let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
+//                alert.show()
+                JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
                 return
             }
             self.tableView.reloadData()

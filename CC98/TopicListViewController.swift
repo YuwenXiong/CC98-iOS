@@ -12,6 +12,7 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import JLToast
 
 class TopicListViewController:UITableViewController{
     
@@ -54,8 +55,9 @@ class TopicListViewController:UITableViewController{
                 self.tableView.footerEndRefreshing()
             }
             if topics.count==0 && isPullRefresh{
-                let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
-                alert.show()
+                JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
+//                let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
+//                alert.show()
                 return
             }
             

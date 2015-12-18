@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import JLToast
 
 class HotTopicViewController:UITableViewController{
     
@@ -41,8 +42,9 @@ class HotTopicViewController:UITableViewController{
                 self.tableView.footerEndRefreshing()
             }
             if self.topics.count==0 {
-                let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
-                alert.show()
+                JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
+//                let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
+//                alert.show()
                 return
             }
 //        }

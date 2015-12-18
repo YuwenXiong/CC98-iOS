@@ -12,6 +12,7 @@ import Foundation
 import UIKit
 import SwiftyJSON
 import NYTPhotoViewer
+import JLToast
 
 class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosViewControllerDelegate {
     
@@ -60,8 +61,9 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosV
             self.tableView.footerEndRefreshing()
         }
         if posts.count==0 && isPullRefresh{
-            let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
-            alert.show()
+            JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
+//            let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
+//            alert.show()
             return
         }
         

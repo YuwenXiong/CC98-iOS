@@ -13,6 +13,7 @@ var baseURL = "http://api.cc98.org/"
 let siteURL = "http://www.cc98.org/"
 
 let globalDataProcessor = DataProcessor()
+let textDuration = 1.0
 //let globalReachabilityCheck = Reach()
 
 
