@@ -11,6 +11,7 @@ import UIKit
 
 class SettingViewController: UIViewController {
     
+    @IBOutlet weak var container: UIView!
     @IBOutlet weak var VPN_Username: UITextField!
     @IBOutlet weak var VPN_Password: UITextField!
     @IBOutlet weak var VPN_Switch: UISwitch!
@@ -23,5 +24,20 @@ class SettingViewController: UIViewController {
     
     @IBAction func VPN_SwitchChanged(sender: AnyObject) {
         userDefaults.setValue(VPN_Switch.on, forKey: "VPN_Switch")
+        if VPN_Switch.on {
+            container.hidden=false
+        }
+        else{
+            container.hidden=true
+        }
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if VPN_Switch.on {
+            container.hidden=false
+        }
+        else{
+            container.hidden=true
+        }
     }
 }

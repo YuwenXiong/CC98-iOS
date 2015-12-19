@@ -18,7 +18,7 @@ class BoardViewController:UITableViewController{
     @IBOutlet weak var thisBoardView: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadData(true)
+       // self.loadData(true)
         if isRoot{
             thisBoardView.title="所有版面"
         }
@@ -33,7 +33,7 @@ class BoardViewController:UITableViewController{
         self.tableView.addHeaderWithCallback{
             self.loadData(true)
         }
-        self.tableView.headerBeginRefreshing()
+       self.tableView.headerBeginRefreshing()
     }
     func loadData(isPullRefresh:Bool){
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
@@ -42,6 +42,7 @@ class BoardViewController:UITableViewController{
             }
             else{
                 self.thisBoard!.GetSubBoards();
+                self.subBoards.removeAll(keepCapacity: false)
                 self.subBoards=self.thisBoard!.boards
             }
             self.loading = false

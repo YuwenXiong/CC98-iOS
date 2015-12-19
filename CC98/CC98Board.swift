@@ -27,6 +27,7 @@ class CC98Board {
         if self.isCategory {
             self.boards.removeAll(keepCapacity: false)
             let subBoardData = globalDataProcessor.GetSubBoards(self.ID)
+            print(subBoardData)
             if subBoardData.count != 0 {
                 for i in 0...subBoardData.count-1 {
                     self.boards.append(CC98Board(data: subBoardData[i]))

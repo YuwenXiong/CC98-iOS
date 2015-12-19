@@ -14,6 +14,7 @@ import SwiftyJSON
 
 class MeViewController: UITableViewController {
     var meInfo: CC98User?
+
     override func viewDidLoad() {
         self.title="Me"
         oauth.authConfig.authorizeContext = self
@@ -43,4 +44,38 @@ class MeViewController: UITableViewController {
         }
         oauth.authorize()
     }
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
+        return 2
+        
+    }
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section==1{
+//            return meInfo!.accountInfo.count
+            return 6
+        }
+        else{
+//            return meInfo!.userInfo.count
+            return 4
+        }
+    }
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell=tableView.dequeueReusableCellWithIdentifier("userProfileCell", forIndexPath: indexPath)as! MeCell
+        
+        if meInfo != nil{
+            if indexPath.section==1{
+                cell.title.text=meInfo!.accountInfo[indexPath.row]
+                cell.detail.text=meInfo!.accountInfoDetail[indexPath.row]
+            }
+            else{
+                cell.title.text=meInfo!.userInfo[indexPath.row]
+                cell.detail.text=meInfo!.userInfoDetail[indexPath.row]
+            }
+        }
+       return cell
+    }
+    
+    
+    
 }
