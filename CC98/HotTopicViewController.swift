@@ -31,7 +31,7 @@ class HotTopicViewController:UITableViewController{
     }
     
     func loadData(isPullRefresh:Bool){
-        self.topics=globalDataProcessor.GetHotTopic();
+        self.topics=globalDataProcessor.GetHotTopic(isPullRefresh);
         self.loading = false
         
         if(isPullRefresh){

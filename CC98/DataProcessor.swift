@@ -19,7 +19,8 @@ class DataProcessor {
     func SetNetworkStatus(networkStatus: String) {
         self.networkStatus = networkStatus
         if networkStatus == "Cellular" && userDefaults.valueForKey("VPN_Switch") as! Bool {
-            
+            print(userDefaults.valueForKey("VPN_Username") as! String)
+            print(userDefaults.valueForKey("VPN_Password") as! String)
             baseURL = "https://rvpn.zju.edu.cn/web/1/http/0/api.cc98.org:80/"
             baseURLS = "https://rvpn.zju.edu.cn/web/1/http/0/api.cc98.org:80/"
             Alamofire.request(.POST, "https://rvpn.zju.edu.cn/por/login_psw.csp", parameters: ["svpn_name": userDefaults.valueForKey("VPN_Username") as! String, "svpn_password": userDefaults.valueForKey("VPN_Password") as! String], headers: ["Content-Type": "application/x-www-form-urlencoded"]).responseData {
@@ -32,7 +33,12 @@ class DataProcessor {
             baseURLS = "https://api.cc98.org/"
         }
     }
-    func GetJSON(URL: String) -> SwiftyJSON.JSON {
+    func GetJSON(URL: String, refresh: Bool = false) -> SwiftyJSON.JSON {
+
+        if refresh {
+            self.cache.remove(key: URL)
+        }
+        
         var flag = false
         self.cache.fetch(URL: NSURL(string: URL)!).onSuccess {
             JSON in
@@ -95,8 +101,8 @@ class DataProcessor {
     }
     
     // pass
-    func GetHotTopic() -> Array<CC98Topic> {
-        let topicsJSON = GetJSON(baseURL + "Topic/Hot")
+    func GetHotTopic(refresh: Bool) -> Array<CC98Topic> {
+        let topicsJSON = GetJSON(baseURL + "Topic/Hot", refresh: refresh)
         var topics = Array<CC98Topic>()
         if topicsJSON.count > 0 {
             for i in 0...topicsJSON.count-1 {

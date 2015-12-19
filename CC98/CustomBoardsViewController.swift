@@ -32,7 +32,7 @@ class CustomBoardsViewController:UITableViewController{
     }
     
     func loadData(){
-        //        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+        print("reach")
         if self.loading {
             return
         }
@@ -44,7 +44,13 @@ class CustomBoardsViewController:UITableViewController{
                 req.addValue("Application/json", forHTTPHeaderField: "Accept")
                 let session = NSURLSession.sharedSession()
                 let task = session.dataTaskWithRequest(req) { data, response, error in
-                    if nil != error {
+                    print(response)
+                    if error != nil {
+                        self.boardsJson=""
+                        self.loading = false
+                        self.tableView.headerEndRefreshing()
+                        self.tableView.reloadData()
+                        print(error)
                         JLToast.makeText("获取用户信息失败！").show()
                     }
                     else {
@@ -52,28 +58,36 @@ class CustomBoardsViewController:UITableViewController{
                         let json = JSON(data)
                         print(json)
                         self.boardsJson=json
+                        self.customBoards.removeAll(keepCapacity: false)
+                        for _ in 0...json.count-1 {
+                            self.customBoards.append(CC98Board(data: ""))
+                        }
+                        self.loading = false
+                        
+                        
+                        self.tableView.headerEndRefreshing()
+                        
+                        if self.boardsJson.count==0 {
+                            JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
+                            //                let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
+                            //                alert.show()
+                            return
+                        }
                         // todo
                         // update info in view
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                           self.tableView.reloadData()
-                        })
+                        self.tableView.reloadData()
                     }
                 }
                 task.resume()
+            } else {
+                self.boardsJson=""
+                self.loading = false
+                self.tableView.headerEndRefreshing()
+                self.tableView.reloadData()
+                JLToast.makeText("获取用户信息失败！").show()
             }
         }
         oauth.authorize()
-        self.loading = false
-        
-        
-        self.tableView.headerEndRefreshing()
-        
-        if customBoards.count==0 {
-            JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
-            //                let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
-            //                alert.show()
-            return
-        }
         
         
         return
@@ -98,17 +112,17 @@ class CustomBoardsViewController:UITableViewController{
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let board = customBoards[indexPath.row]
-        if board.isCategory{
-            let boardView:BoardViewController=UITools.GetViewController("boardViewController")
-            boardView.thisBoard=board
-            boardView.isRoot=false
-            self.navigationController?.pushViewController(boardView, animated: true)
-        }
-        else{
+//        if board.isCategory{
+//            let boardView:BoardViewController=UITools.GetViewController("boardViewController")
+//            boardView.thisBoard=board
+//            boardView.isRoot=false
+//            self.navigationController?.pushViewController(boardView, animated: true)
+//        }
+//        else{
             let topicView:TopicListViewController=UITools.GetViewController("topicListViewController")
             topicView.board=board
             self.navigationController?.pushViewController(topicView, animated: true)
-        }
+//        }
         
         //TODO
     }
@@ -117,7 +131,17 @@ class CustomBoardsViewController:UITableViewController{
         
         //let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! TopicCell
         let cell = tableView.dequeueReusableCellWithIdentifier("BoardCell", forIndexPath: indexPath) as! BoardCell
-    //    cell.board=globalDataProcessor.GetBoardInfo(boardsJson[indexPath.row])
+        if boardsJson == nil {
+            return cell
+        }
+        if self.customBoards[indexPath.row].ID == 0 {
+            self.customBoards[indexPath.row] = CC98Board(data: globalDataProcessor.GetBoardInfo(boardsJson[indexPath.row].intValue))
+        }
+        cell.board = self.customBoards[indexPath.row]
+//        cell.board=
+//        if cell.board == nil {
+//            return cell
+//        }
         cell.boardName.text=cell.board!.name
         
         cell.updateConstraintsIfNeeded()
