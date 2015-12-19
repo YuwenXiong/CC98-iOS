@@ -16,7 +16,7 @@ class CustomBoardsViewController:UITableViewController{
     var meInfo: CC98User?
     var loading:Bool=false
     var customBoards=Array<CC98Board>()
-    var boardsJson:JSON
+    var boardsJson:SwiftyJSON.JSON = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
@@ -117,7 +117,7 @@ class CustomBoardsViewController:UITableViewController{
         
         //let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! TopicCell
         let cell = tableView.dequeueReusableCellWithIdentifier("BoardCell", forIndexPath: indexPath) as! BoardCell
-        cell.board=globalDataProcessor.GetBoardInfo(boardsJson[indexPath.row].int)
+    //    cell.board=globalDataProcessor.GetBoardInfo(boardsJson[indexPath.row])
         cell.boardName.text=cell.board!.name
         
         cell.updateConstraintsIfNeeded()
