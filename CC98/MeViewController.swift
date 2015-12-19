@@ -15,6 +15,7 @@ import SwiftyJSON
 class MeViewController: UITableViewController {
     var meInfo: CC98User?
     override func viewDidLoad() {
+        self.title="Me"
         oauth.authConfig.authorizeContext = self
         oauth.afterAuthorizeOrFailure = { wasFailure, error in
             if (wasFailure == false) {
