@@ -32,7 +32,7 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosV
 //        self.tableView.estimatedRowHeight = 150;
 //        self.tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorStyle = .None
-        loadData(true)
+//        loadData(true)
         self.title=topic?.title
         self.tableView.addHeaderWithCallback{
             self.loadData(true)
@@ -48,59 +48,63 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosV
     }
     
     func loadData(isPullRefresh:Bool){
-        if self.loading {
-            return
-        }
-        self.loading = true
-        let posts=topic!.loadPosts(isPullRefresh)
-        self.loading = false
-        
-        if(isPullRefresh){
-            self.tableView.headerEndRefreshing()
-        }
-        else{
-            self.tableView.footerEndRefreshing()
-        }
-        if posts.count==0 && isPullRefresh{
-            JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
-//            let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
-//            alert.show()
-            return
-        }
-        
-        if(posts.count==0){
-            return
-        }
-        
-        if(isPullRefresh){
-            self.posts.removeAll(keepCapacity: false)
-            self.postHeight.removeAll(keepCapacity: false)
-            self.postContent.removeAll(keepCapacity: false)
-            self.postImgUrls.removeAll(keepCapacity: false)
-            self.postImgs.removeAll(keepCapacity: false)
-        }
-        
-        
-        for it in posts {
-            self.posts.append(it)
-            self.postHeight.append(0)
-            self.postContent.append("")
-            self.postImgs.append(Array<ExamplePhoto>())
-            self.postImgUrls.append(Array<String>())
-        }
-        
-        if isPullRefresh {
-            self.tableView.reloadData()
-        } else {
-            self.tableView.beginUpdates()
-            for i in (self.posts.count - posts.count)...(self.posts.count - 1) {
-            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .None)
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+            if self.loading {
+                return
             }
-            self.tableView.endUpdates()
-            for i in (self.posts.count - posts.count)...(self.posts.count - 1) {
-                self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .None)
+            self.loading = true
+            let posts=self.topic!.loadPosts(isPullRefresh)
+            self.loading = false
+            
+            if(isPullRefresh){
+                self.tableView.headerEndRefreshing()
             }
+            else{
+                self.tableView.footerEndRefreshing()
+            }
+            if posts.count==0 && isPullRefresh{
+                JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
+                //            let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
+                //            alert.show()
+                return
+            }
+            
+            if(posts.count==0){
+                return
+            }
+            
+            if(isPullRefresh){
+                self.posts.removeAll(keepCapacity: false)
+                self.postHeight.removeAll(keepCapacity: false)
+                self.postContent.removeAll(keepCapacity: false)
+                self.postImgUrls.removeAll(keepCapacity: false)
+                self.postImgs.removeAll(keepCapacity: false)
+            }
+            
+            
+            for it in posts {
+                self.posts.append(it)
+                self.postHeight.append(0)
+                self.postContent.append("")
+                self.postImgs.append(Array<ExamplePhoto>())
+                self.postImgUrls.append(Array<String>())
+            }
+            
+            if isPullRefresh {
+                self.tableView.reloadData()
+            } else {
+                self.tableView.beginUpdates()
+                for i in (self.posts.count - posts.count)...(self.posts.count - 1) {
+                    self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .None)
+                }
+                self.tableView.endUpdates()
+                for i in (self.posts.count - posts.count)...(self.posts.count - 1) {
+                    self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .None)
+                }
+            }
+            
         }
+        
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

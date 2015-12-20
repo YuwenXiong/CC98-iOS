@@ -21,7 +21,7 @@ class TopicListViewController:UITableViewController{
     var topics = Array<CC98Topic>()
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData(true)
+//        loadData(true)
         self.title=board?.name
      
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -31,7 +31,6 @@ class TopicListViewController:UITableViewController{
             self.loadData(true)
         }
         self.tableView.addFooterWithCallback{
-            
             if(self.topics.count>0) {
                 self.loadData(false)
             }

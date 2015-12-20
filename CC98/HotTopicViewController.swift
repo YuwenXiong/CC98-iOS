@@ -18,7 +18,6 @@ class HotTopicViewController:UITableViewController{
     var topics = Array<CC98Topic>()
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData(true)
         
         self.tableView.estimatedRowHeight = 120;
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -31,11 +30,17 @@ class HotTopicViewController:UITableViewController{
     }
     
     func loadData(isPullRefresh:Bool){
+        if self.loading {
+            return
+        }
+        self.loading = true
         self.topics=globalDataProcessor.GetHotTopic(isPullRefresh);
+        print("1 \(self.topics.count)")
         self.loading = false
         
         if(isPullRefresh){
             self.tableView.headerEndRefreshing()
+            self.tableView.reloadData()
         }
         else{
             self.tableView.footerEndRefreshing()
@@ -61,7 +66,7 @@ class HotTopicViewController:UITableViewController{
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 10
+        return self.topics.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         

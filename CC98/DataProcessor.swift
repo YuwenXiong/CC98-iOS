@@ -18,7 +18,8 @@ class DataProcessor {
     let cache = Shared.JSONCache
     func SetNetworkStatus(networkStatus: String) {
         self.networkStatus = networkStatus
-        if networkStatus == "Cellular" && userDefaults.valueForKey("VPN_Switch") as! Bool {
+        let VPN_Swith = userDefaults.valueForKey("VPN_Switch")
+        if networkStatus == "Cellular" && VPN_Swith != nil && (VPN_Swith as! Bool ) {
             print(userDefaults.valueForKey("VPN_Username") as! String)
             print(userDefaults.valueForKey("VPN_Password") as! String)
             baseURL = "https://rvpn.zju.edu.cn/web/1/http/0/api.cc98.org:80/"
