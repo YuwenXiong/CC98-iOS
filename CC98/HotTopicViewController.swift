@@ -18,8 +18,8 @@ class HotTopicViewController:UITableViewController{
     var topics = Array<CC98Topic>()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tableView.estimatedRowHeight = 120;
+        self.tableView.updateConstraintsIfNeeded()
         self.tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorInset=UIEdgeInsetsZero
         //        tableView.separatorStyle = .None
@@ -33,21 +33,23 @@ class HotTopicViewController:UITableViewController{
         if self.loading {
             return
         }
-        self.loading = true
-        self.topics=globalDataProcessor.GetHotTopic(isPullRefresh);
-        print("1 \(self.topics.count)")
-        self.loading = false
-        
-        if(isPullRefresh){
-            self.tableView.headerEndRefreshing()
-            self.tableView.reloadData()
-        }
-        else{
-            self.tableView.footerEndRefreshing()
-        }
-        if self.topics.count==0 {
-            JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
-            return
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+            self.loading = true
+            self.topics=globalDataProcessor.GetHotTopic(isPullRefresh);
+            print("1 \(self.topics.count)")
+            self.loading = false
+            
+            if(isPullRefresh){
+                self.tableView.headerEndRefreshing()
+                self.tableView.reloadData()
+            }
+            else{
+                self.tableView.footerEndRefreshing()
+            }
+            if self.topics.count==0 {
+                JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
+                return
+            }
         }
     }
     
@@ -113,29 +115,29 @@ class HotTopicViewController:UITableViewController{
         cell.selectionStyle = .None;
     }
     
-    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        if prototypeCell == nil
-        {
-            self.prototypeCell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as? TopicCell
-        }
-        
-        
-        
-        
-        self.configureCell(prototypeCell!, indexPath: indexPath, isForOffscreenUse: false)
-        
-        self.prototypeCell?.setNeedsUpdateConstraints()
-        self.prototypeCell?.updateConstraintsIfNeeded()
-        self.prototypeCell?.setNeedsLayout()
-        self.prototypeCell?.layoutIfNeeded()
-        
-        
-        let size = self.prototypeCell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
-        
-        return size.height;
-        
-    }
+//    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        
+//        if prototypeCell == nil
+//        {
+//            self.prototypeCell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as? TopicCell
+//        }
+//        
+//        
+//        
+//        
+//        self.configureCell(prototypeCell!, indexPath: indexPath, isForOffscreenUse: false)
+//        
+//        self.prototypeCell?.setNeedsUpdateConstraints()
+//        self.prototypeCell?.updateConstraintsIfNeeded()
+//        self.prototypeCell?.setNeedsLayout()
+//        self.prototypeCell?.layoutIfNeeded()
+//        
+//        
+//        let size = self.prototypeCell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+//        
+//        return size.height;
+//        
+//    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         if segue.identifier == "topicDetail" {
