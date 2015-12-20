@@ -20,8 +20,6 @@
 		CC5C22E21C1C7FE100ADF5CF /* CC98PostListWebPage.html in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22791C1C7FE100ADF5CF /* CC98PostListWebPage.html */; };
 		CC5C22E31C1C7FE100ADF5CF /* clientubb.js in Resources */ = {isa = PBXBuildFile; fileRef = CC5C227A1C1C7FE100ADF5CF /* clientubb.js */; };
 		CC5C23401C1C7FE100ADF5CF /* mootools.core.js in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22D81C1C7FE100ADF5CF /* mootools.core.js */; };
-		CC5C23441C1C7FE100ADF5CF /* temp.html in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22DD1C1C7FE100ADF5CF /* temp.html */; };
-		CC5C23451C1C7FE100ADF5CF /* temp2.html in Resources */ = {isa = PBXBuildFile; fileRef = CC5C22DE1C1C7FE100ADF5CF /* temp2.html */; };
 		CC5C234B1C1C808000ADF5CF /* DataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C23471C1C808000ADF5CF /* DataProcessor.swift */; };
 		CC5C234C1C1C808000ADF5CF /* CC98Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C23481C1C808000ADF5CF /* CC98Post.swift */; };
 		CC5C234D1C1C808000ADF5CF /* CC98User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C23491C1C808000ADF5CF /* CC98User.swift */; };
@@ -120,8 +118,6 @@
 		CC5C22791C1C7FE100ADF5CF /* CC98PostListWebPage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CC98PostListWebPage.html; sourceTree = "<group>"; };
 		CC5C227A1C1C7FE100ADF5CF /* clientubb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = clientubb.js; sourceTree = "<group>"; };
 		CC5C22D81C1C7FE100ADF5CF /* mootools.core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = mootools.core.js; sourceTree = "<group>"; };
-		CC5C22DD1C1C7FE100ADF5CF /* temp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = temp.html; sourceTree = "<group>"; };
-		CC5C22DE1C1C7FE100ADF5CF /* temp2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = temp2.html; sourceTree = "<group>"; };
 		CC5C23471C1C808000ADF5CF /* DataProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProcessor.swift; sourceTree = "<group>"; };
 		CC5C23481C1C808000ADF5CF /* CC98Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CC98Post.swift; sourceTree = "<group>"; };
 		CC5C23491C1C808000ADF5CF /* CC98User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CC98User.swift; sourceTree = "<group>"; };
@@ -288,8 +284,6 @@
 				CC5C22791C1C7FE100ADF5CF /* CC98PostListWebPage.html */,
 				CC5C227A1C1C7FE100ADF5CF /* clientubb.js */,
 				CC5C22D81C1C7FE100ADF5CF /* mootools.core.js */,
-				CC5C22DD1C1C7FE100ADF5CF /* temp.html */,
-				CC5C22DE1C1C7FE100ADF5CF /* temp2.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -458,6 +452,7 @@
 				TargetAttributes = {
 					CC1924211C1C7E85007F0669 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 5N74A6KEW4;
 					};
 					CC1924371C1C7E85007F0669 = {
 						CreatedOnToolsVersion = 7.2;
@@ -496,7 +491,6 @@
 			files = (
 				CC1924321C1C7E85007F0669 /* LaunchScreen.storyboard in Resources */,
 				FFBB66BD1C2698BF000856AF /* Assets in Resources */,
-				CC5C23441C1C7FE100ADF5CF /* temp.html in Resources */,
 				CC5C22E01C1C7FE100ADF5CF /* CC98MessageWebPage.html in Resources */,
 				FFBB66B51C25F2F6000856AF /* profile@3x.png in Resources */,
 				FFBB66B01C25F2F6000856AF /* stack.png in Resources */,
@@ -510,7 +504,6 @@
 				CC5C23401C1C7FE100ADF5CF /* mootools.core.js in Resources */,
 				CC71DF761C1EC2F900276D0D /* ofMale.gif in Resources */,
 				FFBB66B71C25F2F6000856AF /* brightness@2x.png in Resources */,
-				CC5C23451C1C7FE100ADF5CF /* temp2.html in Resources */,
 				FFBB66BB1C25F2F6000856AF /* star@3x.png in Resources */,
 				FFBB66B31C25F2F6000856AF /* profile.png in Resources */,
 				CC71DF771C1EC2F900276D0D /* ofFeMale.gif in Resources */,
@@ -775,7 +768,9 @@
 			baseConfigurationReference = 7EA22B8EC066ED6C5D53FF27 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CC98/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Orpine.CC98;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -787,7 +782,9 @@
 			baseConfigurationReference = 23E8F5C119735D6D5A2F7974 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CC98/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Orpine.CC98;
 				PRODUCT_NAME = "$(TARGET_NAME)";
