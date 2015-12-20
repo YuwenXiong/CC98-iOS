@@ -24,6 +24,5 @@ class CC98Post {
         self.floor = postInfo["floor"].stringValue
         self.content = postInfo["content"].stringValue.stringByReplacingOccurrencesOfString("\r\n", withString: "<br>")
         self.content = globalDataProcessor.ParsePostContent(self)
-//        print(self.content)
     }
 }

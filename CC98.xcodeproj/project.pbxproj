@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0A8BD2180881B60157A04EE9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 827955ABB3EC01BC0BAB466D /* Pods.framework */; };
 		CC1924261C1C7E85007F0669 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1924251C1C7E85007F0669 /* AppDelegate.swift */; };
-		CC1924281C1C7E85007F0669 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1924271C1C7E85007F0669 /* FirstViewController.swift */; };
-		CC19242A1C1C7E85007F0669 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1924291C1C7E85007F0669 /* SecondViewController.swift */; };
 		CC19242D1C1C7E85007F0669 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC19242B1C1C7E85007F0669 /* Main.storyboard */; };
 		CC19242F1C1C7E85007F0669 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC19242E1C1C7E85007F0669 /* Assets.xcassets */; };
 		CC1924321C1C7E85007F0669 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1924301C1C7E85007F0669 /* LaunchScreen.storyboard */; };
@@ -36,7 +34,6 @@
 		CC71DF771C1EC2F900276D0D /* ofFeMale.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC71DF731C1EC2F900276D0D /* ofFeMale.gif */; };
 		CC71DF781C1EC2F900276D0D /* Male.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC71DF741C1EC2F900276D0D /* Male.gif */; };
 		CC71DF791C1EC2F900276D0D /* FeMale.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC71DF751C1EC2F900276D0D /* FeMale.gif */; };
-		CC71DF7D1C20309900276D0D /* ReachabilityNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71DF7C1C20309900276D0D /* ReachabilityNotifications.swift */; };
 		CC86424B1C23BD5D005FD7DF /* ExamplePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86424A1C23BD5D005FD7DF /* ExamplePhoto.swift */; };
 		CC86424D1C23BD75005FD7DF /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86424C1C23BD75005FD7DF /* PhotosProvider.swift */; };
 		CC86424F1C24344C005FD7DF /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86424E1C24344C005FD7DF /* SettingViewController.swift */; };
@@ -107,8 +104,6 @@
 		827955ABB3EC01BC0BAB466D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC1924221C1C7E85007F0669 /* CC98.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CC98.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC1924251C1C7E85007F0669 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CC1924271C1C7E85007F0669 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		CC1924291C1C7E85007F0669 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		CC19242C1C1C7E85007F0669 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC19242E1C1C7E85007F0669 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC1924311C1C7E85007F0669 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -139,7 +134,6 @@
 		CC71DF731C1EC2F900276D0D /* ofFeMale.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ofFeMale.gif; sourceTree = "<group>"; };
 		CC71DF741C1EC2F900276D0D /* Male.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Male.gif; sourceTree = "<group>"; };
 		CC71DF751C1EC2F900276D0D /* FeMale.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FeMale.gif; sourceTree = "<group>"; };
-		CC71DF7C1C20309900276D0D /* ReachabilityNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityNotifications.swift; sourceTree = "<group>"; };
 		CC86424A1C23BD5D005FD7DF /* ExamplePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplePhoto.swift; sourceTree = "<group>"; };
 		CC86424C1C23BD75005FD7DF /* PhotosProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosProvider.swift; sourceTree = "<group>"; };
 		CC86424E1C24344C005FD7DF /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -253,8 +247,6 @@
 				CC5C23461C1C806B00ADF5CF /* Data */,
 				CC5C22751C1C7FE100ADF5CF /* Resources */,
 				CC1924251C1C7E85007F0669 /* AppDelegate.swift */,
-				CC1924271C1C7E85007F0669 /* FirstViewController.swift */,
-				CC1924291C1C7E85007F0669 /* SecondViewController.swift */,
 				CC1924301C1C7E85007F0669 /* LaunchScreen.storyboard */,
 				CC19242B1C1C7E85007F0669 /* Main.storyboard */,
 				CC19242E1C1C7E85007F0669 /* Assets.xcassets */,
@@ -305,7 +297,6 @@
 		CC5C23461C1C806B00ADF5CF /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				CC71DF7C1C20309900276D0D /* ReachabilityNotifications.swift */,
 				CC5C234A1C1C808000ADF5CF /* configure.swift */,
 				CC5C23471C1C808000ADF5CF /* DataProcessor.swift */,
 				CC5C23481C1C808000ADF5CF /* CC98Post.swift */,
@@ -624,11 +615,9 @@
 				FFB124BD1C1C8C0B00F4ECB2 /* HotTopicViewController.swift in Sources */,
 				FFB124C61C1C8CA800F4ECB2 /* RefreshBaseView.swift in Sources */,
 				CC8642511C243CC9005FD7DF /* MeViewController.swift in Sources */,
-				CC19242A1C1C7E85007F0669 /* SecondViewController.swift in Sources */,
 				FF0825321C2065A2007ED752 /* BoardCell.swift in Sources */,
 				CC5C234C1C1C808000ADF5CF /* CC98Post.swift in Sources */,
 				FFB124C71C1C8CA800F4ECB2 /* RefreshConst.swift in Sources */,
-				CC71DF7D1C20309900276D0D /* ReachabilityNotifications.swift in Sources */,
 				CC86424D1C23BD75005FD7DF /* PhotosProvider.swift in Sources */,
 				CC86424B1C23BD5D005FD7DF /* ExamplePhoto.swift in Sources */,
 				CC86424F1C24344C005FD7DF /* SettingViewController.swift in Sources */,
@@ -638,7 +627,6 @@
 				FFB124C81C1C8CA800F4ECB2 /* RefreshFooterView.swift in Sources */,
 				FFE422D11C1DBB120034B879 /* PostCell.swift in Sources */,
 				FFB124CD1C1C8CBF00F4ECB2 /* SwiftNotice.swift in Sources */,
-				CC1924281C1C7E85007F0669 /* FirstViewController.swift in Sources */,
 				FFB124C91C1C8CA800F4ECB2 /* RefreshHeaderView.swift in Sources */,
 				FF9864B41C2588E6006F2E3B /* MeCell.swift in Sources */,
 				CC5C234D1C1C808000ADF5CF /* CC98User.swift in Sources */,

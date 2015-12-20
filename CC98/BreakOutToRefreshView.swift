@@ -170,16 +170,10 @@ extension BreakOutToRefreshView: UIScrollViewDelegate {
   }
   
   func scrollViewDidScroll(scrollView: UIScrollView) {
-//    println("\(scrollView.contentOffset)")
 
-    //let frameHeight = frame.size.height
     let yPosition = sceneHeight - (-scrollView.contentInset.top-scrollView.contentOffset.y)*2
-    
     breakOutScene.moveHandle(yPosition)
     
-//    if scrollView.contentOffset.y < -60 && !breakOutScene.isStarted {
-//      breakOutScene.start()
-//    }
   }
 }
 
@@ -342,26 +336,17 @@ class BreakOutScene: SKScene, SKPhysicsContactDelegate {
   }
   
   func moveHandle(value: CGFloat) {
-//    println("\(value)")
-    
     let paddle = childNodeWithName(paddleName)
-    
     paddle?.position.y = value
   }
   
   func didEndContact(contact: SKPhysicsContact) {
     var ballBody: SKPhysicsBody?
     var otherBody: SKPhysicsBody?
-    
-//    println("--------------------------------------------")
-//    println("A \(contact.bodyA) \(contact.bodyA.categoryBitMask) \(ballCategory)")
-//    println("B \(contact.bodyB) \(contact.bodyB.categoryBitMask) \(ballCategory)")
     if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
-//      println("first")
       ballBody = contact.bodyA
       otherBody = contact.bodyB
     } else {
-//      println("second")
       ballBody = contact.bodyB
       otherBody = contact.bodyA
     }
@@ -370,8 +355,6 @@ class BreakOutScene: SKScene, SKPhysicsContactDelegate {
       let minimalXVelocity = CGFloat(20.0)
       let minimalYVelocity = CGFloat(20.0)
       var velocity = ballBody!.velocity as CGVector
-//      println("ball category: \(ballBody?.categoryBitMask)")
-//      println("before \(velocity.dx) \(velocity.dy)")
       if velocity.dx > -minimalXVelocity && velocity.dx <= 0 {
         velocity.dx = -minimalXVelocity-1
       } else if velocity.dx > 0 && velocity.dx < minimalXVelocity {
@@ -382,7 +365,6 @@ class BreakOutScene: SKScene, SKPhysicsContactDelegate {
       } else if velocity.dy > 0 && velocity.dy < minimalYVelocity {
         velocity.dy = minimalYVelocity+1
       }
-//      println("after \(velocity.dx) \(velocity.dy)")
       ballBody?.velocity = velocity
     }
     

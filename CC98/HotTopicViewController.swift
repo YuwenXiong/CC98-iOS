@@ -36,7 +36,6 @@ class HotTopicViewController:UITableViewController{
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
             self.loading = true
             self.topics=globalDataProcessor.GetHotTopic(isPullRefresh);
-            print("1 \(self.topics.count)")
             self.loading = false
             
             if(isPullRefresh){

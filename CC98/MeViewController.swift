@@ -30,7 +30,6 @@ class MeViewController: UITableViewController {
                     else {
                         let data = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
                         let json = JSON(data)
-                        print(json)
                         self.meInfo = CC98User(userInfo: json)
                         // todo
                         // update info in view
@@ -52,12 +51,16 @@ class MeViewController: UITableViewController {
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section==1{
-//            return meInfo!.accountInfo.count
-            return 6
+            if meInfo == nil {
+                return 0
+            }
+            return meInfo!.accountInfo.count
         }
         else{
-//            return meInfo!.userInfo.count
-            return 4
+            if meInfo == nil {
+                return 0
+            }
+            return meInfo!.userInfo.count
         }
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

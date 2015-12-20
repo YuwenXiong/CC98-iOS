@@ -13,7 +13,6 @@ class CC98Topic {
     let ID: Int, title: String, author: String, time: String, boardName: String, boardID: Int
     var from = 0, to = 0
     init(data: JSON) {
-//        let data = globalDataProcessor.GetTopicInfo(ID)
         self.ID = data["id"].intValue
         self.title = data["title"].stringValue
         self.author = data["authorName"].stringValue

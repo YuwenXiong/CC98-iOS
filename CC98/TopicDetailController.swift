@@ -29,12 +29,7 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosV
     var photosViewController: NYTPhotosViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.tableView.opaque = false
-//        self.tableView.backgroundColor = UIColor.clearColor()
-//        self.tableView.estimatedRowHeight = 150;
-//        self.tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorStyle = .None
-//        loadData(true)
         self.title=topic?.title
         self.tableView.addHeaderWithCallback{
             self.loadData(true,refresh: true)
@@ -46,7 +41,6 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosV
             }
         }
         self.tableView.headerBeginRefreshing()
-//        tableView.hidden = false
     }
     
     func loadData(isPullRefresh:Bool,refresh:Bool){
@@ -67,8 +61,6 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosV
                 }
                 if posts.count==0 && isPullRefresh{
                     JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
-                    //            let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
-                    //            alert.show()
                     return
                 }
                 
@@ -121,8 +113,6 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosV
                 }
                 if posts.count==0 && isPullRefresh{
                     JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
-                    //            let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
-                    //            alert.show()
                     return
                 }
                 
@@ -193,7 +183,6 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosV
 
     func webViewDidFinishLoad(webView: UIWebView) {
         let height = CGFloat((webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")! as NSString).doubleValue + 10)
-//        print(postContent[webView.tag])
         
         if (postHeight[webView.tag] == height) {
             return
@@ -202,13 +191,11 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosV
         postImgUrls[webView.tag] = globalDataProcessor.GetImageUrls(webView.stringByEvaluatingJavaScriptFromString("document.body.getElementsByClassName('post-content')[0].innerHTML")!)
         postImgs[webView.tag] = self.photosProvider.getImages(postImgUrls[webView.tag])
         
-//        print(postImgs)
         tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: webView.tag, inSection: 0)], withRowAnimation: .None)
     }
 
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if request.URL!.absoluteString.hasPrefix("http") {
-            print(request.URL?.absoluteString)
             if (postImgUrls[webView.tag].contains((request.URL?.absoluteString)!)) {
                 self.photosViewController = NYTPhotosViewController(photos: postImgs[webView.tag])
                 self.photosViewController!.delegate = self

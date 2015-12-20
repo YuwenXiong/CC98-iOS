@@ -39,5 +39,11 @@ class SettingViewController: UIViewController {
         else{
             container.hidden=true
         }
-    }
+        if let username = userDefaults.valueForKey("VPN_Username") as? String {
+            VPN_Username.text = username
+        }
+        if let password = userDefaults.valueForKey("VPN_Password") as? String {
+            VPN_Password.text = password
+        }
+   }
 }

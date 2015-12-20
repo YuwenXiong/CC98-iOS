@@ -73,7 +73,6 @@ class DataProcessor {
                             // check the response and the data
                             // you have just received data with an OAuth2-signed request!
                             let data = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
-                            //                print(json)
                             JLToast.makeText("获取数据成功！").show()
                             self.json = JSON(data)
                             flag = true
@@ -89,16 +88,6 @@ class DataProcessor {
             NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture())
         }
         return self.json
-    }
-    
-    func PostJSON(URL: String, parameters: Dictionary<String, AnyObject>) -> SwiftyJSON.JSON {
-        Alamofire.request(.POST, URL, parameters: parameters, encoding: .JSON).responseJSON {
-            response in
-            NSLog("Success: \(response.request?.URL)")
-            self.json = JSON(data: response.data!)
-            print(self.json)
-        }
-        return json
     }
     
     // pass
@@ -199,7 +188,6 @@ class DataProcessor {
             avatar = avatar.stringByReplacingOccurrencesOfString("http://www.cc98.org", withString: "https://rvpn.zju.edu.cn/web/1/http/0/www.cc98.org")
             signature = signature.stringByReplacingOccurrencesOfString("http://file.cc98.org", withString: "https://rvpn.zju.edu.cn/web/1/http/0/file.cc98.org")
             signature = signature.stringByReplacingOccurrencesOfString("http://www.cc98.org", withString: "https://rvpn.zju.edu.cn/web/1/http/0/www.cc98.org")
-            print(avatar)
         }
         
         let htmlPath = NSBundle.mainBundle().pathForResource("CC98PostListWebPage", ofType: "html")
@@ -231,7 +219,6 @@ class DataProcessor {
             finalText.appendString("<div id=\"ubbcode2\">" + signature + "</div><script>searchubb('ubbcode2', 1, 'tablebody1');</script></div>")
         }
         finalText.appendString(endPart)
-        //        print(finalText)
         return finalText as String
     }
     
@@ -241,7 +228,7 @@ class DataProcessor {
             
             var begin = 0
             let pattern1 = "(http(s?):)([/|.|\\w|\\s])*\\.(?:jpg|gif|png)"
-            //            let pattern1 = "https?://(?:[a-z0-9\\-]+\\.)+[a-z]{2,6}(?:/[^/#?]+)+\\.(?:jpg|gif|png|jpeg|bmp)"
+//            let pattern1 = "https?://(?:[a-z0-9\\-]+\\.)+[a-z]{2,6}(?:/[^/#?]+)+\\.(?:jpg|gif|png|jpeg|bmp)"
             let regex1 = try NSRegularExpression(pattern: pattern1, options: NSRegularExpressionOptions.CaseInsensitive)
             
             var res1 = regex1.rangeOfFirstMatchInString(content, options: NSMatchingOptions(rawValue: 0), range: NSMakeRange(begin,content.characters.count))
@@ -257,7 +244,6 @@ class DataProcessor {
                 }
                 
                 res1 = regex1.rangeOfFirstMatchInString(content, options: NSMatchingOptions(rawValue: 0), range: NSMakeRange(begin,content.characters.count-begin))
-                print(res1)
                 if (res1.length == 0) {
                     break
                 }

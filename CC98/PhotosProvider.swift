@@ -25,7 +25,7 @@ class PhotosProvider: NSObject {
     }
     
     func downloadImageForPhoto(url: NSURL, str: NSAttributedString) -> ExamplePhoto{
-        var photo = ExamplePhoto(imageData: nil, attributedCaptionTitle: str)
+        let photo = ExamplePhoto(imageData: nil, attributedCaptionTitle: str)
         print("Download Started")
         print("lastPathComponent: " + (url.lastPathComponent ?? ""))
         getDataFromUrl(url) { (data, response, error)  in
@@ -49,12 +49,9 @@ class PhotosProvider: NSObject {
             //            return photoIndex != CustomEverythingPhotoIndex && photoIndex != DefaultLoadingSpinnerPhotoIndex
         }
         
-        print(imageUrls)
-        
         for photoIndex in 0 ..< imageUrls.count {
             let title = NSAttributedString(string: "\(photoIndex + 1)", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
             
-            print(imageUrls[photoIndex])
             let url = NSURL(string: imageUrls[photoIndex])!
             
             //            let photo = ExamplePhoto(imageData: UIImagePNGRepresentation(image!))

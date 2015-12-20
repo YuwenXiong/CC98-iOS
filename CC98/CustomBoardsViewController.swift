@@ -32,7 +32,6 @@ class CustomBoardsViewController:UITableViewController{
     }
     
     func loadData(){
-        print("reach")
         if self.loading {
             return
         }
@@ -44,7 +43,6 @@ class CustomBoardsViewController:UITableViewController{
                 req.addValue("Application/json", forHTTPHeaderField: "Accept")
                 let session = NSURLSession.sharedSession()
                 let task = session.dataTaskWithRequest(req) { data, response, error in
-                    print(response)
                     if error != nil {
                         self.boardsJson=""
                         self.loading = false
@@ -56,25 +54,18 @@ class CustomBoardsViewController:UITableViewController{
                     else {
                         let data = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
                         let json = JSON(data)
-                        print(json)
                         self.boardsJson=json
                         self.customBoards.removeAll(keepCapacity: false)
                         for _ in 0...json.count-1 {
                             self.customBoards.append(CC98Board(data: ""))
                         }
                         self.loading = false
-                        
-                        
                         self.tableView.headerEndRefreshing()
                         
                         if self.boardsJson.count==0 {
                             JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
-                            //                let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
-                            //                alert.show()
                             return
                         }
-                        // todo
-                        // update info in view
                         self.tableView.reloadData()
                     }
                 }

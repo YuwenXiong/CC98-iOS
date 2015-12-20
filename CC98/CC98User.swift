@@ -29,14 +29,6 @@ class CC98User {
           add(false,title:"生日",detail: userInfo["birthday"].stringValue)
         let temp=(userInfo["gender"] == 0 ? "男" : "女")
         add(false,title:"性别",detail:temp)
-        
-//        add(true)
-////        userInfo["lastLogOnTime"].stringValue.stringByReplacingOccurrencesOfString("T", withString: " ")
-//        self.profile["帖子总数"]=userInfo["postCount"].stringValue
-//        profile["用户头衔"]="1"
-//        profile["QQ"]=userInfo["qq"].stringValue
-//        print(profile[0].key)
-        
     }
     init() {
         self.nickName = ""
