@@ -15,6 +15,7 @@ class BoardViewController:UITableViewController{
     var thisBoard:CC98Board?
     var isRoot:Bool=true
     var loading:Bool = false
+    var loaded = false
     @IBOutlet weak var thisBoardView: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,16 +34,16 @@ class BoardViewController:UITableViewController{
         self.tableView.addHeaderWithCallback{
             self.loadData(true,refresh: true)
         }
-        self.loadData(true,refresh:false)
-//       self.tableView.headerBeginRefreshing()
+//        self.loadData(true,refresh:false)
+        self.tableView.headerBeginRefreshing()
     }
     func loadData(isPullRefresh:Bool,refresh:Bool){
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
             if self.isRoot{
-                self.subBoards=globalDataProcessor.GetRootBoard(refresh);
+                self.subBoards=globalDataProcessor.GetRootBoard(self.loaded && refresh);
             }
             else{
-                self.thisBoard!.GetSubBoards(refresh);
+                self.thisBoard!.GetSubBoards(self.loaded && refresh);
                 self.subBoards.removeAll(keepCapacity: false)
                 self.subBoards=self.thisBoard!.boards
             }
@@ -61,6 +62,7 @@ class BoardViewController:UITableViewController{
                 return
             }
             self.tableView.reloadData()
+            self.loaded = true
         }
     }
     
