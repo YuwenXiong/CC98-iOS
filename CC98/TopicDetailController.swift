@@ -23,6 +23,8 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosV
     var postImgs = Array<Array<ExamplePhoto>>()
     var postImgUrls = Array<Array<String>>()
     var postHeight = Array<CGFloat>()
+    var didPullheader:Bool=false
+    var loaded:Bool=false
     let photosProvider = PhotosProvider()
     var photosViewController: NYTPhotosViewController?
     override func viewDidLoad() {
@@ -35,28 +37,28 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosV
 //        loadData(true)
         self.title=topic?.title
         self.tableView.addHeaderWithCallback{
-            self.loadData(true)
+            self.loadData(true,refresh: true)
         }
         self.tableView.addFooterWithCallback{
             
             if(self.posts.count>0) {
-                self.loadData(false)
+                self.loadData(false,refresh:self.didPullheader)
             }
         }
         self.tableView.headerBeginRefreshing()
 //        tableView.hidden = false
     }
     
-    func loadData(isPullRefresh:Bool){
+    func loadData(isPullRefresh:Bool,refresh:Bool){
         if self.loading {
             return
         }
         if isPullRefresh {
             dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
                 self.loading = true
-                let posts=self.topic!.loadPosts(isPullRefresh)
+                let posts=self.topic!.loadPosts(isPullRefresh,refresh:refresh&&self.loaded)
                 self.loading = false
-                
+                self.didPullheader=true
                 if(isPullRefresh){
                     self.tableView.headerEndRefreshing()
                 }
@@ -103,14 +105,14 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosV
                         self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .None)
                     }
                 }
-                
+                self.loaded=true
             }
             
         } else {
                 self.loading = true
-                let posts=self.topic!.loadPosts(isPullRefresh)
+                let posts=self.topic!.loadPosts(isPullRefresh,refresh: refresh)
                 self.loading = false
-                
+                self.didPullheader=false
                 if(isPullRefresh){
                     self.tableView.headerEndRefreshing()
                 }

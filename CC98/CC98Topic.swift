@@ -23,12 +23,12 @@ class CC98Topic {
         self.from = 0
         self.to = 9
     }
-    func loadPosts(reset: Bool = false) -> Array<CC98Post> {
+    func loadPosts(reset: Bool = false,refresh:Bool) -> Array<CC98Post> {
         if reset {
             from = 0
             to = 9
         }
-        let ret = globalDataProcessor.GetTopicPost(ID, from: from, to: to)
+        let ret = globalDataProcessor.GetTopicPost(ID, from: from, to: to,refresh:refresh)
         from += 10
         to += 10
         return ret

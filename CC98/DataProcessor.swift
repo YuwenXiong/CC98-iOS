@@ -131,8 +131,8 @@ class DataProcessor {
     }
     
     // pass
-    func GetTopicPost(topicID: Int, from: Int, to: Int) -> Array<CC98Post> {
-        let postsJSON = GetJSON(baseURL + "Post/Topic/\(topicID)?from=\(from)&to=\(to)")
+    func GetTopicPost(topicID: Int, from: Int, to: Int,refresh:Bool) -> Array<CC98Post> {
+        let postsJSON = GetJSON(baseURL + "Post/Topic/\(topicID)?from=\(from)&to=\(to)",refresh:refresh)
         var posts = Array<CC98Post>()
         if postsJSON.count > 0 {
             for i in 0...postsJSON.count-1 {
