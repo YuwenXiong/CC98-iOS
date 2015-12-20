@@ -48,7 +48,7 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosV
     }
     
     func loadData(isPullRefresh:Bool){
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+//        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
             if self.loading {
                 return
             }
@@ -103,7 +103,7 @@ class TopicDetailController:UITableViewController, UIWebViewDelegate, NYTPhotosV
                 }
             }
             
-        }
+//        }
         
     }
     
