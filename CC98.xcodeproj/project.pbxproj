@@ -236,6 +236,7 @@
 		CC1924241C1C7E85007F0669 /* CC98 */ = {
 			isa = PBXGroup;
 			children = (
+				FFBB66BC1C2698BF000856AF /* Assets */,
 				FFB124D01C1C8CE800F4ECB2 /* icons */,
 				FFB124BE1C1C8C8D00F4ECB2 /* Refresh */,
 				FFB124B91C1C8B6200F4ECB2 /* Cell */,
@@ -343,7 +344,6 @@
 		FFB124BE1C1C8C8D00F4ECB2 /* Refresh */ = {
 			isa = PBXGroup;
 			children = (
-				FFBB66BC1C2698BF000856AF /* Assets */,
 				FFB124CB1C1C8CBF00F4ECB2 /* SwiftNotice.swift */,
 				FFB124CC1C1C8CBF00F4ECB2 /* UIScrollView+Refresh.swift */,
 				FFB124BF1C1C8CA800F4ECB2 /* BreakOutToRefreshView.swift */,
