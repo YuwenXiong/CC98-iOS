@@ -18,7 +18,7 @@ class BoardViewController:UITableViewController{
     @IBOutlet weak var thisBoardView: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-       // self.loadData(true)
+        
         if isRoot{
             thisBoardView.title="所有版面"
         }
@@ -31,17 +31,18 @@ class BoardViewController:UITableViewController{
         
         //        tableView.separatorStyle = .None
         self.tableView.addHeaderWithCallback{
-            self.loadData(true)
+            self.loadData(true,refresh: true)
         }
-       self.tableView.headerBeginRefreshing()
+        self.loadData(true,refresh:false)
+//       self.tableView.headerBeginRefreshing()
     }
-    func loadData(isPullRefresh:Bool){
+    func loadData(isPullRefresh:Bool,refresh:Bool){
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
             if self.isRoot{
-                self.subBoards=globalDataProcessor.GetRootBoard();
+                self.subBoards=globalDataProcessor.GetRootBoard(refresh);
             }
             else{
-                self.thisBoard!.GetSubBoards();
+                self.thisBoard!.GetSubBoards(refresh);
                 self.subBoards.removeAll(keepCapacity: false)
                 self.subBoards=self.thisBoard!.boards
             }

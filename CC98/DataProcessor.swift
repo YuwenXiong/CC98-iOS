@@ -160,8 +160,8 @@ class DataProcessor {
     
     // Board
     // pass
-    func GetRootBoard() -> Array<CC98Board> {
-        let boardsJSON = GetJSON(baseURL + "Board/Root")
+    func GetRootBoard(refresh:Bool) -> Array<CC98Board> {
+        let boardsJSON = GetJSON(baseURL + "Board/Root",refresh:refresh)
         var boards = Array<CC98Board>()
         if boardsJSON.count > 0 {
             for i in 0...boardsJSON.count-1 {
@@ -171,8 +171,8 @@ class DataProcessor {
         return boards
     }
     // pass
-    func GetSubBoards(boardID: Int) -> SwiftyJSON.JSON {
-        return GetJSON(baseURL + "Board/\(boardID)/Subs")
+    func GetSubBoards(boardID: Int,refresh:Bool) -> SwiftyJSON.JSON {
+        return GetJSON(baseURL + "Board/\(boardID)/Subs",refresh: refresh)
     }
     // pass
     func GetBoardInfo(boardID: Int) -> SwiftyJSON.JSON {
