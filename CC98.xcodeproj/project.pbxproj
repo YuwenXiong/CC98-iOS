@@ -72,7 +72,6 @@
 		FFBB66BA1C25F2F6000856AF /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBB66AE1C25F2F6000856AF /* star@2x.png */; };
 		FFBB66BB1C25F2F6000856AF /* star@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBB66AF1C25F2F6000856AF /* star@3x.png */; };
 		FFBB66BD1C2698BF000856AF /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = FFBB66BC1C2698BF000856AF /* Assets */; };
-		FFE221DF1C24149A00ED4D5B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE221DE1C24149A00ED4D5B /* UserViewController.swift */; };
 		FFE221E11C2414EB00ED4D5B /* CustomBoardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE221E01C2414EB00ED4D5B /* CustomBoardsViewController.swift */; };
 		FFE422D11C1DBB120034B879 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE422D01C1DBB120034B879 /* PostCell.swift */; };
 		FFE422D21C1E9F3C0034B879 /* TopicDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE422CE1C1CABB30034B879 /* TopicDetailController.swift */; };
@@ -169,7 +168,6 @@
 		FFBB66AE1C25F2F6000856AF /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star@2x.png"; path = "icons/star@2x.png"; sourceTree = "<group>"; };
 		FFBB66AF1C25F2F6000856AF /* star@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star@3x.png"; path = "icons/star@3x.png"; sourceTree = "<group>"; };
 		FFBB66BC1C2698BF000856AF /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
-		FFE221DE1C24149A00ED4D5B /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		FFE221E01C2414EB00ED4D5B /* CustomBoardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBoardsViewController.swift; sourceTree = "<group>"; };
 		FFE422CE1C1CABB30034B879 /* TopicDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailController.swift; sourceTree = "<group>"; };
 		FFE422D01C1DBB120034B879 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
@@ -321,7 +319,6 @@
 				FFB124BC1C1C8C0B00F4ECB2 /* HotTopicViewController.swift */,
 				FF08252F1C205C62007ED752 /* TopicListViewController.swift */,
 				FFE221E01C2414EB00ED4D5B /* CustomBoardsViewController.swift */,
-				FFE221DE1C24149A00ED4D5B /* UserViewController.swift */,
 				FF08252D1C205183007ED752 /* BoardViewController.swift */,
 				CC86424E1C24344C005FD7DF /* SettingViewController.swift */,
 				CC8642501C243CC9005FD7DF /* MeViewController.swift */,
@@ -596,7 +593,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFB124CA1C1C8CA800F4ECB2 /* SplotLightHelper.swift in Sources */,
-				FFE221DF1C24149A00ED4D5B /* UserViewController.swift in Sources */,
 				FF0825341C2190BF007ED752 /* UITools.swift in Sources */,
 				FF08252E1C205183007ED752 /* BoardViewController.swift in Sources */,
 				FFB124C51C1C8CA800F4ECB2 /* BreakOutToRefreshView.swift in Sources */,

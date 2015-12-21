@@ -33,6 +33,9 @@ class SettingViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let vpnSwitch = userDefaults.valueForKey("VPN_Switch") as? Bool {
+            VPN_Switch.on = vpnSwitch
+        }
         if VPN_Switch.on {
             container.hidden=false
         }

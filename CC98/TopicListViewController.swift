@@ -39,55 +39,50 @@ class TopicListViewController:UITableViewController{
     }
     
     func loadData(isPullRefresh:Bool){
-//        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
-            if self.loading {
-                return
-            }
-            self.loading = true
-            let topics=self.board!.loadTopics(isPullRefresh)
-            self.loading = false
-            
-            if(isPullRefresh){
-                self.tableView.headerEndRefreshing()
-            }
-            else{
-                self.tableView.footerEndRefreshing()
-            }
-            if topics.count==0 && isPullRefresh{
-                JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
-//                let alert = UIAlertView(title: "网络异常", message: "请检查网络设置", delegate: nil, cancelButtonTitle: "确定")
-//                alert.show()
-                return
-            }
-            
-            if(topics.count==0){
-                return
-            }
-            
-            if(isPullRefresh){
-                
-                self.topics.removeAll(keepCapacity: false)
-            }
-            
-            
-            for it in topics {
-                self.topics.append(it)
-            }
-            
-            if isPullRefresh {
-                self.tableView.reloadData()
-            } else {
-                self.tableView.beginUpdates()
-                for i in (self.topics.count - topics.count)...(self.topics.count - 1) {
-                    self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .None)
-                }
-                self.tableView.endUpdates()
-                for i in (self.topics.count - topics.count)...(self.topics.count - 1) {
-                    self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .None)
-                }
-            }
-//        }
+        if self.loading {
+            return
+        }
+        self.loading = true
+        let topics=self.board!.loadTopics(isPullRefresh)
+        self.loading = false
         
+        if(isPullRefresh){
+            self.tableView.headerEndRefreshing()
+        }
+        else{
+            self.tableView.footerEndRefreshing()
+        }
+        if topics.count==0 && isPullRefresh{
+            JLToast.makeText("网络异常，请检查网络设置！", duration: textDuration).show()
+            return
+        }
+        
+        if(topics.count==0){
+            return
+        }
+        
+        if(isPullRefresh){
+            
+            self.topics.removeAll(keepCapacity: false)
+        }
+        
+        
+        for it in topics {
+            self.topics.append(it)
+        }
+        
+        if isPullRefresh {
+            self.tableView.reloadData()
+        } else {
+            self.tableView.beginUpdates()
+            for i in (self.topics.count - topics.count)...(self.topics.count - 1) {
+                self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .None)
+            }
+            self.tableView.endUpdates()
+            for i in (self.topics.count - topics.count)...(self.topics.count - 1) {
+                self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .None)
+            }
+        }
     }
     
     
