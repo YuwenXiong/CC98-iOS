@@ -56,40 +56,6 @@ class DataProcessor {
         return self.json
     }
     
-    func GetSecurityJSON(URL: String) -> SwiftyJSON.JSON {
-        var flag = false
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
-            oauth.afterAuthorizeOrFailure = { wasFailure, error in
-                if (wasFailure == false) {
-                    let req = oauth.request(forURL: NSURL(string: URL)!)
-                    req.addValue("Application/json", forHTTPHeaderField: "Accept")
-                    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
-                    let session = NSURLSession.sharedSession()
-                    let task = session.dataTaskWithRequest(req) { data, response, error in
-                        if nil != error {
-                            JLToast.makeText("获取数据失败！").show()
-                        }
-                        else {
-                            // check the response and the data
-                            // you have just received data with an OAuth2-signed request!
-                            let data = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
-                            JLToast.makeText("获取数据成功！").show()
-                            self.json = JSON(data)
-                            flag = true
-                        }
-                    }
-                    task.resume()
-                    }
-                }
-            }
-            oauth.authorize()
-        }
-        while (!flag) {
-            NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture())
-        }
-        return self.json
-    }
-    
     // pass
     func GetHotTopic(refresh: Bool) -> Array<CC98Topic> {
         let topicsJSON = GetJSON(baseURL + "Topic/Hot", refresh: refresh)
@@ -181,7 +147,6 @@ class DataProcessor {
         content = content.stringByReplacingOccurrencesOfString("[upload=gif,1]", withString: "[upload=gif]")
         content = content.stringByReplacingOccurrencesOfString("[upload=bmp,1]", withString: "[upload=bmp]")
         content = content.stringByReplacingOccurrencesOfString("[upload=png,1]", withString: "[upload=png]")
-        //        content = content.stringByReplacingOccurrencesOfString("quote]", withString: "quotex]")
         if networkStatus == "Cellular" {
             content = content.stringByReplacingOccurrencesOfString("http://file.cc98.org", withString: "https://rvpn.zju.edu.cn/web/1/http/0/file.cc98.org")
             avatar = avatar.stringByReplacingOccurrencesOfString("http://file.cc98.org", withString: "https://rvpn.zju.edu.cn/web/1/http/0/file.cc98.org")
@@ -228,7 +193,6 @@ class DataProcessor {
             
             var begin = 0
             let pattern1 = "(http(s?):)([/|.|\\w|\\s])*\\.(?:jpg|gif|png)"
-//            let pattern1 = "https?://(?:[a-z0-9\\-]+\\.)+[a-z]{2,6}(?:/[^/#?]+)+\\.(?:jpg|gif|png|jpeg|bmp)"
             let regex1 = try NSRegularExpression(pattern: pattern1, options: NSRegularExpressionOptions.CaseInsensitive)
             
             var res1 = regex1.rangeOfFirstMatchInString(content, options: NSMatchingOptions(rawValue: 0), range: NSMakeRange(begin,content.characters.count))
@@ -269,22 +233,6 @@ class DataProcessor {
             }
         }
         return result
-    }
-    
-    func getUserBoard() -> Array<CC98Board> {
-        var boards = Array<CC98Board>()
-        let boardsJSON = GetSecurityJSON(baseURLS + "Me/CustomBoards")
-        if boardsJSON.count > 0 {
-            for i in 0...boardsJSON.count-1 {
-                boards.append(CC98Board(data: boardsJSON[i]))
-            }
-        }
-        return boards
-    }
-
-    func getMe() -> CC98User {
-        let meJSON = GetSecurityJSON(baseURLS + "Me")
-        return CC98User(userInfo: meJSON)
     }
     
 }
