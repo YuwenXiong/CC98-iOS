@@ -34,7 +34,7 @@ class DataProcessor {
             baseURLS = "https://api.cc98.org/"
         }
     }
-    func GetJSON(URL: String, refresh: Bool = false) -> SwiftyJSON.JSON {
+    func GetJSON(URL: String, refresh: Bool) -> SwiftyJSON.JSON {
 
         if refresh {
             self.cache.remove(key: URL)
@@ -104,7 +104,7 @@ class DataProcessor {
     
     // pass
     func GetBoardTopic(boardID: Int, from: Int, to: Int) -> Array<CC98Topic> {
-        let topicsJSON = GetJSON(baseURL + "Topic/Board/\(boardID)?from=\(from)&to=\(to)")
+        let topicsJSON = GetJSON(baseURL + "Topic/Board/\(boardID)?from=\(from)&to=\(to)", refresh: true)
         var topics = Array<CC98Topic>()
         if topicsJSON.count > 0 {
             for i in 0...topicsJSON.count-1 {
@@ -115,9 +115,9 @@ class DataProcessor {
     }
     
     // pass
-    func GetTopicInfo(topicID: Int) -> SwiftyJSON.JSON {
-        return GetJSON(baseURL + "Topic/\(topicID)")
-    }
+//    func GetTopicInfo(topicID: Int) -> SwiftyJSON.JSON {
+//        return GetJSON(baseURL + "Topic/\(topicID)")
+//    }
     
     // pass
     func GetTopicPost(topicID: Int, from: Int, to: Int,refresh:Bool) -> Array<CC98Post> {
@@ -132,18 +132,18 @@ class DataProcessor {
     }
     
     // pass
-    func GetPost(postID: Int) -> CC98Post {
-        return CC98Post(postInfo: GetJSON(baseURL + "Post/\(postID)"))
-    }
+//    func GetPost(postID: Int) -> CC98Post {
+//        return CC98Post(postInfo: GetJSON(baseURL + "Post/\(postID)"))
+//    }
     // User
     // pass
-    func GetUserByName(userName: String) -> SwiftyJSON.JSON {
-        return GetJSON(baseURL + "User/Name/\(userName)")
-    }
+//    func GetUserByName(userName: String) -> SwiftyJSON.JSON {
+//        return GetJSON(baseURL + "User/Name/\(userName)")
+//    }
     
     // pass
     func GetUserByID(userID: Int) -> SwiftyJSON.JSON {
-        return GetJSON(baseURL + "User/\(userID)")
+        return GetJSON(baseURL + "User/\(userID)", refresh: true)
     }
     
     
@@ -165,7 +165,7 @@ class DataProcessor {
     }
     // pass
     func GetBoardInfo(boardID: Int) -> SwiftyJSON.JSON {
-        return GetJSON(baseURL + "Board/\(boardID)")
+        return GetJSON(baseURL + "Board/\(boardID)", refresh: false)
     }
     
     //    func GetBoard(boardID: Int) -> CC98Board {
